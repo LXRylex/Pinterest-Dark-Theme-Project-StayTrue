@@ -49,11 +49,10 @@ Developer Note: Holy shit these are BROKEN AS FUCK LOL
 
 Expected Release Date [17/11/2025]
 
-~~1. Extract the .zip
+1. Extract the .zip
 2. Go to `chrome://extensions/`.
 3. Enable **Developer mode**.
 4. Click **Load unpacked** and select the folder.
-5. Open Pinterest and refresh.~~
+5. Open Pinterest and refresh.
 
 If you still see white chunks, Pinterest probably changed something try to CTRL+R it will hard refresh, if it does not work report with a screenshot and i'll patch it as quick as possible if it can be done because some elements are hard to turn to black
-[StayTrue-AMOLED-v0.7.1-Beta.zip](https://github.com/user-attachments/files/23585966/StayTrue-AMOLED-v0.7.1-Beta.zip)
