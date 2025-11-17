@@ -47,8 +47,6 @@ Developer Note: Holy shit these are BROKEN AS FUCK LOL
 
 ## ⚙️ Install (Chromium)
 
-Expected Release Date [17/11/2025]
-
 1. Extract the .zip
 2. Go to `chrome://extensions/`.
 3. Enable **Developer mode**.
