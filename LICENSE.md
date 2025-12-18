@@ -25,6 +25,5 @@ Any forks, modifications, or rebuilds remain subject to this license and may not
 
 Termination
 Failure to comply with the terms of this license automatically terminates your rights to use the software.
-If you want, I can also generate a short badge-style line for the README like:
 
 📝 License: Xzentosia Personal Use License (XPUL)
