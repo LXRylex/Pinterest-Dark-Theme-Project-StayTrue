@@ -1,9 +1,9 @@
-# TrueAMOLED - Pinterest
+# StayTrue / Pinterest
 
 Tired of “dark mode” extensions that leave half of Pinterest glowing white or break every other fucking update?
 **TrueAMOLED - Pinterest** is a *CSS-only* theme that actually does the job as goddamn god intended.
 
-## 💀 Why this exists
+## Why this exists
 
 Most awful "Pinterest dark/black" extensions:
 
@@ -14,7 +14,7 @@ Most awful "Pinterest dark/black" extensions:
 
 **TrueAMOLED - Pinterest** is built specifically around Pinterest’s real UI pieces and provides the best dark mode experience
 
-## 🌑 What TrueAMOLED changes
+## What TrueAMOLED changes
 
 - **Global pure black background**  
   Main app root, vertical nav, top bar, dialogs, popups, dropdowns etc and A WHOLLA LOT MORE!
