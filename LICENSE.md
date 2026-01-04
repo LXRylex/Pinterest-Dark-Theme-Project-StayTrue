@@ -1,6 +1,6 @@
 # Xzentosia Personal Use License (XPUL)
 
-Copyright (c) 2024–2025
+Copyright (c) 2024-2026
 Yuilix / Xzentosia
 All Rights Reserved
 
