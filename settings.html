@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>True AMOLED - Settings</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <img class="logo" src="Pinterest.png" alt="True AMOLED" />
+        <div class="brand-text">
+          <div class="h1">True AMOLED</div>
+          <div class="sub">Settings</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <span class="status" id="settingsStatus"></span>
+      </div>
+    </header>
+
+    <!-- VAULT -->
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Private Pins (Vault)</div>
+        <div class="panel-desc">
+          Adds a <b>Save to Vault</b> button on pin pages and enables your local Vault page.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-text">
+          <div class="row-title">Enable Vault feature</div>
+          <div class="row-desc">Disabling removes injection and hides the popup’s “Private Pins”.</div>
+        </div>
+
+        <div id="vaultSwitch" class="switch" role="switch" aria-checked="true" tabindex="0">
+          <div class="knob"></div>
+        </div>
+      </div>
+
+      <div class="saved" id="savedHint"></div>
+
+      <div class="actions">
+        <button id="openVault" class="btn primary" type="button">Open Vault</button>
+      </div>
+    </section>
+
+    <!-- THEME -->
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Theme</div>
+        <div class="panel-desc">
+          Choose which stylesheet is injected. <b>Off = AMOLED</b>, <b>On = Gray</b>.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-text">
+          <div class="row-title">Enable Gray theme</div>
+          <div class="row-desc">Switching themes updates instantly while the extension is enabled.</div>
+        </div>
+
+        <div id="themeSwitch" class="switch" role="switch" aria-checked="false" tabindex="0">
+          <div class="knob"></div>
+        </div>
+      </div>
+
+      <div class="tiny" id="themeHint"></div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-note">
+        Tip: If the option to save to "Vault" isn't available then hard refresh Pinterest by holding CTRL and press F5.
+      </div>
+    </footer>
+  </main>
+
+  <script src="settings.js"></script>
+</body>
+</html>

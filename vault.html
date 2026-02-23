@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Local Pin Vault</title>
+
+  <link rel="stylesheet" href="vault.css" />
+
+  <script src="jszip.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <img class="brand-logo" src="Pinterest.png" alt="Vault" />
+      <div><h1>Pinterest Vault</h1></div>
+    </div>
+
+    <div class="controls">
+      <div class="search-wrapper">
+        <span class="search-icon">🔎</span>
+        <input id="searchInput" type="text" placeholder="Search...but pinterest titles can be weird" />
+      </div>
+    </div>
+
+    <div class="top-actions">
+
+      <button id="helpBtn" class="help-btn" type="button">
+        Read Here
+      </button>
+
+      <button id="dataMenuBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+        Data ▾
+      </button>
+
+      <div class="menu" id="dataMenu" role="menu" aria-label="Data options" hidden>
+        <button class="menu-item" id="menuExport" type="button" role="menuitem">
+          Export (.pinvault)
+        </button>
+
+        <button class="menu-item" id="menuImport" type="button" role="menuitem">
+          Import (.pinvault)
+        </button>
+
+        <div class="menu-sep" role="separator"></div>
+
+        <button class="menu-item" id="menuZip" type="button" role="menuitem">
+          Download ZIP (media)
+        </button>
+
+        <input id="fileImportInput" type="file" accept=".pinvault,application/json" hidden />
+      </div>
+
+      <button id="deleteMenuBtn" class="danger" type="button" aria-haspopup="menu" aria-expanded="false">
+        Delete ▾
+      </button>
+
+      <div class="menu" id="deleteMenu" role="menu" aria-label="Delete options" hidden>
+        <button class="menu-item" id="menuBulkToggle" type="button" role="menuitem">
+          Enter bulk delete
+        </button>
+
+        <button class="menu-item danger" id="menuDeleteSelected" type="button" role="menuitem" disabled>
+          Delete selected
+        </button>
+
+        <div class="menu-sep" role="separator"></div>
+
+        <button class="menu-item danger" id="menuClearAll" type="button" role="menuitem">
+          Clear All
+        </button>
+      </div>
+
+      <button id="tagsMenuBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+        Tags ▾
+      </button>
+
+      <div class="menu" id="tagsMenu" role="menu" aria-label="Tag options" hidden>
+        <button class="menu-item" id="menuTagBulkToggle" type="button" role="menuitem">
+          Enter bulk tag mode
+        </button>
+
+        <button class="menu-item" id="menuManageTags" type="button" role="menuitem">
+          Apply to selected
+        </button>
+
+        <div class="menu-sep" role="separator"></div>
+
+        <button class="menu-item" id="menuCreateTag" type="button" role="menuitem">
+          Manage tags
+        </button>
+      </div>
+
+      <button id="filterMenuBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+        Filter ▾
+      </button>
+
+      <div class="menu" id="filterMenu" role="menu" aria-label="Filter by tag" hidden>
+        <div class="menu-tags" id="filterTags"></div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="emptyState">
+    <div style="font-size:14px; font-weight:600; margin-bottom:6px;">Empty… for now</div>
+    <div style="font-size:12px;">Open a pin and press <b>Save to Vault</b>.</div>
+  </div>
+
+  <main id="vaultGrid"></main>
+
+  <div class="viewer" id="viewer" aria-hidden="true">
+    <div class="viewer-backdrop" id="viewerClose"></div>
+
+    <div class="viewer-dialog" role="dialog" aria-modal="true" aria-label="Media Viewer">
+      <div class="viewer-header">
+        <div class="viewer-title" id="viewerTitle">Preview</div>
+        <button class="viewer-x" id="viewerX" type="button">✕</button>
+      </div>
+
+      <div class="viewer-body">
+        <div class="viewer-media" id="viewerMedia"></div>
+      </div>
+
+      <div class="viewer-footer">
+        <div class="viewer-left">
+          <a class="viewer-link" id="viewerOpen" href="#" target="_blank" rel="noreferrer">Open</a>
+          <button class="viewer-btn" id="viewerCopy" type="button">Copy</button>
+        </div>
+
+        <div class="viewer-right">
+          <button class="viewer-btn primary" id="viewerDownload" type="button">Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tag-modal" id="tagModal" aria-hidden="true">
+    <div class="tag-backdrop" id="tagBackdrop"></div>
+
+    <div class="tag-card" role="dialog" aria-modal="true" aria-label="Manage tags">
+      <div class="tag-head">
+        <div class="tag-title" id="tagModalTitle">Manage Tags</div>
+        <button class="tag-x" id="tagX" type="button" aria-label="Close">✕</button>
+      </div>
+
+      <div class="tag-body">
+        <div class="tag-search-row">
+          <input id="tagInput" type="text" placeholder="Search or type new tag then Enter..." />
+        </div>
+
+        <div class="tag-cloud" id="tagList"></div>
+      </div>
+
+      <div class="tag-footer">
+        <div class="tag-hint">Enter adds new tag. Click chips to apply.</div>
+        <button class="tag-done-btn" id="tagDoneBtn" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tag-modal" id="helpModal" aria-hidden="true">
+    <div class="tag-backdrop" id="helpBackdrop"></div>
+
+    <div class="help-card" role="dialog" aria-modal="true" aria-label="How to use Vault">
+      <div class="tag-head">
+        <div class="tag-title">How to use</div>
+        <button class="tag-x" id="helpX" type="button" aria-label="Close">✕</button>
+      </div>
+
+      <div class="help-body">
+        <div class="help-content">
+          <div class="help-item">
+            <div><b>Data</b> will give you options to extract and have a backup of your saved pins that is here, you can have it as a json or you can just download your whole library as images</div>
+          </div>
+
+          <div class="help-item">
+            <div><b>Tags</b> You can use it to create tagsi multiple select images to apply a tag. Note: You can edit tags by right click on them to edit name or delete the tag</div>
+          </div>
+
+          <div class="help-item">
+            <div><b>Delete</b>Has a bulk delete mode to delete multiple images or delete all.</div>
+          </div>
+
+          <div class="help-item">
+            <div><b>Filter</b>Will sdhow all of your created tags and you can choose which ones to filter to only see that tags.</div>
+          </div>
+
+          <div class="help-item">
+            <div><b>Quick Preview</b>: hover on a image and hold <b>Space</b> this will trigger a quick preview to show the image, works on bulk modes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-modal" id="introModal" aria-hidden="true">
+    <div class="intro-backdrop" id="introBackdrop"></div>
+    <div class="intro-card" role="dialog" aria-modal="true" aria-label="Vault Intro">
+      <div class="intro-head">
+        <div class="intro-title">Welcome to Vault</div>
+        <button class="intro-x" id="introX" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="intro-body">
+        <div class="intro-text" id="introText">
+          </div>
+        
+        <div class="intro-shot">
+          <img id="introShotImg" alt="Feature preview" />
+          <div class="intro-shotbar">
+            <button class="intro-nav" id="introPrev" type="button">‹</button>
+            <div class="intro-dots" id="introDots"></div>
+            <button class="intro-nav" id="introNext" type="button">›</button>
+            <div class="intro-count" id="introCount"></div>
+          </div>
+        </div>
+
+        <label class="intro-check">
+          <input type="checkbox" id="introDontShow" />
+          <span>Don't show this again</span>
+        </label>
+        
+        <button class="intro-ok" id="introOk" type="button">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vault.js"></script>
+</body>
+</html>

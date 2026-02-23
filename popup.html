@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>True AMOLED - Pinterest</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <div class="card">
+    <div class="dark-layer"></div>
+    <button id="settingsBtn" class="settings-btn" type="button" title="Settings" aria-label="Settings">⚙</button>
+
+    <div class="card-header">
+      <div class="text">
+        <div class="title">StayTrue AMOLED</div>
+        <label id="statusLabel"></label>
+      </div>
+
+      <div class="toggle-wrap">
+        <span class="toggle-label">OFF / ON</span>
+        <input type="checkbox" id="toggleAmoled" />
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- DIM SLIDER -->
+    <div class="dim">
+      <div class="dim-top">
+        <span class="dim-title">DIM</span>
+        <span class="dim-val" id="dimValue">0%</span>
+      </div>
+      <input id="dimSlider" type="range" min="0" max="80" value="0" />
+      <div class="dim-hint">Overall Pinterest Brightness</div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="links">
+      <button id="privatePinsBtn" type="button" title="Alternative to save in pinterest itself to protect you from getting account violations when saving an image etc.">
+        Private Pins
+      </button>
+
+      <a id="githubLink" class="icon-btn" href="https://github.com/LXRylex/TrueAMOLED-Projext-Pinterest/releases" target="_blank" title="GitHub">
+        <img src="images/github.png" alt="GitHub" />
+      </a>
+
+      <a id="reviewLink" class="review-btn" href="#" target="_blank" title="Leave a review">
+        Leave a review to support the extension 💜
+      </a>
+
+      <a id="customLink" class="icon-btn" href="#" target="_blank" title="My Webpage">
+        <img src="images/xzen-size-fix.png" alt="Yuilix" />
+      </a>
+    </div>
+
+    <div id="donateWrap">
+      <a href="https://www.buymeacoffee.com/yuilix" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.buymeacoffee.com/button-api/?text=Donate?&emoji=❤️&slug=yuilix&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" />
+      </a>
+    </div>
+
+    <div class="footer">
+      <span class="footer-left">If not working <b>CTRL+F5</b> when the extension is disabled then enable again.</span>
+      <a id="changelogLink"
+         class="footer-link"
+         href="https://github.com/LXRylex/Pinterest-Dark-Theme-Project-StayTrue/releases/tag/v1.0.6-Beta-Release"
+         target="_blank">
+        Changelog v1.0.6 Beta
+      </a>
+    </div>
+  </div>
+
+  <!-- Theme Tip Modal (one-time) -->
+  <div id="modalTheme" class="xzen-modal" aria-hidden="true">
+    <div class="xzen-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalThemeTitle">
+      <div class="xzen-modal-title" id="modalThemeTitle">New: Theme Switch</div>
+      <div class="xzen-modal-text">
+        You can now choose between <b>AMOLED</b> and <b>Gray</b> theme inside <b>Settings</b> (⚙).
+      </div>
+
+      <label class="xzen-modal-check">
+        <input id="modalThemeDont" type="checkbox" />
+        Don’t show again
+      </label>
+
+      <div class="xzen-modal-actions">
+        <button id="modalThemeOk" class="xzen-modal-btn" type="button">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Helper Modal -->
+  <div id="modalReview" class="xzen-modal" aria-hidden="true">
+    <div class="xzen-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalReviewTitle">
+      <div class="xzen-modal-title" id="modalReviewTitle">Before you review</div>
+      <div class="xzen-modal-text">
+        If you found a <b>bug</b> or have a <b>suggestion</b>, please report it on <b>GitHub Issues</b> so it can be fixed.
+        Reviews help a lot, but issue details help way more.
+      </div>
+
+      <div class="xzen-modal-actions xzen-modal-actions-row">
+        <button id="modalReviewGit" class="xzen-modal-btn xzen-modal-btn-secondary" type="button">Report on GitHub</button>
+        <button id="modalReviewGo" class="xzen-modal-btn" type="button">Leave a review</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
