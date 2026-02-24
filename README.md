@@ -68,4 +68,4 @@ Developer Note: Holy shit these are really broken
 
 If you still see white chunks, Pinterest probably changed something try to CTRL+R it will hard refresh, if it does not work report with a screenshot and i'll patch it as quick as possible if it can be done because some elements are hard to turn to black
 
-🧩 Plugin: [Download Pins & Boards](https://chromewebstore.google.com/detail/download-pinsboards-add-o/dckeachmifeldpanciikcopepeiiblkj)
+🧩 Plugin: [Download Pins & Boards](https://chromewebstore.google.com/detail/download-pinsboards-add-o/dckeachmifeldpanciikcopepeiiblkj) Available on Chrome store for all Chromium browsers. For more info [read here](https://github.com/LXRylex/Project-StayTrue-Plugins)
