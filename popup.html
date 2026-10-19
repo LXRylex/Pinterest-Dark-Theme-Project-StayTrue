@@ -62,31 +62,48 @@
     </div>
 
     <div class="footer">
-      <span class="footer-left">If not working <b>CTRL+F5</b> when the extension is disabled then enable again.</span>
+      <span class="footer-left">If not working <b>CTRL+F5</b> that's all</span>
       <a id="changelogLink"
          class="footer-link"
-         href="https://github.com/LXRylex/Pinterest-Dark-Theme-Project-StayTrue/releases/tag/v1.0.6-Beta-Release"
+         href="https://github.com/LXRylex/Pinterest-Dark-Theme-Project-StayTrue/releases"
          target="_blank">
-        Changelog v1.0.6 Beta
+        Version 1.1.3 · Releases
       </a>
     </div>
   </div>
 
-  <!-- Theme Tip Modal (one-time) -->
-  <div id="modalTheme" class="xzen-modal" aria-hidden="true">
-    <div class="xzen-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalThemeTitle">
-      <div class="xzen-modal-title" id="modalThemeTitle">New: Theme Switch</div>
+  <!-- Discord community announcement (one-time) -->
+  <div id="modalDiscordAnnouncement" class="xzen-modal" aria-hidden="true">
+    <div class="xzen-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalDiscordAnnouncementTitle">
+      <div class="xzen-modal-title" id="modalDiscordAnnouncementTitle">I opened an X Dev Discord server</div>
       <div class="xzen-modal-text">
-        You can now choose between <b>AMOLED</b> and <b>Gray</b> theme inside <b>Settings</b> (⚙).
+        <p>A place for our community to report issues, talk about development, and stay in touch more easily.</p>
+        <p>I'm working on all my projects solo, and it's been hard to keep track of conversations everywhere. I hope the server gives us better communication and a place to share the behind-the-scenes work I do even when the web extensions aren't getting updates.</p>
+        <p>I'm especially sorry for the bugs lately. Pinterest's frequent updates keep breaking parts of this extension, and I'm doing my best to fix them. Thank you for your patience and support.</p>
       </div>
+      <div class="xzen-modal-settings-tip">
+        <b>New customization:</b> Open <b>Settings → Themes</b> to choose your theme and customize the AMOLED accent colors.
+      </div>
+      <div class="xzen-modal-actions xzen-modal-actions-row">
+        <button id="modalDiscordAnnouncementOk" class="xzen-modal-btn xzen-modal-btn-secondary" type="button">Got it</button>
+        <button id="modalDiscordJoin" class="xzen-modal-btn" type="button">Join Discord</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Settings Themes tip (one-time when dismissed permanently) -->
+  <div id="modalSettingsThemes" class="xzen-modal" aria-hidden="true">
+    <div class="xzen-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalSettingsThemesTitle">
+      <div class="xzen-modal-title" id="modalSettingsThemesTitle">More Themes in Settings</div>
+      <div class="xzen-modal-text">
+        Check the <b>Settings</b> page for theme options and AMOLED accent customization.
+      </div>
       <label class="xzen-modal-check">
-        <input id="modalThemeDont" type="checkbox" />
+        <input id="modalSettingsThemesDont" type="checkbox" />
         Don’t show again
       </label>
-
       <div class="xzen-modal-actions">
-        <button id="modalThemeOk" class="xzen-modal-btn" type="button">Got it</button>
+        <button id="modalSettingsThemesOk" class="xzen-modal-btn" type="button">Got it</button>
       </div>
     </div>
   </div>

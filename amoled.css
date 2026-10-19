@@ -3,50 +3,50 @@ body {
   background-color: #000000 !important;
 }
 
-
+/* Main Pinterest app root */
 #__PWS_ROOT__,
 body > div:first-child {
   background-color: #000000 !important;
 }
 
-
+/* Left vertical nav background */
 #VerticalNavContent {
   background-color: #000000 !important;
   border-right-color: #111111 !important;
 }
 
-
+/* Make nav icons white */
 #VerticalNavContent svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Top tab strip background */
 [style*="--sema-color-background-default"] {
   background-color: #000000 !important;
 }
 
-
+/* Tab texts (Tümü / Refs / Wallpapers etc.) */
 .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Force Pinterest's semantic background token to be pure black */
 :root {
   --sema-color-background-default: #000000 !important;
 }
 
-
+/* Any inline style using that var -> black */
 *[style*="var(--sema-color-background-default)"] {
   background-color: #000000 !important;
 }
 
-
+/* 2) Dark background for the white popup (flyout) next to the bar */
 .dHA5K0.kF2VEF.sSBu24.zEVE_X {
   background-color: #050505 !important;
 }
 
-
+/* Text inside that popup stays white */
 .dHA5K0.kF2VEF.sSBu24.zEVE_X span,
 .dHA5K0.kF2VEF.sSBu24.zEVE_X p,
 .dHA5K0.kF2VEF.sSBu24.zEVE_X h1,
@@ -56,14 +56,14 @@ body > div:first-child {
   color: #ffffff !important;
 }
 
-
+/* Inputs inside that popup */
 .dHA5K0.kF2VEF.sSBu24.zEVE_X input,
 .dHA5K0.kF2VEF.sSBu24.zEVE_X textarea {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* UNIVERSAL POPUP / FLYOUT DARK MODE – dialogs only */
 [role="dialog"],
 [aria-modal="true"],
 [role="dialog"] .kF2VEF,
@@ -79,94 +79,94 @@ body > div:first-child {
 }
 
 
-
+/* Force the Tümü / Refs / Wallpapers bar wrapper to be black */
 div[style*="top:80px"][style*="width:100%"] {
   background-color: #000000 !important;
 }
 
-
+/* Make the “slider / discovery” icon near tabs white */
 .VHreRh.kHGn_J.XjRT60 svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* “Grup / Gizli” pill buttons */
 .WuRgKB.eMU5i5.YfEt3H.o5UlW_.h3gMqR.cZLkj_ {
   background-color: #000000 !important;
   color: #ffffff !important;
   padding: 4px 12px !important;
   border-radius: 9999px !important;
 }
-
+/* Outer "Grup / Gizli" button wrapper */
 .dBMCN4.jShAKf.fNg3j8.RABojg.IdIBJj.fAZwDI.SdmY6_.y4A0gb.ap8aAM.O0u6sV {
   background-color: #000000 !important;
   color: #ffffff !important;
   border-radius: 9999px !important;
 }
 
-
+/* Inner label */
 .WuRgKB.eMU5i5.YfEt3H.o5UlW_.h3gMqR.cZLkj_ {
   background-color: transparent !important;
   color: #ffffff !important;
   padding: 4px 12px !important;
 }
-
+/* Dropdown menu container (Sıralama türü / Profil düzeni) */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Inner panel */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u .ADXRXN.EH8C6E.Ip8hrQ._tKaHB.sSBu24.saDmEv.wl0pCr.zEVE_X {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Buttons inside dropdown */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u button {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Labels (Sıralama türü / Profil düzeni / A'dan Z'ye / Özel / Son Pin Eklendi etc.) */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u .WuRgKB,
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u .pA9X1U {
   color: #ffffff !important;
 }
 
-
+/* Checkmark icon in the selected option */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u svg path {
   fill: #ffffff !important;
 }
-
+/* "Profili görüntüle" button */
 button[data-test-id="selfProfileHeader-view-profile-button"],
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.CNPSpi.O0u6sV {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Text inside the button */
 button[data-test-id="selfProfileHeader-view-profile-button"] .WuRgKB,
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.CNPSpi.O0u6sV .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Search bar row background -> pure black */
 .ADXRXN.Lo7aEl.zEVE_X {
   background-color: #000000 !important;
 }
 
-
+/* Search dropdown panel background also black */
 #SuggestionsMenu,
 #SuggestionsMenu .ADXRXN.WTrvgR._tKaHB.ecEhnF.zEVE_X {
   background-color: #000000 !important;
 }
 
-
+/* Text inside suggestions stays white */
 #SuggestionsMenu .WuRgKB,
 #SuggestionsMenu h4 {
   color: #ffffff !important;
 }
 
-
+/* Search input text + placeholder */
 input[data-test-id="search-box-input"] {
   color: #ffffff !important;
 }
@@ -174,7 +174,7 @@ input[data-test-id="search-box-input"] {
 input[data-test-id="search-box-input"]::placeholder {
   color: #888888 !important;
 }
-
+/* 1) "Son Aramalar" / recent searches section – full dark */
 #SuggestionsMenu .H2DtUH.am4r_S.bhb3s6._tKaHB,
 #SuggestionsMenu [data-test-id="suggestion-group-heading"],
 #SuggestionsMenu [data-test-id="suggestion-group-heading"] h4,
@@ -187,19 +187,19 @@ input[data-test-id="search-box-input"]::placeholder {
   fill: #ffffff !important;
 }
 
-
+/* 2) Rows + hover AMOLED effect */
 #SuggestionsMenu [data-test-id="search-suggestion"] {
   background-color: #000000 !important;
 }
 
 #SuggestionsMenu [data-test-id="search-suggestion"]:hover {
-  background-color: #0a0a0a !important; 
+  background-color: #0a0a0a !important; /* slightly brighter AMOLED */
 }
 
 #SuggestionsMenu [data-test-id="search-suggestion"] .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Kill the white / grey outline around search dropdown */
 #SuggestionsMenu,
 #SuggestionsMenu .WTrvgR,
 #SuggestionsMenu .MQHiAK,
@@ -213,7 +213,7 @@ input[data-test-id="search-box-input"]::placeholder {
   border-color: #000000 !important;
 }
 
-
+/* Rows + hover AMOLED */
 #SuggestionsMenu [data-test-id="search-suggestion"] {
   background-color: #000000 !important;
 }
@@ -222,191 +222,191 @@ input[data-test-id="search-box-input"]::placeholder {
   background-color: #0a0a0a !important;
 }
 
-
+/* Text inside stays white */
 #SuggestionsMenu [data-test-id="search-suggestion"] .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Closeup: "more options" (three dots) button icon -> white */
 [data-test-id="closeup-more-options"] svg path,
 [data-test-id="closeup-action-bar-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* Make that upload/arrow icon full white */
 .dVx3J_.Q3hcOU.mm_g7v svg path,
 .VHreRh.kHGn_J.cUw_ba svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Tabs bar wrapper (Tümü / Refs / Wallpapers) – force black */
 div[style*="top: 80px"][style*="background-color: rgb(255, 255, 255"] {
   background-color: #000000 !important;
 }
 
-
+/* Inner tab row container */
 .ADXRXN.MJ_eMy.ecEhnF.gEQpi5.zEVE_X {
   background-color: #000000 !important;
 }
 
-
+/* Each tab pill background */
 .ADXRXN.B3GZzn.fz1RM7.gEQpi5.gcIrSY.i1hWBD {
   background-color: #000000 !important;
 }
 
 .VHreRh.kHGn_J.XjRT60 {
-  color: #b573ff !important;
+  color: var(--pdt-accent, #b573ff) !important;
 }
 svg.iewObu path {
-  fill: #b573ff !important;
+  fill: var(--pdt-accent, #b573ff) !important;
 }
-
+/* "Değiştir" button: black bg, white text */
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.GaMK1V.O0u6sV {
   background-color: #000000 !important;
   color: #ffffff !important;
   border-color: #000000 !important;
 }
 
-
+/* Text inside */
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.GaMK1V.O0u6sV .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Optional hover – slightly brighter black */
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.GaMK1V.O0u6sV:hover {
   background-color: #070707 !important;
 }
-
+/* "Ad" label text white */
 .urH_ll label.piPv3T.jSnx8D._hXngT._xeu4m .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* First name input text + placeholder white on black */
 #first_name.VTVmV8.q3kIpX.g0zfi1.bb8HPP.zNJ6Me.c3eeZM.vr41LG.EYma4O.hxKTA7.mm0O_j.eyoFbE.glzo1E.btwCoE {
   color: #ffffff !important;
   background-color: #000000 !important;
   border-color: #333333 !important;
 }
 
-
+/* Placeholder */
 #first_name::placeholder {
   color: #aaaaaa !important;
 }
-
+/* "Soyadı" label text white (also hits Ad, but that's fine) */
 .urH_ll label.piPv3T.jSnx8D._hXngT._xeu4m .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Last name input field */
 #last_name.VTVmV8.q3kIpX.g0zfi1.bb8HPP.zNJ6Me.c3eeZM.vr41LG.EYma4O.hxKTA7.mm0O_j.eyoFbE.glzo1E.btwCoE {
   color: #ffffff !important;
   background-color: #000000 !important;
   border-color: #333333 !important;
 }
 
-
+/* Placeholder for last name */
 #last_name::placeholder {
   color: #aaaaaa !important;
 }
-
+/* "Hakkında" label text white */
 label[for="about"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* About textarea */
 #about.zhTvpR.hxKTA7.mm0O_j {
   background-color: #000000 !important;
   color: #ffffff !important;
   border-color: #333333 !important;
 }
 
-
+/* About textarea placeholder */
 #about::placeholder {
   color: #aaaaaa !important;
 }
-
+/* "Web sitesi" label – purple text */
 label[for="website_url"] .WuRgKB {
-  color: #b86bff !important;
+  color: var(--pdt-accent, #b86bff) !important;
 }
 
-
+/* Website input – purple text on black */
 #website_url.VTVmV8 {
   background-color: #000000 !important;
-  color: #b86bff !important;
+  color: var(--pdt-accent, #b86bff) !important;
   border-color: #333333 !important;
 }
 
-
+/* Website placeholder – softer purple/grey */
 #website_url::placeholder {
-  color: #7a5fae !important;
+  color: var(--pdt-accent, #7a5fae) !important;
 }
-
+/* Label "Kullanıcı adı" -> white */
 label[for="username"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Username input -> black bg, white text */
 #username.VTVmV8 {
   background-color: #000000 !important;
   color: #ffffff !important;
   border-color: #333333 !important;
 }
 
-
+/* Helper URL text under it -> purple */
 #username-helperText .pA9X1U {
-  color: #b86bff !important;
+  color: var(--pdt-accent, #b86bff) !important;
 }
-
+/* "Kaydet" (Done) button – purple bg, white text */
 [data-test-id="done-button"] button {
-  background-color: #b86bff !important;  
-  border-color: #b86bff !important;
+  background-color: var(--pdt-accent, #b86bff) !important;  /* purple */
+  border-color: var(--pdt-accent, #b86bff) !important;
   color: #ffffff !important;
 }
 
-
+/* Inner text */
 [data-test-id="done-button"] .lIkAnG {
   color: #ffffff !important;
 }
 
-
+/* Optional: slightly darker on hover */
 [data-test-id="done-button"] button:hover {
-  background-color: #9b4dff !important;
-  border-color: #9b4dff !important;
+  background-color: var(--pdt-accent, #9b4dff) !important;
+  border-color: var(--pdt-accent, #9b4dff) !important;
 }
-
+/* Cancel + Save buttons – always purple, always white text */
 [data-test-id="cancel-button"] button,
 [data-test-id="done-button"] button {
-  background-color: #b86bff !important;  
-  border-color: #b86bff !important;
+  background-color: var(--pdt-accent, #b86bff) !important;  /* purple */
+  border-color: var(--pdt-accent, #b86bff) !important;
   color: #ffffff !important;
-  opacity: 1 !important;                 
+  opacity: 1 !important;                 /* ignore disabled fade */
 }
 
-
+/* Inner label text */
 [data-test-id="cancel-button"] .OlWU8v,
 [data-test-id="done-button"] .OlWU8v {
   color: #ffffff !important;
 }
 
-
+/* Optional: hover state, slightly darker */
 [data-test-id="cancel-button"] button:hover,
 [data-test-id="done-button"] button:hover {
-  background-color: #9b4dff !important;
-  border-color: #9b4dff !important;
+  background-color: var(--pdt-accent, #9b4dff) !important;
+  border-color: var(--pdt-accent, #9b4dff) !important;
 }
-
+/* "Profil resmimi değiştirin" button – always black */
 button[aria-label="Profil resmimi değiştirin"] {
   background-color: #000000 !important;
   border-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Text inside that button */
 button[aria-label="Profil resmimi değiştirin"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Keep it black on hover / active / focus */
 button[aria-label="Profil resmimi değiştirin"]:hover,
 button[aria-label="Profil resmimi değiştirin"]:active,
 button[aria-label="Profil resmimi değiştirin"]:focus-visible {
@@ -414,173 +414,173 @@ button[aria-label="Profil resmimi değiştirin"]:focus-visible {
   border-color: #000000 !important;
   color: #ffffff !important;
 }
-
+/* Global scrollbar style (Firefox) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #a855ff #000000; 
+  scrollbar-color: var(--pdt-accent, #a855ff) #000000; /* thumb / track */
 }
 
-
+/* WebKit scrollbars (Chrome, Edge, etc.) */
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #000000 !important; 
+  background: #000000 !important; /* pure black track */
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #a855ff !important;   
+  background: var(--pdt-accent, #a855ff) !important;   /* purple thumb */
   border-radius: 999px;
-  border: 2px solid #000000;        
+  border: 2px solid #000000;        /* blends with amoled bg */
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #c084fc !important;   
+  background: var(--pdt-accent, #c084fc) !important;   /* slightly brighter on hover */
 }
-
+/* Pin title card (Closeup view) */
 .CloseupTitleCard {
   background-color: #000000 !important;
 }
 
-
+/* Title text inside the Closeup title card */
 .CloseupTitleCard h1,
 .CloseupTitleCard .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Comment meta row: time, reply, reactions, 3-dots → red */
 
 [data-test-id="comments-time-passed"] .pA9X1U,
 [data-test-id="comment-reply-button-container"] .pA9X1U,
 [data-test-id="comment-reaction-container-reaction-count"] span,
 [data-test-id="comment-more-options"] .pA9X1U {
-  color: #ff4b7a !important; 
+  color: #ff4b7a !important; /* text red */
 }
 
-
+/* Icons (heart + three dots) red */
 [data-test-id="comment-reaction-container-entry-point"] svg path,
 [data-test-id="comment-more-options"] svg path {
   fill: #ff4b7a !important;
 }
-
+/* Names / text containers → white */
 span.WuRgKB.aMgNKE.v_eFe4.qnEc35.hxKTA7.mm0O_j,
 span.WuRgKB.aMgNKE.v_eFe4.qnEc35.hxKTA7.mm0O_j * {
   color: #ffffff !important;
 }
-
+/* Comment author + text all white */
 [data-test-id="author-and-comment-container"] .WuRgKB,
 [data-test-id="author-and-comment-container"] .aeO02S,
 [data-test-id="author-and-comment-container"] a.etmDmh.i7jpet.DodKMr.hlFz_k.Q3hcOU.AMxolZ.zlD4hU.eTLu1g.O0u6sV {
   color: #ffffff !important;
 }
-
+/* Comments header block background */
 .ADXRXN.r97eaX,
 .ADXRXN.r97eaX .Q3hcOU.DodKMr {
   background-color: #000000 !important;
 }
 
-
+/* "59 Yorum" text white */
 #comments-heading,
 [data-test-id="collapsible-header"] .WuRgKB,
 [data-test-id="collapsible-header"] h2 {
   color: #ffffff !important;
 }
 
-
+/* Expand arrow icon white */
 [data-test-id="collapsible-header"] svg path {
   fill: #ffffff !important;
 }
-
+/* Comment editor container: force text white on black */
 #dweb-comment-editor-container {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Actual editable text */
 #dweb-comment-editor-container .public-DraftEditor-content,
 #dweb-comment-editor-container [data-editor],
 #dweb-comment-editor-container span[data-text="true"] {
   color: #ffffff !important;
 }
 
-
+/* Placeholder text (when empty) */
 #dweb-comment-editor-container .public-DraftEditorPlaceholder-inner {
   color: #888888 !important;
 }
 
-
+/* Just in case inline style injects black again */
 #dweb-comment-editor-container[style] {
   color: #ffffff !important;
 }
-
+/* Comment "Tepki ver" reaction button – pure black pill, white icon */
 button[data-test-id="react-button"] .VHreRh.kHGn_J.XjRT60 {
   background-color: #000000 !important;
   border-radius: 9999px !important;
 }
 
-
+/* Make the heart icon itself white */
 button[data-test-id="react-button"] .VHreRh.kHGn_J.XjRT60 svg path {
   fill: #ffffff !important;
 }
-
+/* "Yorumlar" (comments) button – black pill + white icon */
 button[aria-label="Yorumlar"] .VHreRh.kHGn_J.XjRT60 {
   background-color: #000000 !important;
   border-radius: 9999px !important;
 }
 
-
+/* Icon inside stays white */
 button[aria-label="Yorumlar"] .VHreRh.kHGn_J.XjRT60 svg path {
   fill: #ffffff !important;
 }
-
+/* Edit profile button wrapper + button -> black, text white */
 div[data-test-id="edit-button"] button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.itmoZr.GaMK1V.O0u6sV {
   background-color: #000000 !important;
   border-color: #000000 !important;
   color: #ffffff !important;
 }
 
-
+/* Inner label stays white */
 div[data-test-id="edit-button"] button .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Website icon svg -> white */
 div[data-test-id="website-icon-and-url"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* Bell / notifications area -> black always (including hover) */
 div[data-test-id="bell-icon"],
 div[data-test-id="bell-icon"] * {
   background-color: #000000 !important;
 }
 
-
+/* Bell svg -> white */
 div[data-test-id="bell-icon"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Any text inside -> white */
 div[data-test-id="bell-icon"] .WuRgKB,
 div[data-test-id="bell-icon"] span,
 div[data-test-id="bell-icon"] a,
 div[data-test-id="bell-icon"] div {
   color: #ffffff !important;
 }
-
+/* Search box icon area -> black always (including hover) */
 div[data-test-id="search-box-container"],
 div[data-test-id="search-box-container"] * {
   background-color: #000000 !important;
 }
 
-
+/* Search svg -> white */
 div[data-test-id="search-box-container"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Any text inside -> white */
 div[data-test-id="search-box-container"] .WuRgKB,
 div[data-test-id="search-box-container"] span,
 div[data-test-id="search-box-container"] a,
@@ -588,7 +588,7 @@ div[data-test-id="search-box-container"] div,
 div[data-test-id="search-box-container"] button {
   color: #ffffff !important;
 }
-
+/* Business account switcher -> black everywhere EXCEPT the profile/avatar */
 div[data-test-id="business-account-switcher"] {
   background-color: #000000 !important;
 }
@@ -598,7 +598,7 @@ div[data-test-id="business-account-switcher"]
   background-color: #000000 !important;
 }
 
-
+/* Text inside -> white (safe for images) */
 div[data-test-id="business-account-switcher"] .WuRgKB,
 div[data-test-id="business-account-switcher"] span,
 div[data-test-id="business-account-switcher"] a,
@@ -607,27 +607,27 @@ div[data-test-id="business-account-switcher"] div {
   color: #ffffff !important;
 }
 
-
+/* Any icons/arrows inside -> white */
 div[data-test-id="business-account-switcher"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* Account search (profile switcher) text -> white */
 div[data-test-id="account-search-PROFILE"] {
   color: #ffffff !important;
 }
 
-
+/* Input text -> white */
 div[data-test-id="account-search-PROFILE"] input#account-search-field {
   color: #ffffff !important;
   background-color: #000000 !important;
 }
 
-
+/* Placeholder -> white (slightly softer if you want pure white keep #fff) */
 div[data-test-id="account-search-PROFILE"] input#account-search-field::placeholder {
   color: #ffffff !important;
 }
-
+/* Business name field -> make label + input text white */
 .ADXRXN.Tjcf3c._VU9d3.kXGpvW.zEVE_X label[for="business_name"] .WuRgKB {
   color: #ffffff !important;
 }
@@ -639,34 +639,34 @@ div[data-test-id="account-search-PROFILE"] input#account-search-field::placehold
 .ADXRXN.Tjcf3c._VU9d3.kXGpvW.zEVE_X input#business_name::placeholder {
   color: #ffffff !important;
 }
-
+/* Ad account search block -> make text white */
 div[data-test-id="account-search-AD_ACCOUNT"] {
   color: #ffffff !important;
 }
 
-
+/* Input text + bg */
 div[data-test-id="account-search-AD_ACCOUNT"] input#account-search-field {
   color: #ffffff !important;
   background-color: #000000 !important;
 }
 
-
+/* Placeholder text */
 div[data-test-id="account-search-AD_ACCOUNT"] input#account-search-field::placeholder {
   color: #ffffff !important;
 }
 
-
+/* Search icon svg -> white */
 div[data-test-id="account-search-AD_ACCOUNT"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* Promo / offer card: turn all whites/light blues to black, keep text readable */
 .ADXRXN.TCMh56.Tjcf3c.dHA5K0.qJUqe1.wl0pCr.zEVE_X {
   background-color: #000000 !important;
   border-color: #000000 !important;
 }
 
-
+/* Inner blocks of the same promo card */
 .ADXRXN.CQ1_jt.b6DHg3.wl0pCr.zEVE_X,
 .H2DtUH.J6fL34.GJN9iM._tKaHB.qJUqe1.wl0pCr,
 .H2DtUH.am4r_S.bhb3s6.Tjcf3c.wl0pCr,
@@ -675,7 +675,7 @@ div[data-test-id="account-search-AD_ACCOUNT"] svg path {
   border-color: #000000 !important;
 }
 
-
+/* Text inside stays white */
 .ADXRXN.TCMh56.Tjcf3c.dHA5K0.qJUqe1.wl0pCr.zEVE_X .WuRgKB,
 .ADXRXN.TCMh56.Tjcf3c.dHA5K0.qJUqe1.wl0pCr.zEVE_X h2,
 .ADXRXN.TCMh56.Tjcf3c.dHA5K0.qJUqe1.wl0pCr.zEVE_X span,
@@ -684,12 +684,12 @@ div[data-test-id="account-search-AD_ACCOUNT"] svg path {
   color: #ffffff !important;
 }
 
-
+/* Icons inside that promo card -> white */
 .ADXRXN.TCMh56.Tjcf3c.dHA5K0.qJUqe1.wl0pCr.zEVE_X svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* Whole business hub landing page -> black */
 .mainContainer {
   background-color: #000000 !important;
 }
@@ -698,7 +698,7 @@ div[data-test-id="landing-page"].ADXRXN._tKaHB.qJUqe1.zEVE_X {
   background-color: #000000 !important;
 }
 
-
+/* Main hub content wrappers */
 div[data-test-id="business-hub-profile-header"],
 div[data-test-id="business-widgets-section"],
 div[data-test-id="resources-section"],
@@ -707,7 +707,7 @@ div[data-test-id="business-hub-footer"] {
   border-color: #000000 !important;
 }
 
-
+/* Big modules that were light gray */
 div[data-test-id="onboarding-domain-module"],
 div[data-test-id="shareYourBrand"],
 div[data-test-id="createPinModule"],
@@ -716,7 +716,7 @@ div[data-test-id="createAdModule"] {
   border-color: #000000 !important;
 }
 
-
+/* Analytics cards / “no data” boxes that use grayscale vars */
 div[data-test-id="data-analytics-card"],
 div[data-test-id="organic-summary-widget-30"] .Lo7aEl,
 div[data-test-id="top-pins-widget-30"] .Lo7aEl {
@@ -724,75 +724,75 @@ div[data-test-id="top-pins-widget-30"] .Lo7aEl {
   border-color: #000000 !important;
 }
 
-
+/* Footer + resource tiles borders that were light */
 div[data-test-id="resources-section"] .WTrvgR.gcIrSY,
 div[data-test-id="business-hub-footer"].ADXRXN.LXCPkA.kF2VEF.r97eaX.th_pS3.zEVE_X {
   background-color: #000000 !important;
   border-color: #000000 !important;
 }
-
+/* "More" (3-dots/info) button area -> pure black */
 .ADXRXN.TlGbMY.ecEhnF.gcIrSY,
 .ADXRXN.TlGbMY.ecEhnF.gcIrSY * {
   background-color: #000000 !important;
 }
 
-
+/* Icon -> white */
 .ADXRXN.TlGbMY.ecEhnF.gcIrSY svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* Create Pin onboarding button -> black box, white icon + text */
 div[data-test-id="onboarding-module-create-pin-button"],
 div[data-test-id="onboarding-module-create-pin-button"] * {
   background-color: #000000 !important;
 }
 
-
+/* Plus icon white */
 div[data-test-id="onboarding-module-create-pin-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Label white */
 div[data-test-id="onboarding-module-create-pin-button"] .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Create Ad onboarding button -> black box, white icon + text */
 div[data-test-id="onboarding-module-create-ad-button"],
 div[data-test-id="onboarding-module-create-ad-button"] * {
   background-color: #000000 !important;
 }
 
-
+/* Plus icon white */
 div[data-test-id="onboarding-module-create-ad-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Label white */
 div[data-test-id="onboarding-module-create-ad-button"] .WuRgKB {
   color: #ffffff !important;
 }
-
+/* "İşletmeler / Varlıklar" header row -> black bg, keep text white */
 .ADXRXN.BVzdUh.Ip8hrQ,
 .ADXRXN.BVzdUh.Ip8hrQ * {
   background-color: #000000 !important;
 }
 
-
+/* Text + links white */
 .ADXRXN.BVzdUh.Ip8hrQ .WuRgKB,
 .ADXRXN.BVzdUh.Ip8hrQ a,
 .ADXRXN.BVzdUh.Ip8hrQ span,
 .ADXRXN.BVzdUh.Ip8hrQ div {
   color: #ffffff !important;
 }
-
+/* Inbox whole area -> black */
 div[data-test-id="full-height-inbox-container"],
 div[data-test-id="full-height-inbox-container"] .ADXRXN {
   background-color: #000000 !important;
 }
 
-
+/* All clickable blocks stay black on hover/active/focus */
 div[data-test-id="full-height-inbox-container"] button,
 div[data-test-id="full-height-inbox-container"] a,
 div[data-test-id="full-height-inbox-container"] [role="button"],
@@ -818,7 +818,7 @@ div[data-test-id="full-height-inbox-container"] .Q3hcOU:focus {
   outline: none !important;
 }
 
-
+/* Text -> white */
 div[data-test-id="full-height-inbox-container"] .WuRgKB,
 div[data-test-id="full-height-inbox-container"] span,
 div[data-test-id="full-height-inbox-container"] a,
@@ -831,7 +831,7 @@ div[data-test-id="full-height-inbox-container"] label {
   color: #ffffff !important;
 }
 
-
+/* Inputs -> black bg, white text */
 div[data-test-id="full-height-inbox-container"] input,
 div[data-test-id="full-height-inbox-container"] textarea {
   background-color: #000000 !important;
@@ -846,18 +846,18 @@ div[data-test-id="full-height-inbox-container"] textarea::placeholder {
   opacity: 0.7 !important;
 }
 
-
+/* SVG icons -> white */
 div[data-test-id="full-height-inbox-container"] svg,
 div[data-test-id="full-height-inbox-container"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Don't mess with images/avatars */
 div[data-test-id="full-height-inbox-container"] img {
   background: transparent !important;
 }
-
+/* Notifications / messages button wrapper stays black */
 div[data-test-id="notifications-button"],
 div[data-test-id="notifications-button"] a,
 div[data-test-id="notifications-button"] .ADXRXN,
@@ -866,7 +866,7 @@ div[data-test-id="notifications-button"] .kF2VEF {
   background-color: #000000 !important;
 }
 
-
+/* Keep it black on hover/active/focus too */
 div[data-test-id="notifications-button"] a:hover,
 div[data-test-id="notifications-button"] a:active,
 div[data-test-id="notifications-button"] a:focus,
@@ -879,21 +879,21 @@ div[data-test-id="notifications-button"] [role="button"]:focus {
   outline: none !important;
 }
 
-
+/* SVG icon white */
 div[data-test-id="notifications-button"] svg,
 div[data-test-id="notifications-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* If any text exists inside, keep white */
 div[data-test-id="notifications-button"] .WuRgKB,
 div[data-test-id="notifications-button"] span,
 div[data-test-id="notifications-button"] div,
 div[data-test-id="notifications-button"] a {
   color: #ffffff !important;
 }
-
+/* Engagement tab stays black */
 div[data-test-id="engagement-tab"],
 div[data-test-id="engagement-tab"] a,
 div[data-test-id="engagement-tab"] .ADXRXN,
@@ -902,7 +902,7 @@ div[data-test-id="engagement-tab"] .kF2VEF {
   background-color: #000000 !important;
 }
 
-
+/* Keep it black on hover/active/focus */
 div[data-test-id="engagement-tab"] a:hover,
 div[data-test-id="engagement-tab"] a:active,
 div[data-test-id="engagement-tab"] a:focus,
@@ -915,27 +915,27 @@ div[data-test-id="engagement-tab"] [role="button"]:focus {
   outline: none !important;
 }
 
-
+/* SVG icon white */
 div[data-test-id="engagement-tab"] svg,
 div[data-test-id="engagement-tab"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Any text inside stays white */
 div[data-test-id="engagement-tab"] .WuRgKB,
 div[data-test-id="engagement-tab"] span,
 div[data-test-id="engagement-tab"] div,
 div[data-test-id="engagement-tab"] a {
   color: #ffffff !important;
 }
-
+/* "Anladım" button -> pure black */
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X button,
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X .G0yGFD {
   background-color: #000000 !important;
 }
 
-
+/* stay black on hover/click/focus */
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X button:hover,
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X button:active,
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X button:focus {
@@ -945,13 +945,13 @@ div[data-test-id="engagement-tab"] a {
   filter: none !important;
 }
 
-
+/* text -> purple */
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X .WuRgKB {
-  color: #b38aff !important; 
+  color: var(--pdt-accent, #b38aff) !important; /* your soft Xzen purple */
 }
 
-
-
+/* don't touch SVG here -> stays whatever/white already */
+/* Engagement page main area -> full black */
 div[data-test-id="native-engagement-list"],
 div[data-test-id="native-engagement-list"] * ,
 div[data-test-id="native-engagement-welcome"],
@@ -959,14 +959,14 @@ div[data-test-id="native-engagement-welcome"] * {
   background-color: #000000 !important;
 }
 
-
+/* kill the gray split border */
 div[data-test-id="native-engagement-welcome"],
 div[data-test-id="native-engagement-welcome"] > div {
   border-left-color: #000000 !important;
   border-color: #000000 !important;
 }
 
-
+/* texts -> white */
 div[data-test-id="native-engagement-list"] .WuRgKB,
 div[data-test-id="native-engagement-list"] .pA9X1U,
 div[data-test-id="native-engagement-list"] h1,
@@ -986,58 +986,58 @@ div[data-test-id="native-engagement-welcome"] a {
   color: #ffffff !important;
 }
 
-
+/* icons/svgs -> white */
 div[data-test-id="native-engagement-list"] svg path,
 div[data-test-id="native-engagement-welcome"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* keep hover/click black */
 div[data-test-id="native-engagement-list"] *:hover,
 div[data-test-id="native-engagement-welcome"] *:hover,
 div[data-test-id="native-engagement-list"] *:active,
 div[data-test-id="native-engagement-welcome"] *:active {
   background-color: #000000 !important;
 }
-
+/* Business switcher base -> black */
 div[data-test-id="business-account-switcher"]{
   background:#000 !important;
 }
 
-
+/* Force black everywhere EXCEPT the avatar block + its children */
 div[data-test-id="business-account-switcher"] *:not([data-test-id="gestalt-avatar-svg"]):not([data-test-id="gestalt-avatar-svg"] *){
   background-color:#000 !important;
   border-color:#000 !important;
   box-shadow:none !important;
 }
 
-
+/* Keep avatar/profile picture untouched */
 div[data-test-id="business-account-switcher"] [data-test-id="gestalt-avatar-svg"],
 div[data-test-id="business-account-switcher"] [data-test-id="gestalt-avatar-svg"] *{
   background-color: transparent !important;
 }
 
-
+/* Text -> white only */
 div[data-test-id="business-account-switcher"] .WuRgKB,
 div[data-test-id="business-account-switcher"] a,
 div[data-test-id="business-account-switcher"] span{
   color:#fff !important;
 }
 
-
+/* Arrow/svg -> white */
 div[data-test-id="business-account-switcher"] svg path{
   fill:#fff !important;
   stroke:#fff !important;
 }
 
-
+/* Hover/focus stays black */
 div[data-test-id="business-account-switcher"] *:hover,
 div[data-test-id="business-account-switcher"] *:active,
 div[data-test-id="business-account-switcher"] *:focus{
   background-color:#000 !important;
 }
-
+/* Header profile button -> always black */
 div[data-test-id="header-profile"],
 div[data-test-id="header-profile"] a,
 div[data-test-id="header-profile"] .iN00fp,
@@ -1045,7 +1045,7 @@ div[data-test-id="header-profile"] .gEQpi5{
   background-color:#000 !important;
 }
 
-
+/* Hover/focus/active stays black */
 div[data-test-id="header-profile"] *:hover,
 div[data-test-id="header-profile"] *:focus,
 div[data-test-id="header-profile"] *:active{
@@ -1053,23 +1053,23 @@ div[data-test-id="header-profile"] *:active{
   box-shadow:none !important;
 }
 
-
+/* Don’t touch avatar/photo */
 div[data-test-id="header-profile"] [data-test-id="gestalt-avatar-svg"],
 div[data-test-id="header-profile"] [data-test-id="gestalt-avatar-svg"] *{
   background-color:transparent !important;
 }
 
-
+/* Keep avatar border dark (optional) */
 div[data-test-id="header-profile"] [data-test-id="gestalt-avatar-svg"]{
   border-color:#111 !important;
 }
-
+/* Header accounts/options button -> black */
 button[data-test-id="header-accounts-options-button"],
 button[data-test-id="header-accounts-options-button"] *{
   background-color:#000 !important;
 }
 
-
+/* Hover/focus/active stays black */
 button[data-test-id="header-accounts-options-button"]:hover,
 button[data-test-id="header-accounts-options-button"]:focus,
 button[data-test-id="header-accounts-options-button"]:active,
@@ -1080,20 +1080,20 @@ button[data-test-id="header-accounts-options-button"] *:active{
   box-shadow:none !important;
 }
 
-
+/* SVG/arrow -> white */
 button[data-test-id="header-accounts-options-button"] svg,
 button[data-test-id="header-accounts-options-button"] svg path{
   fill:#fff !important;
   stroke:#fff !important;
 }
 
-
+/* Any text inside -> white */
 button[data-test-id="header-accounts-options-button"],
 button[data-test-id="header-accounts-options-button"] span,
 button[data-test-id="header-accounts-options-button"] div{
   color:#fff !important;
 }
-
+/* Pin rep footer: force ALL svg icons white */
 [data-test-id="pinrep-footer"] svg,
 [data-test-id="pinrep-footer"] svg *{
   fill:#fff !important;
@@ -1101,23 +1101,23 @@ button[data-test-id="header-accounts-options-button"] div{
   color:#fff !important;
 }
 
-
+/* extra safety for the stats row specifically */
 [data-test-id="pin-stats-footer"] svg,
 [data-test-id="pin-stats-footer"] svg *{
   fill:#fff !important;
   stroke:#fff !important;
   color:#fff !important;
 }
-
+/* Shortcuts header: text white */
 h3.wyEmcc,
 .H2DtUH .oRZ5_s h3 {
   color: #fff !important;
 }
 
-
+/* The edit button in that bar: purple bg, white text */
 .H2DtUH .oRZ5_s button,
 .H2DtUH button.G0yGFD {
-  background: #8E6BFF !important; 
+  background: var(--pdt-accent, #8E6BFF) !important; /* Xzen purple */
   border-color: transparent !important;
 }
 
@@ -1126,13 +1126,13 @@ h3.wyEmcc,
   color: #fff !important;
 }
 
-
+/* Hover stays purple */
 .H2DtUH .oRZ5_s button:hover,
 .H2DtUH button.G0yGFD:hover {
-  background: #8E6BFF !important;
+  background: var(--pdt-accent, #8E6BFF) !important;
   filter: brightness(1.05);
 }
-
+/* Shortcuts -> Edit button: keep hover black */
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:hover,
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:active,
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:focus-visible {
@@ -1141,25 +1141,25 @@ h3.wyEmcc,
   filter: none !important;
 }
 
-
+/* keep text readable */
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:hover .WuRgKB {
-  color: #fff !important; 
+  color: #fff !important; /* or keep your purple if you want */
 }
-
+/* Dynamic badge dropdown icon: ALWAYS white */
 .ADXRXN.ylMNj8 svg,
 .ADXRXN.ylMNj8 svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
 
-
+/* even if some parent tries to recolor on hover/active */
 .ADXRXN.ylMNj8:hover svg,
 .ADXRXN.ylMNj8:active svg,
 .ADXRXN.ylMNj8:focus-visible svg {
   fill: #fff !important;
   stroke: #fff !important;
 }
-
+/* Mega-nav header (dynamic menu controller): ALWAYS black, even on hover */
 [data-test-id="dynamic-menu-controller"],
 [data-test-id="dynamic-menu-controller"]:hover,
 [data-test-id="dynamic-menu-controller"]:active,
@@ -1174,7 +1174,7 @@ h3.wyEmcc,
   border-color: transparent !important;
 }
 
-
+/* keep the Pinterest logo, menu icon, and title white */
 [data-test-id="dynamic-menu-controller"] svg,
 [data-test-id="dynamic-menu-controller"] svg path{
   fill: #fff !important;
@@ -1185,7 +1185,7 @@ h3.wyEmcc,
 [data-test-id="mega-nav-header-name"]{
   color: #fff !important;
 }
-
+/* Share profile + cover edit buttons: black bg, white icon */
 [data-test-id="share-profile-auth"] button.euRXRl,
 [data-test-id="profile-cover-edit-button"] button.euRXRl{
   background: #000 !important;
@@ -1194,7 +1194,7 @@ h3.wyEmcc,
   border-color: transparent !important;
 }
 
-
+/* keep them black on hover/focus/active */
 [data-test-id="share-profile-auth"] button.euRXRl:hover,
 [data-test-id="share-profile-auth"] button.euRXRl:active,
 [data-test-id="share-profile-auth"] button.euRXRl:focus,
@@ -1207,7 +1207,7 @@ h3.wyEmcc,
   background-color: #000 !important;
 }
 
-
+/* icons white */
 [data-test-id="share-profile-auth"] svg,
 [data-test-id="share-profile-auth"] svg path,
 [data-test-id="profile-cover-edit-button"] svg,
@@ -1215,13 +1215,13 @@ h3.wyEmcc,
   fill: #fff !important;
   stroke: #fff !important;
 }
-
+/* Action bar area: always black */
 [data-test-id="pin-action-bar"],
 [data-test-id="pin-action-bar"] *{
   background-color: #000 !important;
 }
 
-
+/* The specific buttons you showed */
 button.euRXRl[data-test-id="react-button"],
 [data-test-id="reactions-count-button"],
 [data-test-id="closeup-share-button"] button.euRXRl,
@@ -1235,7 +1235,7 @@ button.euRXRl[aria-label="Daha fazla işlem"]{
   border-color: transparent !important;
 }
 
-
+/* Keep them black on hover / focus / active */
 button.euRXRl[data-test-id="react-button"]:hover,
 button.euRXRl[data-test-id="react-button"]:active,
 button.euRXRl[data-test-id="react-button"]:focus,
@@ -1259,7 +1259,7 @@ button.euRXRl[aria-label="Daha fazla işlem"]:hover{
   background-color: #000 !important;
 }
 
-
+/* Icons + numbers white */
 [data-test-id="pin-action-bar"] svg,
 [data-test-id="pin-action-bar"] svg path,
 button.euRXRl[data-test-id="react-button"] svg,
@@ -1275,14 +1275,14 @@ button.euRXRl[aria-label="Yorumlar"] svg path,
   stroke: #fff !important;
   color: #fff !important;
 }
-
+/* Closeup Share area: force black background ALWAYS */
 [data-test-id="closeup-share-button"],
 [data-test-id="closeup-share-button"] * {
   background: #000 !important;
   background-color: #000 !important;
 }
 
-
+/* specifically hammer hover/active/focus states */
 [data-test-id="closeup-share-button"]:hover,
 [data-test-id="closeup-share-button"] button,
 [data-test-id="closeup-share-button"] button:hover,
@@ -1299,20 +1299,20 @@ button.euRXRl[aria-label="Yorumlar"] svg path,
   border-color: transparent !important;
 }
 
-
+/* keep share icon white */
 [data-test-id="closeup-share-button"] svg,
 [data-test-id="closeup-share-button"] svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
-
+/* Collapse button area: force black bg always */
 [data-test-id="collapse-button"],
 [data-test-id="collapse-button"] * {
   background: #000 !important;
   background-color: #000 !important;
 }
 
-
+/* kill hover/active/focus lightening */
 [data-test-id="collapse-button"]:hover,
 [data-test-id="collapse-button"] button,
 [data-test-id="collapse-button"] button:hover,
@@ -1329,13 +1329,13 @@ button.euRXRl[aria-label="Yorumlar"] svg path,
   border-color: transparent !important;
 }
 
-
+/* arrow svg white */
 [data-test-id="collapse-button"] svg,
 [data-test-id="collapse-button"] svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
-
+/* Emoji / Sticker / Photo picker buttons: normal black */
 button[aria-label="Bir emoji seçin"],
 button[aria-label="Bir çıkartma seçin"],
 button[aria-label="Bir fotoğraf seçin"]{
@@ -1345,7 +1345,7 @@ button[aria-label="Bir fotoğraf seçin"]{
   border-color:transparent !important;
 }
 
-
+/* Hover purple (and keep it even if Pinterest applies hover to inner wrappers) */
 button[aria-label="Bir emoji seçin"]:hover,
 button[aria-label="Bir emoji seçin"]:hover *,
 
@@ -1354,11 +1354,11 @@ button[aria-label="Bir çıkartma seçin"]:hover *,
 
 button[aria-label="Bir fotoğraf seçin"]:hover,
 button[aria-label="Bir fotoğraf seçin"]:hover *{
-  background:#B38AFF !important;
-  background-color:#B38AFF !important;
+  background:var(--pdt-accent, #B38AFF) !important;
+  background-color:var(--pdt-accent, #B38AFF) !important;
 }
 
-
+/* SVG always white */
 button[aria-label="Bir emoji seçin"] svg,
 button[aria-label="Bir emoji seçin"] svg path,
 
@@ -1370,34 +1370,34 @@ button[aria-label="Bir fotoğraf seçin"] svg path{
   fill:#fff !important;
   stroke:#fff !important;
 }
-
+/* Pin save button: ALWAYS purple */
 [data-test-id="PinBetterSaveButton"] button,
 button[aria-label="Kaydet"].fsprMd{
-  background:#B38AFF !important;
-  background-color:#B38AFF !important;
-  border-color:#B38AFF !important;
+  background:var(--pdt-accent, #B38AFF) !important;
+  background-color:var(--pdt-accent, #B38AFF) !important;
+  border-color:var(--pdt-accent, #B38AFF) !important;
   box-shadow:none !important;
 }
 
-
+/* Keep it purple on hover/active/focus */
 [data-test-id="PinBetterSaveButton"] button:hover,
 [data-test-id="PinBetterSaveButton"] button:active,
 [data-test-id="PinBetterSaveButton"] button:focus,
 button[aria-label="Kaydet"].fsprMd:hover,
 button[aria-label="Kaydet"].fsprMd:active,
 button[aria-label="Kaydet"].fsprMd:focus{
-  background:#B38AFF !important;
-  background-color:#B38AFF !important;
-  border-color:#B38AFF !important;
+  background:var(--pdt-accent, #B38AFF) !important;
+  background-color:var(--pdt-accent, #B38AFF) !important;
+  border-color:var(--pdt-accent, #B38AFF) !important;
   filter:none !important;
 }
 
-
+/* Text stays white and crisp */
 [data-test-id="PinBetterSaveButton"] .lIkAnG,
 button[aria-label="Kaydet"].fsprMd *{
   color:#fff !important;
 }
-
+/* Create-board tile: force full black */
 [data-test-id="create-board"],
 [data-test-id="create-board-button"],
 [data-test-id="create-board-button"] > div,
@@ -1408,7 +1408,7 @@ button[aria-label="Kaydet"].fsprMd *{
   box-shadow:none !important;
 }
 
-
+/* Keep it black on hover / active / focus */
 [data-test-id="create-board-button"]:hover,
 [data-test-id="create-board-button"]:active,
 [data-test-id="create-board-button"]:focus,
@@ -1418,31 +1418,31 @@ button[aria-label="Kaydet"].fsprMd *{
   filter:none !important;
 }
 
-
+/* Text always white */
 [data-test-id="create-board-button"] .WuRgKB,
 [data-test-id="create-board-button"] .rszMzv,
 [data-test-id="create-board-button"] [title]{
   color:#fff !important;
 }
 
-
+/* SVG icon always white */
 [data-test-id="create-board-button"] svg,
 [data-test-id="create-board-button"] svg *{
   fill:#fff !important;
   color:#fff !important;
   stroke:#fff !important;
 }
-
+/* Force BOTH "board select dropdown" + "Kaydet" to purple */
 [data-test-id="pin-better-save-button"] button,
 button[data-test-id="PinBetterSaveDropdown"],
 [data-test-id="PinBetterSaveButton"] button{
-  background: #8E6BFF !important;       
-  background-color: #8E6BFF !important;
-  border-color: #8E6BFF !important;
+  background: var(--pdt-accent, #8E6BFF) !important;       /* your purple */
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+  border-color: var(--pdt-accent, #8E6BFF) !important;
   box-shadow: none !important;
 }
 
-
+/* Keep purple on hover / active / focus */
 [data-test-id="pin-better-save-button"] button:hover,
 [data-test-id="pin-better-save-button"] button:active,
 [data-test-id="pin-better-save-button"] button:focus,
@@ -1452,51 +1452,51 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
 [data-test-id="PinBetterSaveButton"] button:hover,
 [data-test-id="PinBetterSaveButton"] button:active,
 [data-test-id="PinBetterSaveButton"] button:focus{
-  background: #8E6BFF !important;
-  background-color: #8E6BFF !important;
+  background: var(--pdt-accent, #8E6BFF) !important;
+  background-color: var(--pdt-accent, #8E6BFF) !important;
   filter: none !important;
 }
 
-
+/* Text white inside both */
 [data-test-id="pin-better-save-button"] .WuRgKB,
 [data-test-id="pin-better-save-button"] .lIkAnG{
   color: #fff !important;
 }
 
-
+/* Caret SVG stays white */
 [data-test-id="pin-better-save-button"] svg,
 [data-test-id="pin-better-save-button"] svg *{
   fill: #fff !important;
   stroke: #fff !important;
   color: #fff !important;
 }
-
+/* The container you pasted */
 .ADXRXN.EH8C6E._xSIdT{
   background:#000 !important;
   color:#fff !important;
 }
 
-
+/* All text inside (Pinterest uses these a lot) */
 .ADXRXN.EH8C6E._xSIdT .WuRgKB,
 .ADXRXN.EH8C6E._xSIdT .YfEt3H,
 .ADXRXN.EH8C6E._xSIdT .aMgNKE{
   color:#fff !important;
 }
 
-
+/* Icon (svg) */
 .ADXRXN.EH8C6E._xSIdT svg,
 .ADXRXN.EH8C6E._xSIdT svg path{
   fill:#fff !important;
   stroke:#fff !important;
 }
-
+/* Whole back-button area stays black */
 .KvKvqR,
 .KvKvqR [data-test-id="back-button"],
 .KvKvqR [data-test-id="back-button"] *{
   background: #000 !important;
 }
 
-
+/* Keep any text white */
 .KvKvqR [data-test-id="back-button"],
 .KvKvqR [data-test-id="back-button"] .WuRgKB,
 .KvKvqR [data-test-id="back-button"] span,
@@ -1504,14 +1504,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #fff !important;
 }
 
-
+/* Arrow (svg) forced white */
 .KvKvqR [data-test-id="back-button"] svg,
 .KvKvqR [data-test-id="back-button"] svg path{
   fill: #fff !important;
   stroke: #fff !important;
 }
 
-
+/* Hover/active/focus must NOT brighten */
 .KvKvqR [data-test-id="back-button"]:hover,
 .KvKvqR [data-test-id="back-button"]:active,
 .KvKvqR [data-test-id="back-button"]:focus,
@@ -1522,17 +1522,17 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #fff !important;
 }
 
-
+/* If Pinterest adds a hover overlay/shadow layer */
 .KvKvqR [data-test-id="back-button"] .Fm_EPH{
   background: transparent !important;
   opacity: 0 !important;
 }
-
+/* Input text white */
 #partner_contact_email {
   color: #fff !important;
 }
 
-
+/* Placeholder white too (all engines) */
 #partner_contact_email::placeholder,
 #partner_contact_email::-webkit-input-placeholder,
 #partner_contact_email::-moz-placeholder,
@@ -1540,18 +1540,18 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
 #partner_contact_email:-moz-placeholder {
   color: #fff !important;
 }
-
+/* Country code + phone number block */
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* All text inside -> white */
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X * {
   color: #fff !important;
 }
 
-
+/* Inputs + select: black bg, white text */
 #countryCode,
 #phoneNumber {
   background: #000 !important;
@@ -1559,7 +1559,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   border-color: #555 !important;
 }
 
-
+/* Phone placeholder white */
 #phoneNumber::placeholder,
 #phoneNumber::-webkit-input-placeholder,
 #phoneNumber::-moz-placeholder,
@@ -1568,37 +1568,37 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #fff !important;
 }
 
-
+/* Dropdown arrow icon white */
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X .hdKVJ2 svg,
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X .hdKVJ2 svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
 
-
+/* Options text white in the list */
 #countryCode option {
   background: #000 !important;
   color: #fff !important;
 }
-
+/* Container black, text white */
 .ADXRXN.Hv8rKq {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* Everything inside -> white text */
 .ADXRXN.Hv8rKq * {
   color: #fff !important;
 }
 
-
+/* Input itself */
 #partner_address_line_1 {
   background: #000 !important;
   color: #fff !important;
   border-color: #555 !important;
 }
 
-
+/* Placeholder (if any) */
 #partner_address_line_1::placeholder,
 #partner_address_line_1::-webkit-input-placeholder,
 #partner_address_line_1::-moz-placeholder,
@@ -1606,55 +1606,55 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
 #partner_address_line_1:-moz-placeholder {
   color: #fff !important;
 }
-
+/* Container: black bg, white text */
 .ADXRXN.Hv8rKq {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* All text inside -> white */
 .ADXRXN.Hv8rKq * {
   color: #fff !important;
 }
 
-
+/* Select: black bg, white text + border */
 #partner_country {
   background: #000 !important;
   color: #fff !important;
   border-color: #555 !important;
 }
 
-
+/* Dropdown arrow icon white */
 .ADXRXN.Hv8rKq .hdKVJ2 svg,
 .ADXRXN.Hv8rKq .hdKVJ2 svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
 
-
+/* Options in the dropdown list */
 #partner_country option {
   background: #000 !important;
   color: #fff !important;
 }
-
+/* Email settings block */
 .ADXRXN.k5oQr4 {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* Everything inside -> white text */
 .ADXRXN.k5oQr4 * {
   color: #fff !important;
 }
 
-
+/* Input itself */
 #email {
   background: #000 !important;
   color: #fff !important;
   border-color: #555 !important;
 }
 
-
+/* Placeholder, if Pinterest ever adds one */
 #email::placeholder,
 #email::-webkit-input-placeholder,
 #email::-moz-placeholder,
@@ -1662,19 +1662,19 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
 #email:-moz-placeholder {
   color: #fff !important;
 }
-
+/* Password row container: black bg */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* Label + text inside (except the button area) */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 label,
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 .WuRgKB {
   color: #fff !important;
 }
 
-
+/* Password input itself */
 #password {
   background: #000 !important;
   color: #fff !important;
@@ -1682,39 +1682,39 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   caret-color: #fff !important;
 }
 
-
+/* Eye toggle icon: white */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 .f8Y_Ck svg,
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 .f8Y_Ck svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
-
+/* Buttons -> purple, no border outline */
 .ADXRXN.To17G1 .G0yGFD {
-  background: #7c3aed !important;   
-  border: none !important;          
+  background: var(--pdt-accent, #7c3aed) !important;   /* purple */
+  border: none !important;          /* no outline/border */
   color: #fff !important;
 }
 
-
+/* Hover / active */
 .ADXRXN.To17G1 .G0yGFD:hover {
-  background: #6d28d9 !important;
+  background: var(--pdt-accent, #6d28d9) !important;
 }
 
 .ADXRXN.To17G1 .G0yGFD:active {
-  background: #5b21b6 !important;
+  background: var(--pdt-accent, #5b21b6) !important;
 }
-
+/* === Personal Information container: full black + white === */
 [data-test-id="personalInformationContainer"] {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* All text inside -> white */
 [data-test-id="personalInformationContainer"] * {
   color: #fff !important;
 }
 
-
+/* === Inputs / text fields === */
 #birthdate,
 #custom_gender,
 #contact_name,
@@ -1725,14 +1725,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   caret-color: #fff !important;
 }
 
-
+/* Placeholders */
 #birthdate::placeholder,
 #custom_gender::placeholder,
 #combobox-accountBasicsCountry::placeholder {
   color: #fff !important;
 }
 
-
+/* Selects */
 #accountBussinessType,
 #accountBasicsLanguage {
   background: #000 !important;
@@ -1740,21 +1740,21 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   border-color: #555 !important;
 }
 
-
+/* Options in dropdowns */
 #accountBussinessType option,
 #accountBasicsLanguage option {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* Icons (info, calendar, clear, dropdown arrows, datepicker nav) */
 [data-test-id="personalInformationContainer"] svg,
 [data-test-id="personalInformationContainer"] svg path {
   fill: #fff !important;
   stroke: #fff !important;
 }
 
-
+/* === Datepicker popup === */
 [data-test-id="personalInformationContainer"] .react-datepicker,
 [data-test-id="personalInformationContainer"] .react-datepicker__header,
 [data-test-id="personalInformationContainer"] .react-datepicker__day,
@@ -1767,69 +1767,69 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   border-color: #555 !important;
 }
 
-
+/* Selected day highlight */
 [data-test-id="personalInformationContainer"] .react-datepicker__day--selected {
-  background: #7c3aed !important;
+  background: var(--pdt-accent, #7c3aed) !important;
   color: #fff !important;
 }
 
-
+/* Month/year dropdown options */
 [data-test-id="personalInformationContainer"] .react-datepicker__month-select option,
 [data-test-id="personalInformationContainer"] .react-datepicker__year-select option {
   background: #000 !important;
   color: #fff !important;
 }
 
-
+/* === Radio + checkbox accents === */
 [data-test-id="personalInformationContainer"] input[type="radio"],
 [data-test-id="personalInformationContainer"] input[type="checkbox"] {
-  accent-color: #a855f7;
+  accent-color: var(--pdt-accent, #a855f7);
 }
 
-
+/* Checkbox tick SVG */
 [data-test-id="personalInformationContainer"] .SDw0sc {
   fill: #fff !important;
 }
-
+/* Outer clickable button */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"] {
   background: transparent !important;
   border: none !important;
 }
 
-
+/* Actual pill area */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]
   .dBMCN4.jShAKf.iS__OQ.RABojg._W0I5h.fAZwDI.SdmY6_.y4A0gb.ap8aAM.O0u6sV {
-  background: #a855f7 !important;
+  background: var(--pdt-accent, #a855f7) !important;
   color: #fff !important;
   border-radius: 999px !important;
   border: none !important;
 }
 
-
+/* Text inside */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"] .WuRgKB {
   color: #fff !important;
 }
 
-
+/* Remove outline / default focus */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]:focus-visible {
   outline: none !important;
   box-shadow: none !important;
 }
 
-
+/* Optional hover */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]
   .dBMCN4.jShAKf.iS__OQ.RABojg._W0I5h.fAZwDI.SdmY6_.y4A0gb.ap8aAM.O0u6sV:hover {
-  background: #9333ea !important;
+  background: var(--pdt-accent, #9333ea) !important;
 }
-
+/* 1) Make all main Pinterest text white (safe, already using these everywhere) */
 .WuRgKB,
 .pA9X1U {
   color: #ffffff !important;
 }
 
-
+/* 2) "Yönetin" link: make it a purple pill button */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.r_wnlE.VogH1o.E6J5D_ {
-  background: #a855f7 !important;   
+  background: var(--pdt-accent, #a855f7) !important;   /* purple */
   color: #ffffff !important;
   border-radius: 999px !important;
   padding: 6px 12px !important;
@@ -1840,23 +1840,23 @@ a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.r_wnlE.VogH1o.E6J5D_ {
   border: none !important;
 }
 
-
+/* Text inside the button */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.r_wnlE.VogH1o.E6J5D_ 
   .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* 3) Keep the small arrow icon white */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.r_wnlE.VogH1o.E6J5D_ 
   svg path {
   fill: #ffffff !important;
 }
 
-
+/* 4) Instagram label + description text stay white too */
 .H2DtUH .WuRgKB {
   color: #ffffff !important;
 }
-
+/* Force Instagram icon to white */
 svg[aria-label="Instagram"] path {
   fill: #ffffff !important;
 }
@@ -1869,21 +1869,23 @@ svg.aTSQd5.hL9n03._ByyDT path {
 svg.aTSQd5.hL9n03.F1qJlU path {
   fill: #ffffff !important;
 }
-
-
-
+/* Hide the "more ideas" top tabs bar completely */
+/*div[data-root-margin="more-ideas-tabs"] {
+  display: none !important;
+}*/
+/* Vertical nav icon circles – keep black, even on hover/focus */
 .VHreRh.kHGn_J.XjRT60 {
   background-color: #000 !important;
 }
 
-
+/* Anchor + button wrappers */
 .etmDmh.i7jpet.zlD4hU.Q3hcOU,
 .dVx3J_.Q3hcOU.mm_g7v,
 .euRXRl .dVx3J_.Q3hcOU {
   background-color: #000 !important;
 }
 
-
+/* Hover / focus / active states stay black */
 .etmDmh.i7jpet.zlD4hU.Q3hcOU:hover,
 .etmDmh.i7jpet.zlD4hU.Q3hcOU:focus-visible,
 .dVx3J_.Q3hcOU.mm_g7v:hover,
@@ -1892,7 +1894,7 @@ svg.aTSQd5.hL9n03.F1qJlU path {
 .euRXRl:focus-visible .dVx3J_.Q3hcOU {
   background-color: #000 !important;
 }
-
+/* Group / Gizli pills – always black */
 .fsprMd.IdIBJj.O0u6sV,
 .fsprMd.IdIBJj.O0u6sV .dBMCN4 {
   background-color: #000 !important;
@@ -1900,7 +1902,7 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   border-color: #000 !important;
 }
 
-
+/* Hover / focus / pressed stay black */
 .fsprMd.IdIBJj.O0u6sV:hover,
 .fsprMd.IdIBJj.O0u6sV:focus-visible,
 .fsprMd.IdIBJj.O0u6sV[aria-pressed="true"] {
@@ -1909,25 +1911,25 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   border-color: #000 !important;
 }
 
-
+/* Inner label text */
 .fsprMd.IdIBJj.O0u6sV .WuRgKB {
   color: #fff !important;
 }
-
+/* Whole create-pin cluster card area */
 .ADXRXN.gEQpi5:has(button[data-test-id="create-pin-cluster-button"]) {
   background-color: #000 !important;
 }
 
-
+/* The 3-image box: purple outline, rounded, black */
 .ADXRXN.gEQpi5:has(button[data-test-id="create-pin-cluster-button"])
   > .e2jAjp.gcIrSY.N9tO7e {
-  border: 1px solid #b38aff !important;
+  border: 1px solid var(--pdt-accent, #b38aff) !important;
   border-radius: 16px !important;
   background-color: #000 !important;
   overflow: hidden;
 }
 
-
+/* Inner tiles: no white borders, just black */
 .ADXRXN.gEQpi5:has(button[data-test-id="create-pin-cluster-button"])
   .NYgy1O.TfR6nu.WTrvgR.aHn_t7.bnBtRO.mJ2PyB {
   border-color: #000 !important;
@@ -1936,41 +1938,41 @@ svg.aTSQd5.hL9n03.F1qJlU path {
 [data-test-id="unavailable-pin"] .WuRgKB.eMU5i5.YfEt3H {
   color: #fff !important;
 }
-
+/* Unavailable pin: black background */
 [data-test-id="unavailable-pin"] {
   background: #000 !important;
 }
 
-
+/* Texts inside: white */
 [data-test-id="unavailable-pin"] .WuRgKB {
   color: #fff !important;
 }
-
+/* == BASE: dropdown is black == */
 #SuggestionsMenu,
 #SuggestionsMenu [data-test-id="typeaheadResults"],
 #SuggestionsMenu .ADXRXN.WTrvgR._tKaHB.ecEhnF.zEVE_X {
   background-color: #000 !important;
 }
 
-
+/* Each suggestion tile: black card */
 #SuggestionsMenu [data-test-id="recent-query"],
 #SuggestionsMenu [data-test-id="search-suggestion"] {
   background-color: #000 !important;
 }
 
-
+/* Kill dim overlays / hover masks that cause blackout */
 #SuggestionsMenu .SXrTgC,
 #SuggestionsMenu .xpe_Hd {
   display: none !important;
   background: transparent !important;
 }
 
-
+/* Make sure links themselves are not painting over everything */
 #SuggestionsMenu a[href^="/search/pins/"] {
   background-color: transparent !important;
 }
 
-
+/* Image wrapper: let the image show, no hover darken */
 #SuggestionsMenu [data-test-id="search-suggestion-image-container"] .ADXRXN.gEQpi5 {
   background-color: transparent !important;
 }
@@ -1980,7 +1982,7 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   mix-blend-mode: normal !important;
 }
 
-
+/* Text: force white, even on hover/selected */
 #SuggestionsMenu .WuRgKB,
 #SuggestionsMenu h3,
 #SuggestionsMenu [data-test-id="search-suggestion-text"] {
@@ -1988,7 +1990,7 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   -webkit-text-fill-color: #fff !important;
 }
 
-
+/* Hover / focus / selected – keep same look, no blackout */
 #SuggestionsMenu [data-test-id="search-suggestion"]:hover,
 #SuggestionsMenu [data-test-id="search-suggestion"]:focus-visible,
 #SuggestionsMenu [data-test-id="search-suggestion"][aria-selected="true"] {
@@ -2008,15 +2010,15 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }
-
+/* Share panel scroll area */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X {
   background-color: #000000 !important;
   color: #ffffff !important;
-  scrollbar-color: #b38aff #000000 !important;
+  scrollbar-color: var(--pdt-accent, #b38aff) #000000 !important;
   scrollbar-width: thin;
 }
 
-
+/* Inner containers to black */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X .ADXRXN,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X .H2DtUH,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X .C6J6UC,
@@ -2024,7 +2026,7 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   background-color: #000000 !important;
 }
 
-
+/* Texts white */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X h2,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X h3,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X .WuRgKB,
@@ -2034,29 +2036,29 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   color: #ffffff !important;
 }
 
-
+/* Inputs background black */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X input.tX2F_U {
   background-color: #000000 !important;
   border-color: #3a3a3a !important;
 }
 
-
+/* Buttons purple (copy, Gönder, etc) */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button {
-  background-color: #b38aff !important;
+  background-color: var(--pdt-accent, #b38aff) !important;
   color: #ffffff !important;
   border-radius: 999px !important;
   border: none !important;
 }
 
-
+/* Keep purple on hover/focus */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button:hover,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button:focus-visible,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button:active {
-  background-color: #9c72ff !important;
+  background-color: var(--pdt-accent, #9c72ff) !important;
   color: #ffffff !important;
 }
 
-
+/* Custom scrollbar (WebKit) */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X::-webkit-scrollbar {
   width: 8px;
 }
@@ -2066,14 +2068,14 @@ svg.aTSQd5.hL9n03.F1qJlU path {
 }
 
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X::-webkit-scrollbar-thumb {
-  background: #b38aff;
+  background: var(--pdt-accent, #b38aff);
   border-radius: 999px;
 }
 
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X::-webkit-scrollbar-thumb:hover {
-  background: #9c72ff;
+  background: var(--pdt-accent, #9c72ff);
 }
-
+/* Copy-link share icon: black pill, white icon */
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
   [data-test-id="copy-link-share-icon-auth"] .H2DtUH .ADXRXN {
   background-color: #000000 !important;
@@ -2081,7 +2083,7 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   padding: 0 !important;
 }
 
-
+/* Button + inner square stay black */
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
   [data-test-id="copy-link-share-icon-auth"] button.euRXRl,
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
@@ -2090,34 +2092,34 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   border-radius: 999px !important;
 }
 
-
+/* Ensure icon stays white */
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
   [data-test-id="copy-link-share-icon-auth"] svg path {
   fill: #ffffff !important;
 }
-
+/* Base (optional) */
 .scrollableList [data-test-id="news-hub-list-item"] {
   background: transparent;
   transition: background 0.15s ease;
 }
 
-
+/* On hover: make card background black */
 .scrollableList [data-test-id="news-hub-list-item"]:hover {
   background: #000000;
 }
 
-
+/* Keep all text white on hover */
 .scrollableList [data-test-id="news-hub-list-item"]:hover * {
   color: #ffffff !important;
 }
 
-
+/* Turn ONLY SVG icons white (ellipsis etc.) */
 .scrollableList [data-test-id="news-hub-list-item"]:hover svg,
 .scrollableList [data-test-id="news-hub-list-item"]:hover svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-
+/* remove the original bg */
 .ADXRXN.eOQXgz .o__pql .ADXRXN.ZEBTif{
   background: transparent !important;
   box-shadow: none !important;
@@ -2129,18 +2131,18 @@ svg.aTSQd5.hL9n03.F1qJlU path {
   display: none !important;
 }
 
-
+/* text stays same, bg gets wider */
 .ADXRXN.eOQXgz .o__pql .ADXRXN.ZEBTif > span.YLh4cb{
   color: #ffffff !important;
   position: relative !important;
   display: inline-block !important;
-  background: transparent !important; 
+  background: transparent !important; /* bg moved to ::before */
 }
 .ADXRXN.eOQXgz .o__pql{ 
-  background: #8b5cf6 !important; 
+  background: var(--pdt-accent, #8b5cf6) !important; 
 }
 button.fsprMd._W0I5h{
-  background: #8b5cf6 !important;
+  background: var(--pdt-accent, #8b5cf6) !important;
 }
 
 button.fsprMd._W0I5h .WuRgKB{
@@ -2149,8 +2151,8 @@ button.fsprMd._W0I5h .WuRgKB{
 button.fsprMd._W0I5h,
 button.fsprMd._W0I5h > div,
 button.fsprMd._W0I5h > div > div{
-  background: #8b5cf6 !important;
-  border-color: #8b5cf6 !important;
+  background: var(--pdt-accent, #8b5cf6) !important;
+  border-color: var(--pdt-accent, #8b5cf6) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -2161,10 +2163,10 @@ button.fsprMd._W0I5h:active{
   outline: none !important;
   box-shadow: none !important;
 }
-
+/* CSV importer: purple bg, white text, no outlines/borders */
 [data-test-id="csv-importer"] [data-test-id="drag-behavior-container"],
 [data-test-id="csv-importer"] .ADXRXN.dHA5K0.gEQpi5.gSktR2.i1hWBD{
-  background: #8b5cf6 !important;
+  background: var(--pdt-accent, #8b5cf6) !important;
   border: 0 !important;
   outline: none !important;
   box-shadow: none !important;
@@ -2174,19 +2176,19 @@ button.fsprMd._W0I5h:active{
   color: #fff !important;
 }
 
-
+/* make the upload icon white too */
 [data-test-id="csv-importer"] svg,
 [data-test-id="csv-importer"] svg path{
   fill: #fff !important;
 }
 
-
+/* kill any focus ring */
 [data-test-id="csv-importer"] input#csv-input:focus,
 [data-test-id="csv-importer"] input#csv-input:focus-visible{
   outline: none !important;
   box-shadow: none !important;
 }
-
+/* Force the Send button background to black (normal/hover/active/focus), don’t touch the svg */
 button.euRXRl,
 button.euRXRl:hover,
 button.euRXRl:active,
@@ -2204,7 +2206,7 @@ button.euRXRl:hover > div > div{
   outline: none !important;
   box-shadow: none !important;
 }
-
+/* input text + placeholder white */
 input#contactSearch{
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
@@ -2214,15 +2216,15 @@ input#contactSearch::placeholder{
   color: #fff !important;
   opacity: 1 !important;
 }
-
+/* Clear input button: force purple bg on hover (don’t touch svg) */
 .S0lmtn.avKrN2 .Q3hcOU.dHA5K0:hover,
 .S0lmtn.avKrN2 .Q3hcOU.dHA5K0:hover > div{
-  background: #8b5cf6 !important;
-  border-color: #8b5cf6 !important;
+  background: var(--pdt-accent, #8b5cf6) !important;
+  border-color: var(--pdt-accent, #8b5cf6) !important;
   box-shadow: none !important;
   outline: none !important;
 }
-
+/* Closeup viewer: force all the white “image area” backgrounds to black */
 [data-test-id="closeup-visual-container"] [data-test-id="closeup-body-image-container"]{
   background: #000 !important;
   background-color: #000 !important;
@@ -2233,25 +2235,25 @@ input#contactSearch::placeholder{
   background-color: #000 !important;
 }
 
-
+/* The extra white wrapper you have (background: rgb(255,255,255); height:100%) */
 [data-test-id="closeup-visual-container"] [aria-disabled="true"].Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi > div > div{
   background: #000 !important;
   background-color: #000 !important;
 }
-
+/* whole message box container */
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X{
   background:#000 !important;
   border-color:#000 !important;
   box-shadow:none !important;
 }
 
-
+/* inner wrappers */
 .ADXRXN.B3GZzn.TFmI8_.gEQpi5.sSBu24.zEVE_X,
 .ADXRXN.XexRYe._tKaHB.wl0pCr.zEVE_X{
   background:#000 !important;
 }
 
-
+/* textarea: black bg, white text */
 textarea#messageDraft{
   background:#000 !important;
   color:#fff !important;
@@ -2259,19 +2261,19 @@ textarea#messageDraft{
   scrollbar-color:#333 #000 !important;
 }
 
-
+/* placeholder white */
 textarea#messageDraft::placeholder{
   color:#fff !important;
   opacity:1 !important;
 }
 
-
+/* kill focus ring / any blue glow */
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X:focus-within{
   box-shadow:none !important;
   outline:none !important;
 }
 
-
+/* send button area black (don’t touch svg) */
 [data-test-id="send-message-to-conversation"],
 [data-test-id="send-message-to-conversation"] .euRXRl,
 [data-test-id="send-message-to-conversation"] .euRXRl > div,
@@ -2281,15 +2283,15 @@ textarea#messageDraft::placeholder{
   box-shadow:none !important;
   outline:none !important;
 }
-
-
+/* MESSAGES*/
+/* any text inside wrappers white */
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X,
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X *{
   color:#fff;
 }
-
+/* React heart: FORCE purple (super specific, overrides most theme rules) */
 .oRZ5_s .DTsIgD button[data-test-id="react-button"]{
-  color: #8b5cf6 !important;
+  color: var(--pdt-accent, #8b5cf6) !important;
 }
 
 .oRZ5_s .DTsIgD button[data-test-id="react-button"] svg.aTSQd5.hL9n03.LN6DSu,
@@ -2300,30 +2302,30 @@ textarea#messageDraft::placeholder{
   filter: none !important;
   opacity: 1 !important;
 }
-
+/* black bg */
 li.epr-emoji-category,
 li.epr-emoji-category .epr-emoji-category-content{
   background-color: #000 !important;
 }
 
-
+/* white text */
 li.epr-emoji-category .epr-emoji-category-label{
   color: #fff !important;
   background-color: transparent !important;
 }
-
+/* black bg + white text */
 .epr_q53mwh.epr_vl50xg.epr_-3yva2a.epr_c90x4z.epr_-sisw4f.epr_mw4zr1.epr_-kg0voo.epr_iogimd.epr_wtwvf4.epr_-lzq3oa{
   background: #000 !important;
 }
 .epr_q53mwh.epr_vl50xg.epr_-3yva2a.epr_c90x4z.epr_-sisw4f.epr_mw4zr1.epr_-kg0voo.epr_iogimd.epr_wtwvf4.epr_-lzq3oa .epr_-99h9r1{
   color: #fff !important;
 }
-
+/* black bg for the category nav */
 #epr-category-nav-id.epr-category-nav{
   background: #000 !important;
 }
 
-
+/* kill the blue hover/active glow */
 #epr-category-nav-id .epr-btn,
 #epr-category-nav-id .epr-btn:hover,
 #epr-category-nav-id .epr-btn:active,
@@ -2332,55 +2334,55 @@ li.epr-emoji-category .epr-emoji-category-label{
   box-shadow: none !important;
   outline: none !important;
 }
-
+/* emojis (category icons) turn purple on hover */
 #epr-category-nav-id .epr-btn:hover{
-  color: #8b5cf6 !important;
-  fill: #8b5cf6 !important;
-  stroke: #8b5cf6 !important;
+  color: var(--pdt-accent, #8b5cf6) !important;
+  fill: var(--pdt-accent, #8b5cf6) !important;
+  stroke: var(--pdt-accent, #8b5cf6) !important;
 }
 
 #epr-category-nav-id .epr-btn:hover svg,
 #epr-category-nav-id .epr-btn:hover svg *{
-  fill: #8b5cf6 !important;
-  stroke: #8b5cf6 !important;
+  fill: var(--pdt-accent, #8b5cf6) !important;
+  stroke: var(--pdt-accent, #8b5cf6) !important;
 }
-
+/* whole bar bg black */
 .epr-search-container{
   background: #000 !important;
 }
 
-
+/* input: black bg, white text, purple outline */
 .epr-search-container input[type="text"]{
   background: #000 !important;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
-  outline: 2px solid #8b5cf6 !important;
+  outline: 2px solid var(--pdt-accent, #8b5cf6) !important;
   box-shadow: none !important;
 }
 
-
+/* placeholder white */
 .epr-search-container input[type="text"]::placeholder{
   color: #fff !important;
   opacity: 1 !important;
 }
 
-
+/* keep focus outline purple */
 .epr-search-container input[type="text"]:focus,
 .epr-search-container input[type="text"]:focus-visible{
-  outline: 2px solid #8b5cf6 !important;
+  outline: 2px solid var(--pdt-accent, #8b5cf6) !important;
   box-shadow: none !important;
 }
-
+/* make the whole search row (outside the input too) black */
 .epr_q53mwh.epr_-8ygbw8.epr_346qu6.epr_-lzq3oa{
   background: #000 !important;
 }
 
-
+/* also the skin tone area beside it */
 .epr_q53mwh.epr_-8ygbw8.epr_346qu6.epr_-lzq3oa .epr-skin-tones,
 .epr_q53mwh.epr_-8ygbw8.epr_346qu6.epr_-lzq3oa .epr-skin-tone-select{
   background: #000 !important;
 }
-
+/* block bg black */
 .ADXRXN.Fm_EPH.NYgy1O.TfR6nu.mJ2PyB [data-test-id="more-description-container"],
 .ADXRXN.Fm_EPH.NYgy1O.TfR6nu.mJ2PyB [data-test-id="more-description-container"] *{
   background: #000 !important;
@@ -2388,17 +2390,17 @@ li.epr-emoji-category .epr-emoji-category-label{
   box-shadow: none !important;
 }
 
-
+/* remove the white fade */
 .ADXRXN.Fm_EPH.NYgy1O.TfR6nu.mJ2PyB [data-test-id="more-description-container"] .ADXRXN.TfR6nu{
   background: transparent !important;
   background-image: none !important;
 }
 
-
+/* text purple */
 .ADXRXN.Fm_EPH.NYgy1O.TfR6nu.mJ2PyB .WuRgKB{
-  color: #8b5cf6 !important;
+  color: var(--pdt-accent, #8b5cf6) !important;
 }
-
+/* less block bg black */
 [data-test-id="less-description-container"],
 [data-test-id="less-description-container"] *{
   background: #000 !important;
@@ -2406,27 +2408,27 @@ li.epr-emoji-category .epr-emoji-category-label{
   box-shadow: none !important;
 }
 
-
+/* less text purple */
 [data-test-id="less-description-container"] .WuRgKB{
-  color: #8b5cf6 !important;
+  color: var(--pdt-accent, #8b5cf6) !important;
 }
-
+/* FORCE purple text for both ...more and ...less (overrides white text rules) */
 [data-test-id="more-description-container"] .WuRgKB,
 [data-test-id="more-description-container"] .Q3hcOU,
 [data-test-id="less-description-container"] .WuRgKB,
 [data-test-id="less-description-container"] .Q3hcOU{
-  color: #8b5cf6 !important;
-  -webkit-text-fill-color: #8b5cf6 !important;
-  fill: #8b5cf6 !important;
+  color: var(--pdt-accent, #8b5cf6) !important;
+  -webkit-text-fill-color: var(--pdt-accent, #8b5cf6) !important;
+  fill: var(--pdt-accent, #8b5cf6) !important;
 }
-
+/* ONLY this profile suggestion card background */
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX,
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX:hover {
   background: #000 !important;
   background-color: #000 !important;
 }
 
-
+/* ONLY the direct <a> that wraps the card */
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX > a,
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX > a:hover,
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX > a:active,
@@ -2435,105 +2437,105 @@ li.epr-emoji-category .epr-emoji-category-label{
   background-color: #000 !important;
 }
 
-
+/* ONLY the first inner container inside that <a> (the big block) */
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX > a > .ADXRXN.BVzdUh {
   background: #000 !important;
   background-color: #000 !important;
 }
 
-
+/* In case Pinterest uses overlay layers on the <a> */
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX > a::before,
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX > a::after {
   background: #000 !important;
   background-color: #000 !important;
 }
-
+/* Pinterest "Create a Pin or a board" button -> purple, text white */
 button[aria-label="Create a Pin or a board"]{
-  background: #8b5cf6 !important;          
-  background-color: #8b5cf6 !important;
-  border-color: #8b5cf6 !important;
+  background: var(--pdt-accent, #8b5cf6) !important;          /* purple */
+  background-color: var(--pdt-accent, #8b5cf6) !important;
+  border-color: var(--pdt-accent, #8b5cf6) !important;
   color: #fff !important;
 }
 
-
+/* keep inner text white too */
 button[aria-label="Create a Pin or a board"] *{
   color: #fff !important;
-  fill: #fff !important;   
-  stroke: #fff !important; 
+  fill: #fff !important;   /* if any icon */
+  stroke: #fff !important; /* if any icon */
 }
 
-
+/* optional hover a bit brighter */
 button[aria-label="Create a Pin or a board"]:hover{
-  background: #a78bfa !important;
-  background-color: #a78bfa !important;
-  border-color: #a78bfa !important;
+  background: var(--pdt-accent, #a78bfa) !important;
+  background-color: var(--pdt-accent, #a78bfa) !important;
+  border-color: var(--pdt-accent, #a78bfa) !important;
 }
-
+/* 1) The wrapper itself must NOT paint a background */
 .KvKvqR,
 .KvKvqR * {
   background: transparent !important;
   background-color: transparent !important;
 }
 
-
+/* 2) Only the sliding bar gets the black background */
 .KvKvqR > div {
   background: #000 !important;
   background-color: #000 !important;
 }
 
-
+/* 3) When Pinterest sets translateY(-100%), make it truly not visible/clickable */
 .KvKvqR > div[style*="translateY(-100%)"],
 .KvKvqR .ecEhnF[style*="translateY(-100%)"]{
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-
+/* optional: smooth fade with the existing slide */
 .KvKvqR > div,
 .KvKvqR .ecEhnF{
   transition: transform .3s ease-in-out, opacity .3s ease-in-out !important;
 }
-
+/* Notification count + outline (ring) */
 .ac_zDw .qKw26o,
 .ac_zDw .qKw26o * {
-  background: #5B21B6 !important;   
-  border-color: #5B21B6 !important; 
+  background: var(--pdt-accent, #5B21B6) !important;   /* dark purple fill */
+  border-color: var(--pdt-accent, #5B21B6) !important; /* if it uses border */
   color: #fff !important;
 }
 
-
+/* force the little badge ring/outline */
 .ac_zDw .qKw26o {
-  box-shadow: 0 0 0 2px #5B21B6 !important; 
+  box-shadow: 0 0 0 2px var(--pdt-accent, #5B21B6) !important; /* purple outline */
 }
-
+/* Search box outline only (keep everything else untouched) */
 #HeaderContent #searchBoxContainer .ADXRXN[style*="box-shadow"]{
-  box-shadow: 0 0 0 4px #5B21B6 !important; 
+  box-shadow: 0 0 0 4px var(--pdt-accent, #5B21B6) !important; /* dark purple outline */
 }
 
-
+/* If Pinterest swaps the wrapper on focus/active */
 #HeaderContent #searchBoxContainer .ADXRXN[style*="box-shadow"]:focus-within{
-  box-shadow: 0 0 0 4px #5B21B6 !important;
+  box-shadow: 0 0 0 4px var(--pdt-accent, #5B21B6) !important;
 }
-
+/* FORCE our own border on the whole search bar block */
 #searchBoxContainer > .ADXRXN.Lo7aEl.zEVE_X{
   box-shadow: none !important;
   outline: none !important;
 
-  border: 2px solid #4C1D95 !important;   
-  border-radius: 14px !important;         
-  background: #000 !important;            
+  border: 2px solid var(--pdt-accent, #4C1D95) !important;   /* darker purple */
+  border-radius: 14px !important;         /* ours, not theirs */
+  background: #000 !important;            /* optional if you want it black */
 }
 
-
+/* keep it same when focused */
 #searchBoxContainer:focus-within > .ADXRXN.Lo7aEl.zEVE_X{
-  border-color: #4C1D95 !important;
-  box-shadow: 0 0 0 2px rgba(76,29,149,.55) !important; 
+  border-color: var(--pdt-accent, #4C1D95) !important;
+  box-shadow: 0 0 0 2px rgba(var(--pdt-accent-rgb, 76, 29, 149), .55) !important; /* optional glow */
 }
-
+/* Make the right-side "Your Pins" segment match the search box (visibility + icon) */
 :where(#searchBoxContainer, [data-test-id="search-box-container"]) :where(
   [data-test-id="search-filter"],
   [data-test-id="search-filter"] *,
-  .ADXRXN.C6J6UC 
+  .ADXRXN.C6J6UC /* wrapper around the filter */
 ){
   background: transparent !important;
   color: #f2f2f2 !important;
@@ -2541,27 +2543,27 @@ button[aria-label="Create a Pin or a board"]:hover{
   box-shadow: none !important;
 }
 
-
+/* Ensure the dropdown arrow + any SVGs inherit the text color */
 :where(#searchBoxContainer, [data-test-id="search-box-container"]) [data-test-id="search-filter"] svg{
   color: #f2f2f2 !important;
   fill: currentColor !important;
 }
 
-
+/* Fix the input text/placeholder too so it doesn't look "missing" */
 :where(#searchBoxContainer, [data-test-id="search-box-container"]) input[data-test-id="search-box-input"]{
   color: #f2f2f2 !important;
 }
 :where(#searchBoxContainer, [data-test-id="search-box-container"]) input[data-test-id="search-box-input"]::placeholder{
   color: #9a9a9a !important;
 }
-
+/* Dark purple */
 :root{
-  --xzen-purple: #4C1D95;
-  --xzen-purple-glow: rgba(76,29,149,.55);
+  --xzen-purple: var(--pdt-accent, #4C1D95);
+  --xzen-purple-glow: rgba(var(--pdt-accent-rgb, 76, 29, 149), .55);
   --xzen-radius: 14px;
 }
 
-
+/* Target the search box in the header (multiple Pinterest layouts) */
 :where(#searchBoxContainer, [data-test-id="search-box-container"]) :where(
   .ADXRXN.Lo7aEl.zEVE_X,
   .ADXRXN.gEQpi5.sSBu24.wl0pCr.zEVE_X
@@ -2572,7 +2574,7 @@ button[aria-label="Create a Pin or a board"]:hover{
   border-radius: var(--xzen-radius) !important;
 }
 
-
+/* When Pinterest adds focus/expanded shadows inline, override harder */
 :where(#searchBoxContainer, [data-test-id="search-box-container"]):focus-within :where(
   .ADXRXN.Lo7aEl.zEVE_X,
   .ADXRXN.gEQpi5.sSBu24.wl0pCr.zEVE_X
@@ -2581,27 +2583,27 @@ button[aria-label="Create a Pin or a board"]:hover{
   border-color: var(--xzen-purple) !important;
 }
 
-
+/* Optional: remove the thin divider inside so YOUR border is the only border */
 :where(#searchBoxContainer, [data-test-id="search-box-container"]) .ADXRXN.MEP_vB{
   background: transparent !important;
 }
-
+/* ===== Search bar: full outline WITHOUT killing suggestions ===== */
 :root{
-  --xzen-purple-deep: #3a0ea6; 
+  --xzen-purple-deep: var(--pdt-accent, #3a0ea6); /* darker purple */
 }
 
-
+/* Direct wrapper of the whole search bar (the light gray block in your HTML) */
 #searchBoxContainer > .Lo7aEl{
   background-color: #000 !important;
   border-radius: 12px !important;
 
-  
+  /* IMPORTANT: allow dropdown to extend */
   overflow: visible !important;
 
   position: relative !important;
 }
 
-
+/* Draw the outline ABOVE inner children so nothing “paints over” the bottom edge */
 #searchBoxContainer > .Lo7aEl::after{
   content: "" !important;
   position: absolute !important;
@@ -2612,14 +2614,14 @@ button[aria-label="Create a Pin or a board"]:hover{
   z-index: 5 !important;
 }
 
-
+/* Keep inner row black, but DO NOT clip dropdown */
 #searchBoxContainer > .Lo7aEl > .gEQpi5.sSBu24.wl0pCr.zEVE_X{
   background: #000 !important;
   box-shadow: none !important;
   overflow: visible !important;
 }
 
-
+/* Stop the right “Your Pins” segment from covering the border */
 #searchBoxContainer [data-test-id="search-filter"],
 #searchBoxContainer [data-test-id="search-filter"] > div{
   background: transparent !important;
@@ -2628,24 +2630,24 @@ button[aria-label="Create a Pin or a board"]:hover{
   border-radius: 0 !important;
 }
 
-
+/* Optional divider */
 #searchBoxContainer .MEP_vB.RZKOJ9.aNs6gM.bx1iJI{
   background: var(--xzen-purple-deep) !important;
   opacity: 0.9 !important;
 }
-
+/* Settings menu underline only (the tiny 3px bar) */
 nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
-  background-color: #5A22C9 !important;  
+  background-color: var(--pdt-accent, #5A22C9) !important;  /* darker purple */
 }
-:root{ --xzen-purple:#B38AFF; }
+:root{ --xzen-purple:var(--pdt-accent, #B38AFF); }
 
-
+/* panel */
 .co9vq_.Ula08X .gEQpi5.qjbPDW.Tu2pQF.Ula08X,
 #pronouns{
   background:#000 !important;
 }
 
-
+/* HARD force default (non-hover) bg to black */
 #pronouns [role="option"],
 #pronouns [role="option"] > div,
 #pronouns [role="option"] .NNH3oA,
@@ -2654,12 +2656,12 @@ nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
   background:#000 !important;
 }
 
-
+/* text */
 #pronouns [role="option"] .WuRgKB{
   color:#fff !important;
 }
 
-
+/* hover becomes purple (and stays white text) */
 #pronouns [role="option"]:hover,
 #pronouns [role="option"]:hover > div,
 #pronouns [role="option"]:hover .NNH3oA,
@@ -2671,27 +2673,27 @@ nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
   color:#fff !important;
 }
 
-
+/* kill any light overlays */
 #pronouns [role="option"]::before,
 #pronouns [role="option"]::after{
   content:none !important;
 }
-
+/* Pronoun selected pill (she/her tag) */
 .df3qGz .ADXRXN.Lo7aEl.gEQpi5.h2QNmC.nnftW_{
   background:#000 !important;
-  border:1px solid rgba(179,138,255,.55) !important; 
+  border:1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .55) !important; /* optional cute outline */
 }
 
 .df3qGz .ADXRXN.sSBu24.zEVE_X{
   background:transparent !important;
 }
 
-
+/* text */
 .df3qGz .WuRgKB{
   color:#fff !important;
 }
 
-
+/* keep remove icon white without repainting button bg */
 .df3qGz button.Qshsbk{
   background:transparent !important;
 }
@@ -2699,54 +2701,54 @@ nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
 .df3qGz button.Qshsbk path{
   fill:#fff !important;
 }
-
+/* Top tabs: make the label text purple on hover */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.sSBu24 a.etmDmh:hover .WuRgKB{
-  color:#B38AFF !important;
+  color:var(--pdt-accent, #B38AFF) !important;
 }
 
-
+/* keep current/active one purple too (optional) */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.sSBu24 a[aria-current="page"] .WuRgKB{
-  color:#B38AFF !important;
+  color:var(--pdt-accent, #B38AFF) !important;
 }
-
+/* View board button: purple bg + white text */
 button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV{
-  background:#B38AFF !important;
-  border-color:#B38AFF !important;
+  background:var(--pdt-accent, #B38AFF) !important;
+  border-color:var(--pdt-accent, #B38AFF) !important;
 }
 
-
+/* keep text white (even inside weird <font> wrappers) */
 button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV,
 button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV *{
   color:#fff !important;
   fill:#fff !important;
 }
 
-
+/* optional: hover stays purple */
 button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
-  background:#B38AFF !important;
+  background:var(--pdt-accent, #B38AFF) !important;
 }
-
+/* Save button: dark purple (60% transparent) + white SVG */
 :root{
-  --xzen-purple-dark: rgba(58, 14, 166, .60); 
+  --xzen-purple-dark: rgba(var(--pdt-accent-rgb, 58, 14, 166), .60); /* dark purple @60% */
 }
 
-
+/* override the inner white-ish background block */
 .Q3hcOU.Lo7aEl[aria-label="Save"] > .ADXRXN.Lo7aEl{
   background: var(--xzen-purple-dark) !important;
 }
 
-
+/* keep icons white */
 .Q3hcOU.Lo7aEl[aria-label="Save"] svg,
 .Q3hcOU.Lo7aEl[aria-label="Save"] svg *{
   fill: #fff !important;
 }
 
-
+/* optional: keep hover the same */
 .Q3hcOU.Lo7aEl[aria-label="Save"]:hover > .ADXRXN.Lo7aEl{
   background: var(--xzen-purple-dark) !important;
 }
-
-:root{ --xzen-purple:#4c1d95; }
+/* Visit site: FORCE purple outline (even if Pinterest keeps bg black) */
+:root{ --xzen-purple:var(--pdt-accent, #4c1d95); }
 
 [data-test-id="visit-site-button"] a,
 [data-test-id="visit-site-button"] a.etmDmh,
@@ -2754,19 +2756,19 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   outline: 2px solid var(--xzen-purple) !important;
   outline-offset: -2px !important;
 
-  border: 2px solid var(--xzen-purple) !important;         
-  box-shadow: 0 0 0 2px var(--xzen-purple) inset !important;
+  border: 2px solid var(--xzen-purple) !important;         /* fallback */
+  box-shadow: 0 0 0 2px var(--xzen-purple) inset !important;/* extra force */
 }
 
 [data-test-id="visit-site-button"] a::before{
-  border: 0 !important; 
+  border: 0 !important; /* stop shimmer overlay from masking edges */
 }
+/* DARK PURPLE CODE: var(--pdt-accent, #4c1d95) */
+/* GLOBAL PURPLE CODE: var(--pdt-accent, #B38AFF) */
 
+:root{ --xzen-purple:var(--pdt-accent, #B38AFF); }
 
-
-:root{ --xzen-purple:#B38AFF; }
-
-
+/* Pin action dropdown: outline every item */
 [data-test-id="pin-action-dropdown"] button[role="menuitem"],
 [data-test-id="pin-action-dropdown"] a[role="menuitem"]{
   outline: 2px solid var(--xzen-purple) !important;
@@ -2776,21 +2778,21 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   background-clip: padding-box !important;
 }
 
-
+/* keep spacing so outlines don’t stick together */
 [data-test-id="pin-action-dropdown"] button[role="menuitem"]{
   margin: 6px 8px !important;
 }
 
-
+/* optional: hover glow (still just outline-ish) */
 [data-test-id="pin-action-dropdown"] button[role="menuitem"]:hover{
   box-shadow: 0 0 0 2px var(--xzen-purple) inset !important;
 }
 :root{
-  --xzen-purple:#B38AFF;
-  --xzen-purple-dark:#6A3DFF;
+  --xzen-purple:var(--pdt-accent, #B38AFF);
+  --xzen-purple-dark:var(--pdt-accent, #6A3DFF);
 }
 
-
+/* hover + focus */
 [data-test-id="pin-action-dropdown"] button[role="menuitem"],
 [data-test-id="pin-action-dropdown"] a[role="menuitem"]{
   transition: background-color .12s ease, box-shadow .12s ease, outline-color .12s ease, transform .08s ease !important;
@@ -2798,30 +2800,30 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
 
 [data-test-id="pin-action-dropdown"] button[role="menuitem"]:hover,
 [data-test-id="pin-action-dropdown"] a[role="menuitem"]:hover{
-  background: rgba(179,138,255,.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) !important;
   outline-color: var(--xzen-purple-dark) !important;
-  box-shadow: 0 0 0 2px rgba(179,138,255,.65) inset, 0 8px 18px rgba(179,138,255,.18) !important;
+  box-shadow: 0 0 0 2px rgba(var(--pdt-accent-rgb, 179, 138, 255), .65) inset, 0 8px 18px rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) !important;
   transform: translateY(-1px) !important;
 }
 
-
+/* keyboard highlight too */
 [data-test-id="pin-action-dropdown"] button[role="menuitem"]:focus-visible,
 [data-test-id="pin-action-dropdown"] a[role="menuitem"]:focus-visible{
-  background: rgba(179,138,255,.22) !important;
+  background: rgba(var(--pdt-accent-rgb, 179, 138, 255), .22) !important;
   outline-color: var(--xzen-purple) !important;
-  box-shadow: 0 0 0 3px rgba(179,138,255,.75) inset !important;
+  box-shadow: 0 0 0 3px rgba(var(--pdt-accent-rgb, 179, 138, 255), .75) inset !important;
 }
-:root{--xzen-purple:#B38AFF;--xzen-purple-deep:#7A42FF;}
+:root{--xzen-purple:var(--pdt-accent, #B38AFF);--xzen-purple-deep:var(--pdt-accent, #7A42FF);}
 
-
+/* Make the SVG icon white */
 #ideas-flyout svg,
 #ideas-flyout svg *{
   fill: #fff !important;
 }
 
-
+/* Make Xzen "Support Amoled Project Here" link purple (plain text) */
 #xzen-amoled-credit-item a{
-  color: #B38AFF !important;
+  color: var(--pdt-accent, #B38AFF) !important;
   text-decoration: none !important;
   font-weight: 600 !important;
   opacity: .92 !important;
@@ -2831,7 +2833,7 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   opacity: 1 !important;
   text-decoration: underline !important;
 }
-
+/* Purple underline for the section headers (Support / Resources / etc) */
 #VerticalNav-Settings-Flyout .X1bmBV > [role="presentation"]{
   position: relative;
   padding-bottom: 6px !important;
@@ -2846,16 +2848,16 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   bottom: 2px;
   height: 2px;
   border-radius: 99px;
-  background: #B38AFF;
+  background: var(--pdt-accent, #B38AFF);
   opacity: .85;
 }
 
-
+/* Optional: make the section title itself slightly purple too */
 #VerticalNav-Settings-Flyout .X1bmBV > [role="presentation"] .pA9X1U{
-  color: #B38AFF !important;
+  color: var(--pdt-accent, #B38AFF) !important;
   opacity: .95;
 }
-
+/* Left-aligned, shorter purple underline + purple text on hover (Settings/Support buttons only) */
 
 #VerticalNav-Settings-Flyout button.yww37Y{
   position: relative;
@@ -2864,12 +2866,12 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
 #VerticalNav-Settings-Flyout button.yww37Y::after{
   content:"";
   position:absolute;
-  left: 22px;          
+  left: 22px;          /* left aligned */
   bottom: 0;
-  width: 78px;         
+  width: 78px;         /* shorter line */
   height: 2px;
   border-radius: 999px;
-  background: #B38AFF;
+  background: var(--pdt-accent, #B38AFF);
   opacity: .45;
   pointer-events:none;
   transform: scaleX(.7);
@@ -2881,39 +2883,39 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
 #VerticalNav-Settings-Flyout button.yww37Y:focus-within::after{
   opacity: .95;
   transform: scaleX(1);
-  width: 108px;        
+  width: 108px;        /* expands a bit on hover */
 }
 
-
+/* Text inside the button turns purple on hover */
 #VerticalNav-Settings-Flyout button.yww37Y .WuRgKB{
   transition: color .16s ease, opacity .16s ease;
 }
 
 #VerticalNav-Settings-Flyout button.yww37Y:hover .WuRgKB,
 #VerticalNav-Settings-Flyout button.yww37Y:focus-within .WuRgKB{
-  color: #B38AFF !important;
+  color: var(--pdt-accent, #B38AFF) !important;
 }
-
+/* Create flyout: black tile behind the SVG, but DO NOT recolor the SVG itself */
 #VerticalNav-CreationOptions-Flyout .BVzdUh._xSIdT.gcIrSY.h2QNmC{
   background: #000 !important;
   border-radius: 10px !important;
   padding: 6px !important;
 }
-
+/* Explore button: make ONLY the 48x48 tile background black (leave SVG untouched) */
 #ideas-flyout.ADXRXN{
   background-color: #000 !important;
-  border-radius: 12px !important; 
+  border-radius: 12px !important; /* optional, remove if you want sharp */
 }
-
+/* specifically: those 3 square options (Organize / More ideas / Collage) */
 a[aria-label="Organize"] > div > div:has(svg),
 a[aria-label="More ideas"] > div > div:has(svg),
 a[aria-label="Collage"] > div > div:has(svg){
-  background: #B38AFF !important;
-  border: 1px solid rgba(179,138,255,.7) !important;
+  background: var(--pdt-accent, #B38AFF) !important;
+  border: 1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .7) !important;
   border-radius: 18px !important;
 }
 
-
+/* force the svg inside those squares to white */
 a[aria-label="Organize"] svg,
 a[aria-label="Organize"] svg * ,
 a[aria-label="More ideas"] svg,
@@ -2924,7 +2926,7 @@ a[aria-label="Collage"] svg *{
   stroke: #fff !important;
   color: #fff !important;
 }
-
+/* ONLY this tile: Organize (text + svg white) */
 a[aria-label="Organize"]{
   color:#fff !important;
 }
@@ -2939,12 +2941,12 @@ a[aria-label="Organize"] svg *{
   stroke:#fff !important;
   color:#fff !important;
 }
-
+/* black background + white svg for THIS button/icon block */
 ._37Rc2.HdFEzo{
   background-color:#000 !important;
 }
 
-
+/* make the icon white */
 ._37Rc2.HdFEzo svg,
 ._37Rc2.HdFEzo svg *{
   fill:#fff !important;
@@ -2952,11 +2954,11 @@ a[aria-label="Organize"] svg *{
   color:#fff !important;
 }
 
-
+/* optional: if Pinterest adds inner wrappers that tint */
 ._37Rc2.HdFEzo .nDkDfP{
   color:#fff !important;
 }
-
+/* STORYBOARD title input only (scoped by data-test-id) */
 [data-test-id="storyboard-title-field-container"] .urH_ll{
   background:#000 !important;
 }
@@ -2969,76 +2971,78 @@ a[aria-label="Organize"] svg *{
 [data-test-id="storyboard-title-field-container"] input#storyboard-selector-title{
   background:#000 !important;
   color:#fff !important;
-  border:1px solid #B38AFF !important;
+  border:1px solid var(--pdt-accent, #B38AFF) !important;
   outline:0 !important;
-  box-shadow:0 0 0 1px rgba(179,138,255,.55) inset !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .55) inset !important;
 }
 
-
+/* placeholder text */
 [data-test-id="storyboard-title-field-container"] input#storyboard-selector-title::placeholder{
   color:rgba(255,255,255,.65) !important;
 }
 
-
+/* keep it purple even when disabled */
 [data-test-id="storyboard-title-field-container"] input#storyboard-selector-title:disabled{
   -webkit-text-fill-color:#fff !important;
   opacity:1 !important;
-  border-color:#B38AFF !important;
+  border-color:var(--pdt-accent, #B38AFF) !important;
 }
-
+/* WebsiteField only */
 .urH_ll:has(#WebsiteField) #WebsiteField{
   background:#000 !important;
   color:#fff !important;
   -webkit-text-fill-color:#fff !important;
 
-  border:1px solid #B38AFF !important;
+  border:1px solid var(--pdt-accent, #B38AFF) !important;
   outline:none !important;
-  box-shadow:0 0 0 1px rgba(179,138,255,.55) inset !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .55) inset !important;
 
   border-radius:12px !important;
 }
 
-
+/* placeholder */
 .urH_ll:has(#WebsiteField) #WebsiteField::placeholder{
   color:rgba(255,255,255,.65) !important;
 }
 
-
+/* disabled state still readable */
 .urH_ll:has(#WebsiteField) #WebsiteField:disabled{
   opacity:1 !important;
 }
 
-
+/* focus glow (if it ever becomes enabled) */
 .urH_ll:has(#WebsiteField) #WebsiteField:focus{
   box-shadow:
-    0 0 0 1px rgba(179,138,255,.75) inset,
-    0 0 0 3px rgba(179,138,255,.18) !important;
+    0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .75) inset,
+    0 0 0 3px rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) !important;
 }
+/* =========================
+   DESCRIPTION / DRAFT EDITOR (specific)
+   ========================= */
 
-
-
+/* Outer disabled editor card (the big box) */
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
   > .ADXRXN._xSIdT.a7F6nQ.gcIrSY.iQW80L.u5MNBk.wl0pCr{
   background:#000 !important;
-  border:1px solid rgba(179,138,255,.85) !important;
-  box-shadow:0 0 0 1px rgba(179,138,255,.18) inset !important;
+  border:1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .85) !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) inset !important;
   border-radius:14px !important;
 }
 
-
+/* The inner editor container */
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
   [data-test-id="editor-with-mentions"]{
   background:transparent !important;
 }
 
-
+/* The actual Draft container */
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
   [data-test-id="comment-editor-container"]{
   color:#fff !important;
   background:transparent !important;
 }
 
-
+/* Placeholder text */
 #dweb-comment-editor-container .public-DraftEditorPlaceholder-inner,
 #mweb-comment-editor-container .public-DraftEditorPlaceholder-inner{
   color:rgba(255,255,255,.70) !important;
@@ -3047,14 +3051,14 @@ a[aria-label="Organize"] svg *{
   white-space:nowrap !important;
 }
 
-
+/* Content area text color (even if disabled) */
 #dweb-comment-editor-container .public-DraftEditor-content,
 #mweb-comment-editor-container .public-DraftEditor-content{
   color:#fff !important;
-  caret-color:#B38AFF !important;
+  caret-color:var(--pdt-accent, #B38AFF) !important;
 }
 
-
+/* Make sure any nested wrappers don’t reintroduce light backgrounds */
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
   .DraftEditor-root,
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
@@ -3062,86 +3066,95 @@ a[aria-label="Organize"] svg *{
   background:transparent !important;
 }
 
-
+/* Optional: subtle hover glow on the whole block (still disabled-safe) */
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
   > .ADXRXN._xSIdT.a7F6nQ.gcIrSY.iQW80L.u5MNBk.wl0pCr:hover{
-  box-shadow:0 0 0 1px rgba(179,138,255,.28) inset, 0 0 18px rgba(179,138,255,.12) !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .28) inset, 0 0 18px rgba(var(--pdt-accent-rgb, 179, 138, 255), .12) !important;
 }
+/* =========================
+   "Choose a board" dropdown (specific)
+   ========================= */
 
-
-
+/* the disabled dropdown button */
 .Q3hcOU.gcIrSY.itw4K9.g0I6wi[aria-disabled="true"][data-test-id="board-dropdown-select-button"] > .ADXRXN{
   background:#000 !important;
-  border:1px solid rgba(179,138,255,.85) !important;
-  box-shadow:0 0 0 1px rgba(179,138,255,.18) inset !important;
+  border:1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .85) !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) inset !important;
   border-radius:16px !important;
 }
 
-
+/* placeholder text */
 .Q3hcOU.gcIrSY.itw4K9.g0I6wi[aria-disabled="true"][data-test-id="board-dropdown-select-button"]
   [data-test-id="board-dropdown-placeholder"] .ADXRXN{
   color:rgba(255,255,255,.70) !important;
 }
 
-
+/* ensure any text wrapper is white */
 .Q3hcOU.gcIrSY.itw4K9.g0I6wi[aria-disabled="true"][data-test-id="board-dropdown-select-button"]
   .WuRgKB{
   color:#fff !important;
 }
 
-
+/* dropdown arrow svg -> white */
 .Q3hcOU.gcIrSY.itw4K9.g0I6wi[aria-disabled="true"][data-test-id="board-dropdown-select-button"]
   svg{
   fill:#fff !important;
 }
 
-
+/* optional: subtle glow on hover (won’t break disabled) */
 .Q3hcOU.gcIrSY.itw4K9.g0I6wi[aria-disabled="true"][data-test-id="board-dropdown-select-button"] > .ADXRXN:hover{
-  box-shadow:0 0 0 1px rgba(179,138,255,.28) inset, 0 0 18px rgba(179,138,255,.12) !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .28) inset, 0 0 18px rgba(var(--pdt-accent-rgb, 179, 138, 255), .12) !important;
 }
+/* =========================
+   Tagged topics input (specific)
+   black bg + purple outline + white text
+   ========================= */
 
-
-
+/* label text */
 label.piPv3T.jSnx8D._hXngT.Ak7eo_ .OlWU8v{
   color:#fff !important;
 }
 
-
+/* the disabled combobox input */
 input#combobox-storyboard-interest-tags.VTVmV8.q3kIpX.g0zfi1.B94P4O.miEtGt.dm14Pm.vr41LG.EYma4O.hxKTA7.mm0O_j.eyoFbE.glzo1E.hPj47J[disabled]{
   background:#000 !important;
   color:#fff !important;
-  border:1px solid rgba(179,138,255,.85) !important;
-  box-shadow:0 0 0 1px rgba(179,138,255,.18) inset !important;
+  border:1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .85) !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) inset !important;
   border-radius:16px !important;
 }
 
-
+/* placeholder */
 input#combobox-storyboard-interest-tags[disabled]::placeholder{
   color:rgba(255,255,255,.55) !important;
   opacity:1 !important;
 }
 
-
+/* keep any surrounding "disabled" wrappers from forcing gray */
 #combobox-storyboard-interest-tags[disabled]{
   -webkit-text-fill-color:#fff !important;
 }
+/* =========================
+   Upload dropzone (specific)
+   black bg + purple outline
+   BLACK svg + BLACK text
+   ========================= */
 
-
-
+/* outer container bg */
 div[data-test-id="drag-behavior-container"].ADXRXN.dHA5K0{
   background:#000 !important;
   box-shadow:none !important;
-  border:1px solid rgba(179,138,255,.85) !important;
-  box-shadow:0 0 0 1px rgba(179,138,255,.18) inset !important;
+  border:1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .85) !important;
+  box-shadow:0 0 0 1px rgba(var(--pdt-accent-rgb, 179, 138, 255), .18) inset !important;
 }
 
-
+/* dashed inner ring -> purple */
 div[data-test-id="drag-behavior-container"]
   .ADXRXN.XexRYe._tKaHB.gEQpi5.h2QNmC.kF2VEF.sSBu24.zEVE_X{
-  border-color:rgba(179,138,255,.9) !important;
+  border-color:rgba(var(--pdt-accent-rgb, 179, 138, 255), .9) !important;
 }
 
-
+/* svg -> BLACK (only inside this dropzone) */
 div[data-test-id="drag-behavior-container"] svg,
 div[data-test-id="drag-behavior-container"] svg *{
   fill:#000 !important;
@@ -3149,46 +3162,49 @@ div[data-test-id="drag-behavior-container"] svg *{
   stroke:#000 !important;
 }
 
-
+/* main text -> BLACK */
 div[data-test-id="drag-behavior-container"]
   .WuRgKB.eMU5i5.YfEt3H.v_eFe4.qnEc35.hxKTA7.mm0O_j{
   color:#000 !important;
 }
 
-
+/* sub text + explanation -> BLACK (slightly softer if you want: change to rgba(0,0,0,.7)) */
 div[data-test-id="drag-behavior-container"]
   .WuRgKB.eMU5i5.YfEt3H.v_eFe4.qnEc35.eLtWQB.B3NXeR.M_tJtU,
 div[data-test-id="drag-behavior-container"]
   #upload-button-explanation .WuRgKB{
   color:#000 !important;
 }
-
+/* Save from URL button: purple outline only (specific) */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.j0pMjI.hG7AI5.E6J5D_[href="/pin-builder/?tab=save_from_url"]{
-  border:1px solid rgba(179,138,255,.85) !important;
+  border:1px solid rgba(var(--pdt-accent-rgb, 179, 138, 255), .85) !important;
   border-radius:12px !important;
   padding:8px 12px !important;
   background:transparent !important;
 }
-
+/* =========================================================
+   Create Pin page: purple OUTLINES ONLY (no bg/text/svg edits)
+   Targets only the elements you pasted (Pin Builder / Storyboard)
+   ========================================================= */
 
 :root{
-  --xzen-purple: rgba(179,138,255,.85);
-  --xzen-purple-soft: rgba(179,138,255,.18);
+  --xzen-purple: rgba(var(--pdt-accent-rgb, 179, 138, 255), .85);
+  --xzen-purple-soft: rgba(var(--pdt-accent-rgb, 179, 138, 255), .18);
 }
 
-
+/* ---- Drafts sidebar (right panel) outline ---- */
 div[data-test-id="storyboard-drafts-sidebar"]
   .ADXRXN.DTsIgD.a7F6nQ.ecEhnF.iQW80L.n62I2n.u5MNBk{
   border-color: var(--xzen-purple) !important;
   box-shadow: 0 0 0 1px var(--xzen-purple-soft) inset !important;
 }
 
-
+/* divider line under "Pin drafts" header */
 div[data-test-id="storyboard-drafts-sidebar"] hr[data-gestalt-valid-html="Divider"]{
   border-top-color: var(--xzen-purple) !important;
 }
 
-
+/* ---- Upload dropzone outer container ---- */
 div[data-test-id="storyboard-draft-upload-container"]
   div[data-test-id="drag-behavior-container"].ADXRXN.dHA5K0{
   outline: 1px solid var(--xzen-purple) !important;
@@ -3196,13 +3212,13 @@ div[data-test-id="storyboard-draft-upload-container"]
   box-shadow: 0 0 0 1px var(--xzen-purple-soft) inset !important;
 }
 
-
+/* dashed inner ring -> purple */
 div[data-test-id="storyboard-draft-upload-container"]
   div[data-test-id="drag-behavior-container"] .ADXRXN.XexRYe._tKaHB.gEQpi5.h2QNmC.kF2VEF.sSBu24.zEVE_X{
   border-color: var(--xzen-purple) !important;
 }
 
-
+/* ---- "Save from URL" button outline ---- */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.j0pMjI.hG7AI5.E6J5D_[href="/pin-builder/?tab=save_from_url"]{
   outline: 1px solid var(--xzen-purple) !important;
   outline-offset: 0 !important;
@@ -3210,7 +3226,7 @@ a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.j0pMjI.hG7AI5.E6J5D_[h
   border-radius: 12px !important;
 }
 
-
+/* ---- Title input container + input outline ---- */
 div[data-test-id="storyboard-title-field-container"]{
   outline: 1px solid var(--xzen-purple) !important;
   outline-offset: -1px !important;
@@ -3222,7 +3238,7 @@ div[data-test-id="storyboard-title-field-container"] input#storyboard-selector-t
   border-radius: 12px !important;
 }
 
-
+/* ---- Description editor outer box outline ---- */
 div[data-test-id="storyboard-description-field-container"]
   .ADXRXN._xSIdT.a7F6nQ.gcIrSY.iQW80L.u5MNBk.wl0pCr{
   outline: 1px solid var(--xzen-purple) !important;
@@ -3231,68 +3247,68 @@ div[data-test-id="storyboard-description-field-container"]
   border-radius: 16px !important;
 }
 
-
+/* ---- Link (WebsiteField) outline ---- */
 input#WebsiteField{
   outline: 1px solid var(--xzen-purple) !important;
   outline-offset: -2px !important;
   border-radius: 12px !important;
 }
 
-
+/* ---- Board dropdown select outline ---- */
 div[data-test-id="board-dropdown-select-button"] > .ADXRXN[style*="height: 48px"]{
   outline: 1px solid var(--xzen-purple) !important;
   outline-offset: -1px !important;
   box-shadow: 0 0 0 1px var(--xzen-purple-soft) inset !important;
 }
 
-
+/* ---- Tagged topics combobox outline ---- */
 input#combobox-storyboard-interest-tags{
   outline: 1px solid var(--xzen-purple) !important;
   outline-offset: -2px !important;
   border-radius: 12px !important;
 }
 
-
+/* ---- Header bar ("Create Pin") outline ---- */
 div[data-test-id="header-content-container"]{
   border-color: var(--xzen-purple) !important;
   box-shadow: 0 0 0 1px var(--xzen-purple-soft) inset !important;
 }
-
+/* Pin drafts sidebar OUTLINE (the outer wrapper div you pasted) */
 :root{
-  --xzen-purple: rgba(179,138,255,.85);
-  --xzen-purple-soft: rgba(179,138,255,.18);
+  --xzen-purple: rgba(var(--pdt-accent-rgb, 179, 138, 255), .85);
+  --xzen-purple-soft: rgba(var(--pdt-accent-rgb, 179, 138, 255), .18);
 }
 
-
+/* outer sidebar wrapper (DTsIgD...) */
 .ADXRXN.DTsIgD.a7F6nQ.ecEhnF.iQW80L.n62I2n.u5MNBk{
   border-color: var(--xzen-purple) !important;
   box-shadow: 0 0 0 1px var(--xzen-purple-soft) inset !important;
 }
 
-
+/* top inner divider line (C6J6UC has border-width 1px 0 0) */
 .ADXRXN.DTsIgD.a7F6nQ.ecEhnF.iQW80L.n62I2n.u5MNBk
   > div[data-test-id="storyboard-drafts-sidebar"] .ADXRXN.C6J6UC{
   border-top-color: var(--xzen-purple) !important;
 }
 
-
+/* the hr under the header */
 div[data-test-id="storyboard-drafts-sidebar"] hr[data-gestalt-valid-html="Divider"]{
   border-top-color: var(--xzen-purple) !important;
 }
-
+/* Ideas dropdown: underline + purple text on hover (no spacing/layout changes) */
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a{
   position: relative !important;
   text-decoration: none !important;
   transition: color 140ms ease !important;
 }
 
-
+/* purple text on hover/focus */
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a:hover,
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a:focus-visible{
-  color: #B38AFF !important;
+  color: var(--pdt-accent, #B38AFF) !important;
 }
 
-
+/* underline */
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a::after{
   content:"" !important;
   position:absolute !important;
@@ -3300,7 +3316,7 @@ div[data-test-id="storyboard-drafts-sidebar"] hr[data-gestalt-valid-html="Divide
   bottom: -2px !important;
   width: 54px !important;
   height: 2px !important;
-  background: rgba(179,138,255,.95) !important;
+  background: rgba(var(--pdt-accent-rgb, 179, 138, 255), .95) !important;
   border-radius: 999px !important;
   transform-origin: left center !important;
   transform: scaleX(.7) !important;
@@ -3314,21 +3330,21 @@ div[data-test-id="storyboard-drafts-sidebar"] hr[data-gestalt-valid-html="Divide
   transform: scaleX(1) !important;
   opacity: 1 !important;
 }
-
+/* Ideas dropdown: make the option TEXT purple on hover (scoped, no spacing changes) */
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a:hover,
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a:focus-visible{
-  color: #B38AFF !important;
+  color: var(--pdt-accent, #B38AFF) !important;
 }
 
-
+/* force the inner <span> text to follow too */
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a:hover span,
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a:focus-visible span{
-  color: #B38AFF !important;
+  color: var(--pdt-accent, #B38AFF) !important;
 }
 #board-name{
   color: #fff !important;
 }
-
+/* ===== PINTEREST: FORCE IMAGES VISIBLE (OVERRIDE ALL THEMES) ===== */
 html body img.iFOUS5,
 html body .PinCard__imageWrapper img,
 html body [data-test-id="non-story-pin-image"] img,
@@ -3344,7 +3360,7 @@ html body [data-test-id*="pinrep"] img{
   transform: none !important;
 }
 
-
+/* also make sure containers aren’t being hidden */
 html body .PinCard__imageWrapper,
 html body [data-test-id="pinrep-image"],
 html body [data-test-id="non-story-pin-image"],
@@ -3355,18 +3371,18 @@ html body [data-test-id="pincard-storyPin-without-link"]{
   filter: none !important;
   -webkit-filter: none !important;
 }
-
+/* Change text color to purple when hovering over the tab */
 a[role="tab"]:hover .WuRgKB {
-    color: #a020f0 !important; 
+    color: var(--pdt-accent, #a020f0) !important; 
     transition: color 0.2s ease-in-out;
 }
 
-
+/* Optional: If you also want the bottom border/underline to turn purple on hover */
 a[role="tab"]:hover ._gOf1c {
-    background-color: #a020f0 !important;
+    background-color: var(--pdt-accent, #a020f0) !important;
     transition: background-color 0.2s ease-in-out;
 }
-
+/* Change background to pure black on hover for all menu items */
 #SideBarSettingsDropdown #settings:hover,
 #SideBarSettingsDropdown #homefeed-tuner:hover,
 #SideBarSettingsDropdown #account-claiming:hover,
@@ -3384,45 +3400,221 @@ a[role="tab"]:hover ._gOf1c {
     background-color: #000000 !important;
 }
 
-
+/* Make the text PURPLE on hover */
 #SideBarSettingsDropdown a:hover .WuRgKB,
 #SideBarSettingsDropdown div[role="button"]:hover .WuRgKB,
 #SideBarSettingsDropdown a:hover .ylMNj8 {
-    color: #a020f0 !important;
+    color: var(--pdt-accent, #a020f0) !important;
     transition: color 0.2s ease-in-out;
 }
 
-
+/* Ensure the SVG icons also turn PURPLE on hover */
 #SideBarSettingsDropdown a:hover svg,
 #SideBarSettingsDropdown div[role="button"]:hover svg {
-    fill: #a020f0 !important;
-    color: #a020f0 !important;
+    fill: var(--pdt-accent, #a020f0) !important;
+    color: var(--pdt-accent, #a020f0) !important;
     transition: fill 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-
+/* Change the label text above the inputs to white */
 #label-first_name div,
 #label-last_name div {
     color: #ffffff !important;
 }
 
-
+/* Change the text typed inside the input fields to white */
 #first_name,
 #last_name {
     color: #ffffff !important;
 }
-
+/* Make the Change Password button purple */
 div[data-test-id="change-password-button"] button {
-    background-color: #8E6BFF !important;
+    background-color: var(--pdt-accent, #8E6BFF) !important;
     border: none !important;
     transition: background-color 0.2s ease-in-out !important;
 }
 
-
+/* Ensure the text inside the button is white */
 div[data-test-id="change-password-button"] button .WuRgKB {
     color: #ffffff !important;
 }
 
-
+/* Optional: Slightly darker purple when you hover over it */
 div[data-test-id="change-password-button"] button:hover {
-    background-color: #8E6BFF !important;
+    background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Settings Side Panel */
+
+#settings,
+#homefeed-tuner,
+#account-claiming,
+#reports-and-violations-center,
+#install-app,
+#be-a-beta-tester,
+#get-help,
+#make-widget-link,
+#removals,
+#personalized-ads,
+#settingsPrivacy,
+#privacy-policy,
+#tos-policy {
+  color: white;
+}
+
+#settings:hover,
+#homefeed-tuner:hover,
+#account-claiming:hover,
+#reports-and-violations-center:hover,
+#install-app:hover,
+#be-a-beta-tester:hover,
+#get-help:hover,
+#make-widget-link:hover,
+#removals:hover,
+#personalized-ads:hover,
+#settingsPrivacy:hover,
+#privacy-policy:hover,
+#tos-policy:hover {
+  background-color: black !important;
+}
+
+#settings:hover *,
+#homefeed-tuner:hover *,
+#account-claiming:hover *,
+#reports-and-violations-center:hover *,
+#install-app:hover *,
+#be-a-beta-tester:hover *,
+#get-help:hover *,
+#make-widget-link:hover *,
+#removals:hover *,
+#personalized-ads:hover *,
+#settingsPrivacy:hover *,
+#privacy-policy:hover *,
+#tos-policy:hover * {
+  color: var(--pdt-accent, #B38AFF) !important;
+  fill: var(--pdt-accent, #B38AFF) !important;
+}
+.FdRUHB.GVKpuJ{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.FdRUHB.GVKpuJ img,
+.FdRUHB.GVKpuJ [data-test-id="drawer-image-group-first-image-container"] img,
+.FdRUHB.GVKpuJ .iFOUS5.ALBw9Q{
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  filter: none !important;
+}
+
+.FdRUHB.GVKpuJ .SXrTgC,
+.FdRUHB.GVKpuJ .Mftu_k{
+  background: transparent !important;
+  opacity: 0 !important;
+}
+/* Pinterest board picker / Save flyout: keep every panel AMOLED black. */
+.co9vq_.Ula08X [role="dialog"][aria-label="Popover"],
+[data-test-id="board-picker-flyout"],
+[data-test-id="board-picker-flyout"] section,
+[data-test-id="board-picker-flyout"] [role="list"],
+[data-test-id="board-picker-flyout"] [data-test-id="boardWithoutSection"],
+[data-test-id="board-picker-flyout"] [data-test-id^="board-row-"],
+[data-test-id="board-picker-flyout"] [data-test-id="search-boards-field-container"],
+[data-test-id="board-picker-flyout"] [data-test-id="create-board"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+[data-test-id="board-picker-flyout"] input[type="search"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff !important;
+}
+
+[data-test-id="board-picker-flyout"] input[type="search"]::placeholder {
+  color: #aaa !important;
+  -webkit-text-fill-color: #aaa !important;
+}
+
+[data-test-id="board-picker-flyout"] .WuRgKB,
+[data-test-id="board-picker-flyout"] h2,
+[data-test-id="board-picker-flyout"] svg {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+/* Pinterest search suggestions: black panel and white copy, regardless of query text. */
+#SuggestionsMenu {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+#SuggestionsMenu [data-test-id="typeaheadResults"],
+#SuggestionsMenu [data-test-id="typeaheadResults"] :is(div, a, button) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#SuggestionsMenu :is(h1, h2, h3, h4, h5, h6, p, span, a, button, .WuRgKB),
+#SuggestionsMenu [data-test-id="search-suggestion-text"] {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#SuggestionsMenu svg,
+#SuggestionsMenu svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+/* Current Pinterest notifications/news sidebar: black panels, white copy. */
+#news-feed-sidebar,
+#news-feed-sidebar > .H2DtUH,
+#news-feed-sidebar [data-test-id="news-hub-title"],
+#news-feed-sidebar [data-test-id="scrollable-container"],
+#news-feed-sidebar .scrollableList,
+#news-feed-sidebar .scrollableList > li,
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+#news-feed-sidebar div:not(.SXrTgC),
+#news-feed-sidebar :is(ul, li, a, button) {
+  background-color: #000 !important;
+}
+
+#news-feed-sidebar .SXrTgC {
+  background: transparent !important;
+}
+
+#news-feed-sidebar :is(div, span, h1, h2, h3, h4, p, a, button) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#news-feed-sidebar {
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  border-color: #222 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg,
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+#news-feed-sidebar [data-test-id="gestalt-avatar-svg"] text {
+  fill: #fff !important;
 }

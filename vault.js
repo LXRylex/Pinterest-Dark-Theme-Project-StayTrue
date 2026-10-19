@@ -1,17 +1,18 @@
-
-
+// vault.js
+// Xzen Vault: Import/Export + ZIP(media) + Viewer Download + Tags (picker) + Bulk select + Quick Preview
 
 const VAULT_KEY  = "xzenVaultItems";
 const TAGS_KEY   = "xzenVaultTags";
 const FILTER_KEY = "xzenVaultTagFilter";
-const HELP_KEY   = "xzenVaultHelp"; 
+const HELP_KEY   = "xzenVaultHelp"; // (kept for compatibility)
+const VIEWER_ACTIONS_KEY = "xzenVaultViewerActionsOpen";
 
-
+// ===================== DOM =====================
 const vaultGrid   = document.getElementById("vaultGrid");
 const emptyState  = document.getElementById("emptyState");
 const searchInput = document.getElementById("searchInput");
 
-
+// --- MENUS ---
 const deleteMenuBtn      = document.getElementById("deleteMenuBtn");
 const deleteMenu         = document.getElementById("deleteMenu");
 const menuBulkToggle     = document.getElementById("menuBulkToggle");
@@ -28,15 +29,17 @@ const filterMenuBtn = document.getElementById("filterMenuBtn");
 const filterMenu    = document.getElementById("filterMenu");
 const filterTags    = document.getElementById("filterTags");
 
-
+// --- DATA MENU ---
 const dataMenuBtn      = document.getElementById("dataMenuBtn");
 const dataMenu         = document.getElementById("dataMenu");
 const menuExport       = document.getElementById("menuExport");
 const menuImport       = document.getElementById("menuImport");
 const menuZip          = document.getElementById("menuZip");
 const fileImportInput  = document.getElementById("fileImportInput");
+const zipOverlay       = document.getElementById("zipOverlay");
+const zipOverlayText   = document.getElementById("zipOverlayText");
 
-
+// --- MODALS ---
 const tagModal    = document.getElementById("tagModal");
 const tagBackdrop = document.getElementById("tagBackdrop");
 const tagX        = document.getElementById("tagX");
@@ -49,17 +52,19 @@ const helpModal    = document.getElementById("helpModal");
 const helpBackdrop = document.getElementById("helpBackdrop");
 const helpX        = document.getElementById("helpX");
 
-
+// --- VIEWER ---
 const viewer         = document.getElementById("viewer");
 const viewerClose    = document.getElementById("viewerClose");
 const viewerX        = document.getElementById("viewerX");
 const viewerTitle    = document.getElementById("viewerTitle");
 const viewerMedia    = document.getElementById("viewerMedia");
+const viewerDialog   = viewer?.querySelector(".viewer-dialog");
+const viewerActionsToggle = document.getElementById("viewerActionsToggle");
 const viewerOpen     = document.getElementById("viewerOpen");
 const viewerCopy     = document.getElementById("viewerCopy");
 const viewerDownload = document.getElementById("viewerDownload");
 
-
+// ===================== STATE =====================
 let items = [];
 let tags  = [];
 let activeFilter = "__all";
@@ -68,18 +73,20 @@ let editingUrls = new Set();
 
 let activeItem = null;
 let activeResolved = null;
+let viewerActionsOpen = true;
 
 let bulkMode = false;
-let bulkModeKind = "delete"; 
+let bulkModeKind = "delete"; // "delete" | "tag"
 let selectedUrls = new Set();
 
-
+// --- Quick preview ---
 let filteredView = [];
 let hoveredIndex = -1;
 let spaceDown = false;
 let qpToken = 0;
+let qpHideTimer = 0;
 
-
+// ===================== Utils =====================
 function esc(s) {
   return String(s || "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -127,6 +134,29 @@ function safeName(s) {
     .slice(0, 80) || "vault";
 }
 
+function pinimgImageCandidates(...urls) {
+  const candidates = [];
+  const add = (url) => {
+    const value = String(url || "").trim();
+    if (value && !candidates.includes(value)) candidates.push(value);
+  };
+
+  for (const rawUrl of urls) {
+    const url = String(rawUrl || "").trim();
+    if (!url) continue;
+
+    add(url);
+
+    const match = url.match(/^(https?:\/\/i\.pinimg\.com\/)(?:originals|\d+x)\/(.+)$/i);
+    if (!match) continue;
+
+    add(`${match[1]}1200x/${match[2]}`);
+    add(`${match[1]}736x/${match[2]}`);
+  }
+
+  return candidates;
+}
+
 function preloadImage(url) {
   return new Promise((resolve, reject) => {
     if (!url) return reject(new Error("no url"));
@@ -136,6 +166,21 @@ function preloadImage(url) {
     img.onerror = () => reject(new Error("load fail"));
     img.src = url;
   });
+}
+
+async function firstLoadableImageUrl(urls) {
+  let lastError = null;
+
+  for (const url of urls) {
+    try {
+      await preloadImage(url);
+      return url;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error("no loadable image url");
 }
 
 function getMetaFromHtml(html, propOrName) {
@@ -159,15 +204,7 @@ function isRealVideo(it, probeUrl) {
   return (it?.mediaType === "video" || hasExt(p, ["mp4", "webm"])) && !isGifHint(it, p);
 }
 
-async function resolveMediaForItem(it) {
-  const stored = (it?.mediaUrl || "").trim();
-  if (stored) {
-    let t = it.mediaType || guessTypeFromUrl(stored);
-    if (t === "video" && isGifHint(it, stored)) t = "gif";
-    const thumb = (it.thumb || "").trim() || (t !== "video" ? stored : "");
-    return { url: stored, type: t, thumb };
-  }
-
+async function resolveMediaFromPage(it) {
   try {
     const res = await fetch(it.url, { credentials: "include" });
     const html = await res.text();
@@ -193,11 +230,38 @@ async function resolveMediaForItem(it) {
     const thumb = img || (type !== "video" ? url : "");
     return { url, type, thumb };
   } catch {
-    let t = it.mediaType || guessTypeFromUrl(it.thumb || it.url);
-    const u = (it.mediaUrl || it.thumb || it.url || "").trim();
-    if (t === "video" && isGifHint(it, u)) t = "gif";
-    return { url: u, type: t, thumb: it.thumb || "" };
+    return { url: "", type: "image", thumb: (it?.thumb || "").trim() };
   }
+}
+
+async function resolveMediaForItem(it) {
+  const stored = (it?.mediaUrl || "").trim();
+  const storedIsUsable = stored && !/^blob:/i.test(stored);
+
+  if (storedIsUsable) {
+    let t = it.mediaType || guessTypeFromUrl(stored);
+    if (t === "video" && isGifHint(it, stored)) t = "gif";
+
+    if (t !== "video") {
+      const candidates = pinimgImageCandidates(it.thumb, stored);
+
+      try {
+        const working = await firstLoadableImageUrl(candidates);
+        return { url: working, type: t, thumb: working };
+      } catch {}
+    }
+
+    const thumb = (it.thumb || "").trim() || (t !== "video" ? stored : "");
+    return { url: stored, type: t, thumb };
+  }
+
+  const resolved = await resolveMediaFromPage(it);
+  if (resolved.url) return resolved;
+
+  let t = it.mediaType || guessTypeFromUrl(it.thumb || it.url);
+  const u = (it.thumb || it.url || "").trim();
+  if (t === "video" && isGifHint(it, u)) t = "gif";
+  return { url: u, type: t, thumb: it.thumb || "" };
 }
 
 function normalizeTagName(name) {
@@ -215,7 +279,7 @@ function ensureItemTags() {
   });
 }
 
-
+// ===================== Menu System =====================
 function menuOpen(btn, menu) {
   if (!btn || !menu) return;
   menu.hidden = false;
@@ -268,13 +332,13 @@ tagsMenuBtn?.addEventListener("click",   (e) => { e.preventDefault(); toggleMenu
 filterMenuBtn?.addEventListener("click", (e) => { e.preventDefault(); toggleMenuExclusive(filterMenuBtn, filterMenu); });
 dataMenuBtn?.addEventListener("click",   (e) => { e.preventDefault(); toggleMenuExclusive(dataMenuBtn, dataMenu); });
 
-
+// ===================== Storage =====================
 function saveItems()  { chrome.storage.local.set({ [VAULT_KEY]: items }); }
 function saveTags()   { chrome.storage.local.set({ [TAGS_KEY]: tags }); }
 function saveFilter() { chrome.storage.local.set({ [FILTER_KEY]: activeFilter }); }
 function saveAll()    { chrome.storage.local.set({ [VAULT_KEY]: items, [TAGS_KEY]: tags, [FILTER_KEY]: activeFilter }); }
 
-
+// ===================== Data Import/Export =====================
 menuExport?.addEventListener("click", () => {
   const payload = { version: 1, exportedAt: new Date().toISOString(), items, tags };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -356,7 +420,7 @@ fileImportInput?.addEventListener("change", (e) => {
   reader.readAsText(file);
 });
 
-
+// ===================== ZIP (media) =====================
 function getFilteredItemsNow() {
   const q = (searchInput?.value || "").trim().toLowerCase();
   let out = items;
@@ -396,6 +460,31 @@ async function fetchBlobBestEffort(url) {
   throw lastErr || new Error("fetch failed");
 }
 
+function setZipOverlayText(text) {
+  if (zipOverlayText) zipOverlayText.textContent = text || "";
+}
+
+function showZipOverlay(text = "Preparing files") {
+  if (!zipOverlay) return;
+
+  setZipOverlayText(text);
+  zipOverlay.hidden = false;
+  zipOverlay.setAttribute("aria-hidden", "false");
+  zipOverlay.classList.add("show");
+}
+
+function hideZipOverlay() {
+  if (!zipOverlay) return;
+
+  zipOverlay.classList.remove("show");
+  zipOverlay.setAttribute("aria-hidden", "true");
+  zipOverlay.hidden = true;
+}
+
+function waitForPaint() {
+  return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+}
+
 async function downloadZipMedia() {
   closeAllMenus();
 
@@ -415,7 +504,9 @@ async function downloadZipMedia() {
 
   const btn = menuZip;
   const oldText = btn?.textContent || "";
-  if (btn) { btn.disabled = true; btn.textContent = "Zipping…"; }
+  if (btn) { btn.disabled = true; btn.textContent = "Zipping..."; }
+  showZipOverlay(`Preparing ${list.length} item(s)`);
+  await waitForPaint();
 
   const zip = new JSZip();
   const folder = zip.folder("XzenVaultMedia");
@@ -427,7 +518,9 @@ async function downloadZipMedia() {
   for (let i = 0; i < list.length; i++) {
     const it = list[i];
     try {
-      if (btn) btn.textContent = `Zipping… (${i + 1}/${list.length})`;
+      const progressText = `Zipping... (${i + 1}/${list.length})`;
+      if (btn) btn.textContent = progressText;
+      setZipOverlayText(progressText);
 
       const resolved = await resolveMediaForItem(it);
       const mediaUrl = (resolved?.url || "").trim();
@@ -469,7 +562,11 @@ async function downloadZipMedia() {
   }, null, 2));
 
   try {
-    const blob = await zip.generateAsync({ type: "blob" });
+    setZipOverlayText("Building ZIP... 0%");
+    const blob = await zip.generateAsync({ type: "blob" }, (meta) => {
+      const pct = Math.max(0, Math.min(100, Math.round(meta.percent || 0)));
+      setZipOverlayText(`Building ZIP... ${pct}%`);
+    });
     const url = URL.createObjectURL(blob);
     const dateStr = new Date().toISOString().slice(0, 10);
 
@@ -483,13 +580,14 @@ async function downloadZipMedia() {
   } catch (e) {
     alert("ZIP failed: " + (e?.message || e));
   } finally {
+    hideZipOverlay();
     if (btn) { btn.disabled = false; btn.textContent = oldText || "Download ZIP (media)"; }
   }
 }
 
 menuZip?.addEventListener("click", downloadZipMedia);
 
-
+// ===================== Bulk mode =====================
 function updateCardSelectedUI(card, url) {
   if (!card || !url) return;
   const on = selectedUrls.has(url);
@@ -542,7 +640,7 @@ function toggleSelected(url) {
   updateSelectedUI();
 }
 
-
+// ===================== Tags (filter menu) =====================
 function addTag(name) {
   const clean = normalizeTagName(name);
   if (!clean) return;
@@ -596,7 +694,7 @@ function rebuildTagMenus() {
   }
 }
 
-
+// ===================== Tag Picker + Context Menu =====================
 function openTagPicker(urlArray) {
   editingUrls = new Set(urlArray || []);
 
@@ -637,7 +735,7 @@ function renderTagPickerCloud() {
     btn.type = "button";
     btn.textContent = t;
 
-    
+    // highlight if first selected item has this tag (simple UX)
     if (editingUrls.size > 0) {
       const firstUrl = editingUrls.values().next().value;
       const firstItem = items.find(it => it?.url === firstUrl);
@@ -716,7 +814,7 @@ function renameTagGlobal(oldName) {
 
   const kOld = tagKey(oldName);
 
-  
+  // prevent duplicates
   if (tags.some(t => tagKey(t) === tagKey(clean) && tagKey(t) !== kOld)) {
     alert("A tag with that name already exists.");
     return;
@@ -728,7 +826,7 @@ function renameTagGlobal(oldName) {
   items.forEach(it => {
     if (!Array.isArray(it.tags)) return;
     it.tags = it.tags.map(t => (tagKey(t) === kOld ? clean : t));
-    
+    // dedupe
     const seen = new Set();
     it.tags = it.tags.filter(t => {
       const k = tagKey(t);
@@ -738,7 +836,7 @@ function renameTagGlobal(oldName) {
     });
   });
 
-  
+  // if active filter renamed
   if (activeFilter !== "__all" && tagKey(activeFilter) === kOld) {
     activeFilter = clean;
   }
@@ -791,18 +889,18 @@ tagInput?.addEventListener("keydown", (e) => {
   const existing = tags.find(t => tagKey(t) === tagKey(clean));
 
   if (existing) {
-    
+    // toggle existing tag on selected items
     if (editingUrls.size > 0) {
       const chips = Array.from(tagList.querySelectorAll(".tag-chip-btn"));
       const target = chips.find(c => tagKey(c.textContent) === tagKey(existing));
       if (target) target.click();
     }
   } else {
-    
+    // add new tag
     addTag(clean);
     renderTagPickerCloud();
 
-    
+    // auto-apply to selected items
     if (editingUrls.size > 0) {
       const chips = Array.from(tagList.querySelectorAll(".tag-chip-btn"));
       const newBtn = chips.find(c => tagKey(c.textContent) === tagKey(clean));
@@ -820,7 +918,7 @@ tagX?.addEventListener("click", hideTagModal);
 tagDoneBtn?.addEventListener("click", () => {
   const v = (tagInput?.value || "").trim();
 
-  
+  // If user typed a tag and hit Done without Enter: create + apply
   if (v) {
     const clean = normalizeTagName(v);
     if (clean) {
@@ -846,7 +944,7 @@ tagDoneBtn?.addEventListener("click", () => {
   hideTagModal();
 });
 
-
+// ===================== Help System (Static) =====================
 function openHelp() {
   if (!helpModal) return;
   helpModal.classList.add("show");
@@ -862,7 +960,7 @@ helpBtn?.addEventListener("click", openHelp);
 helpBackdrop?.addEventListener("click", closeHelp);
 helpX?.addEventListener("click", closeHelp);
 
-
+// ===================== Render =====================
 function render() {
   if (!vaultGrid || !emptyState) return;
 
@@ -893,7 +991,7 @@ function render() {
     card.className = `card ${selectedUrls.has(it.url) ? "selected" : ""}`;
     card.dataset.i = idx;
 
-    
+    // checkbox
     const cb = document.createElement("input");
     cb.className = "select-checkbox";
     cb.type = "checkbox";
@@ -910,7 +1008,7 @@ function render() {
 
     card.appendChild(cb);
 
-    
+    // thumb
     const thumbWrap = document.createElement("div");
     thumbWrap.className = "thumb-wrapper";
     thumbWrap.dataset.openviewer = idx;
@@ -950,7 +1048,7 @@ function render() {
 
     card.appendChild(thumbWrap);
 
-    
+    // body
     const body = document.createElement("div");
     body.className = "card-body";
 
@@ -959,7 +1057,7 @@ function render() {
     titleDiv.textContent = it.title || "Pinterest";
     body.appendChild(titleDiv);
 
-    
+    // tag chips
     if (Array.isArray(it.tags) && it.tags.length > 0) {
       const tagDiv = document.createElement("div");
       tagDiv.className = "card-tags";
@@ -1046,7 +1144,7 @@ function render() {
 
   vaultGrid.appendChild(frag);
 
-  
+  // thumbnail preload
   filtered.forEach(async (it, i) => {
     const imgEl = vaultGrid.querySelector(`[data-thumb="${i}"]`);
     const fbEl  = vaultGrid.querySelector(`[data-fallback="${i}"]`);
@@ -1057,8 +1155,8 @@ function render() {
     if (!thumb) { fbEl.textContent = "No thumbnail"; return; }
 
     try {
-      await preloadImage(thumb);
-      imgEl.src = thumb;
+      const workingThumb = await firstLoadableImageUrl(pinimgImageCandidates(thumb, it.mediaUrl));
+      imgEl.src = workingThumb;
       wrap.classList.add("loaded");
       fbEl.style.display = "none";
     } catch {
@@ -1069,10 +1167,10 @@ function render() {
   updateSelectedUI();
 }
 
-
+// ===================== Search =====================
 searchInput?.addEventListener("input", () => render());
 
-
+// ===================== Events (Menus) =====================
 menuBulkToggle?.addEventListener("click", () => {
   setBulkMode(!(bulkMode && bulkModeKind === "delete"), "delete");
 });
@@ -1112,10 +1210,10 @@ menuManageTags?.addEventListener("click", () => {
 });
 
 menuCreateTag?.addEventListener("click", () => {
-  openTagPicker([]); 
+  openTagPicker([]); // manage tags only
 });
 
-
+// ===================== Storage Sync =====================
 chrome.storage.onChanged.addListener((c, a) => {
   if (a !== "local") return;
 
@@ -1128,6 +1226,20 @@ chrome.storage.onChanged.addListener((c, a) => {
   render();
 });
 
+// ===================== Viewer =====================
+function applyViewerActionsState(open, persist = true) {
+  viewerActionsOpen = !!open;
+  viewerDialog?.classList.toggle("actions-collapsed", !viewerActionsOpen);
+  viewerActionsToggle?.setAttribute("aria-expanded", String(viewerActionsOpen));
+
+  if (viewerActionsToggle) {
+    viewerActionsToggle.textContent = viewerActionsOpen ? "Hide actions" : "Actions";
+  }
+
+  if (persist) {
+    chrome.storage.local.set({ [VIEWER_ACTIONS_KEY]: viewerActionsOpen });
+  }
+}
 
 function showViewer() {
   if (!viewer) return;
@@ -1148,6 +1260,63 @@ function hideViewer() {
 
 viewerClose?.addEventListener("click", hideViewer);
 viewerX?.addEventListener("click", hideViewer);
+viewerActionsToggle?.addEventListener("click", () => {
+  applyViewerActionsState(!viewerActionsOpen);
+});
+
+async function renderViewerImageFallback(it, ...urls) {
+  if (!viewerMedia || activeItem !== it) return;
+
+  try {
+    const working = await firstLoadableImageUrl(pinimgImageCandidates(...urls));
+    if (activeItem !== it) return;
+
+    const img = document.createElement("img");
+    img.decoding = "async";
+    img.loading = "eager";
+    img.referrerPolicy = "no-referrer-when-downgrade";
+    img.draggable = false;
+    img.src = working;
+    viewerMedia.replaceChildren(img);
+  } catch {
+    if (activeItem !== it) return;
+    viewerMedia.innerHTML = '<div class="viewer-media-error">Video unavailable. Use Open to view the original pin.</div>';
+  }
+}
+
+function renderViewerVideo(it, resolved, allowPageRetry = true) {
+  if (!viewerMedia || activeItem !== it) return;
+
+  const v = document.createElement("video");
+  v.controls = true;
+  v.playsInline = true;
+  v.preload = "metadata";
+  v.referrerPolicy = "no-referrer-when-downgrade";
+  v.poster = resolved.thumb || it.thumb || "";
+
+  v.addEventListener("error", async () => {
+    if (activeItem !== it) return;
+
+    if (allowPageRetry) {
+      const fromPage = await resolveMediaFromPage(it);
+      if (activeItem !== it) return;
+
+      if (fromPage.type === "video" && fromPage.url && fromPage.url !== resolved.url) {
+        activeResolved = fromPage;
+        renderViewerVideo(it, fromPage, false);
+        return;
+      }
+
+      await renderViewerImageFallback(it, fromPage.thumb, resolved.thumb, it.thumb, it.mediaUrl);
+      return;
+    }
+
+    await renderViewerImageFallback(it, resolved.thumb, it.thumb, it.mediaUrl);
+  }, { once: true });
+
+  v.src = resolved.url;
+  viewerMedia.replaceChildren(v);
+}
 
 async function openViewer(it) {
   if (!viewerTitle || !viewerOpen || !viewerMedia) return;
@@ -1162,20 +1331,13 @@ async function openViewer(it) {
   const resolved = await resolveMediaForItem(it);
   activeResolved = resolved;
 
-  
+  // video
   if (resolved.type === "video") {
-    const v = document.createElement("video");
-    v.controls = true;
-    v.playsInline = true;
-    v.preload = "metadata";
-    v.referrerPolicy = "no-referrer-when-downgrade";
-    v.src = resolved.url;
-    viewerMedia.innerHTML = "";
-    viewerMedia.appendChild(v);
+    renderViewerVideo(it, resolved);
     return;
   }
 
-  
+  // gif (might be mp4/webm)
   if (resolved.type === "gif") {
     const u = resolved.url || resolved.thumb || "";
     const isVid = hasExt(u, ["mp4", "webm"]);
@@ -1205,7 +1367,7 @@ async function openViewer(it) {
     return;
   }
 
-  
+  // image
   const img = document.createElement("img");
   img.decoding = "async";
   img.loading = "eager";
@@ -1227,7 +1389,7 @@ viewerCopy?.addEventListener("click", async () => {
   } catch {}
 });
 
-
+// Download current media (uses chrome.downloads)
 viewerDownload?.addEventListener("click", () => {
   if (!activeItem || !activeResolved?.url) return;
 
@@ -1243,14 +1405,15 @@ viewerDownload?.addEventListener("click", () => {
   });
 });
 
-
+// ===================== Boot =====================
 function load() {
   chrome.storage.local.get(
-    { [VAULT_KEY]: [], [TAGS_KEY]: [], [FILTER_KEY]: "__all" },
+    { [VAULT_KEY]: [], [TAGS_KEY]: [], [FILTER_KEY]: "__all", [VIEWER_ACTIONS_KEY]: true },
     (d) => {
       items = Array.isArray(d[VAULT_KEY]) ? d[VAULT_KEY] : [];
       tags  = Array.isArray(d[TAGS_KEY])  ? d[TAGS_KEY]  : [];
       activeFilter = d[FILTER_KEY] || "__all";
+      applyViewerActionsState(true, false);
 
       ensureItemTags();
       rebuildTagMenus();
@@ -1261,7 +1424,7 @@ function load() {
 
 load();
 
-
+// ===================== Quick Preview (hold Space) =====================
 function qpEnsure() {
   let el = document.getElementById("quickPreview");
   if (el) return el;
@@ -1280,13 +1443,24 @@ function qpEnsure() {
   return el;
 }
 
-function qpShow() { qpEnsure().classList.add("show"); }
+function qpShow() {
+  if (qpHideTimer) {
+    clearTimeout(qpHideTimer);
+    qpHideTimer = 0;
+  }
+  qpEnsure().classList.add("show");
+}
 function qpHide() {
   const el = document.getElementById("quickPreview");
   if (!el) return;
   el.classList.remove("show");
-  const body = el.querySelector("#qpBody");
-  if (body) body.innerHTML = "";
+  if (qpHideTimer) clearTimeout(qpHideTimer);
+  qpHideTimer = setTimeout(() => {
+    if (el.classList.contains("show")) return;
+    const body = el.querySelector("#qpBody");
+    if (body) body.innerHTML = "";
+    qpHideTimer = 0;
+  }, 140);
 }
 
 function qpActiveElementIsTyping() {
@@ -1306,7 +1480,7 @@ async function qpRenderForItem(it) {
   body.innerHTML = `<div style="color:#777; font-weight:600; padding: 40px;">Loading…</div>`;
   qpShow();
 
-  
+  // fast thumb first
   const qt = (it.thumb || "").trim() || (it.mediaType !== "video" ? (it.mediaUrl || "").trim() : "") || "";
   if (qt) {
     body.innerHTML = "";
@@ -1372,15 +1546,18 @@ vaultGrid?.addEventListener("pointerout", (e) => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (e.code !== "Space" || e.repeat || qpActiveElementIsTyping()) return;
-  spaceDown = true;
+  if (e.code !== "Space" || qpActiveElementIsTyping()) return;
   e.preventDefault();
+  if (e.repeat) return;
+
+  spaceDown = true;
   const it = filteredView[hoveredIndex];
   if (it) qpRenderForItem(it);
 });
 
 window.addEventListener("keyup", (e) => {
   if (e.code !== "Space") return;
+  if (!qpActiveElementIsTyping()) e.preventDefault();
   spaceDown = false;
   qpHide();
 });
@@ -1390,7 +1567,7 @@ window.addEventListener("blur", () => {
   spaceDown = false;
   qpHide();
 });
-
+/* --- INTRO MODAL LOGIC --- */
 (function() {
   const INTRO_KEY = "xzenVaultIntroSeen";
   const modal = document.getElementById("introModal");
@@ -1407,7 +1584,7 @@ window.addEventListener("blur", () => {
   const nextBtn = document.getElementById("introNext");
   const dontShow = document.getElementById("introDontShow");
 
-  
+  // Define your preview slides here
   const shots = [
     {
       txt: "Welcome to your Pinterest Vault. This is a private space for your saved pins.",
@@ -1435,7 +1612,7 @@ window.addEventListener("blur", () => {
     if (imgEl) imgEl.src = s.img;
     if (countEl) countEl.textContent = `${idx + 1} / ${shots.length}`;
 
-    
+    // Update dots
     const dots = dotsWrap.querySelectorAll(".intro-dot");
     dots.forEach((d, i) => {
       d.classList.toggle("active", i === idx);
@@ -1447,7 +1624,7 @@ window.addEventListener("blur", () => {
     setTimeout(() => { modal.style.display = "none"; }, 200);
   }
 
-  
+  // Generate Dots
   dotsWrap.innerHTML = shots.map((_, i) =>
     `<button type="button" class="intro-dot" aria-label="Slide ${i + 1}"></button>`
   ).join("");
@@ -1462,7 +1639,7 @@ window.addEventListener("blur", () => {
   function closeAndMaybeSave() {
     const never = !!dontShow?.checked;
     if (never) {
-      
+      // Using localStorage directly if your helper functions aren't available
       localStorage.setItem(INTRO_KEY, "true");
       hide();
     } else {
@@ -1481,11 +1658,11 @@ window.addEventListener("blur", () => {
     if (e.key === "ArrowRight") setSlide(idx + 1);
   });
 
-  
+  // Check if already dismissed
   const isDismissed = localStorage.getItem(INTRO_KEY);
   if (!isDismissed) {
     modal.style.display = "flex";
-    
+    // Small timeout to allow display:flex to register before opacity transition
     setTimeout(() => {
       modal.classList.add("show");
       setSlide(0);

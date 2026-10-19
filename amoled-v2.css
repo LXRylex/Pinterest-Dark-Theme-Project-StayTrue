@@ -1,0 +1,870 @@
+/* Only the page background — nothing else */
+body {
+  background: #000000 !important;
+}
+
+.default_k {
+  background-color: #000000 !important;
+}
+
+[role="tablist"] > [role="tab"] .box_k[style*="height:48px"],
+[role="tablist"] > [role="tab"] .box_k[style*="height: 48px"] {
+  background-color: #000000 !important;
+}
+
+.transparent_U,
+.transparent_U.focused_U {
+  background-color: transparent !important;
+}
+
+.transparent_U.hovered_U {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+.white_U,
+.white_U.focused_U,
+.white_U.hovered_U {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+.secondary_n {
+  background-color: #000000 !important;
+  box-shadow: inset 0 -2px 0 0 var(--pdt-accent, #8E6BFF) !important;
+}
+
+.primary_s {
+  background-color: #000000 !important;
+}
+
+.secondary_k {
+  background-color: transparent !important;
+}
+
+.secondary_k:hover {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+}
+
+.secondary_l {
+  background-color: #000000 !important;
+  box-shadow: inset 0 -2px 0 0 var(--pdt-accent, #8E6BFF) !important;
+}
+
+.secondary_l:hover {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+.tertiary_l,
+.tertiary_l:hover {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+  border-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+.primary_n,
+.primary_n:hover,
+.primary_n:active,
+.primary_n:focus,
+.primary_n:focus-visible {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+button.xzen-vault-home-save-btn {
+  right: 48px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+button.xzen-vault-home-save-btn > div {
+  border-radius: 0 !important;
+}
+
+button.xzen-vault-save-btn.xzen-vault-closeup-save-btn {
+  width: 48px !important;
+  height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+button.xzen-vault-save-btn.xzen-vault-closeup-save-btn .VHreRh {
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--pdt-accent, #8E6BFF) !important;
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+button.xzen-vault-save-btn.xzen-vault-closeup-save-btn svg {
+  display: block !important;
+  margin: auto !important;
+}
+
+.icon_C {
+  fill: #ffffff !important;
+}
+
+.default_C {
+  color: #ffffff !important;
+}
+
+/* Pin Card Footer Texts */
+[data-test-id="pinrep-footer"] span,
+[data-test-id="pinrep-footer"] a,
+[data-test-id="pinrep-footer"] h2,
+[data-test-id="pinrep-footer-organic-title"] {
+  color: #ffffff !important;
+}
+
+/* Global Text Inversion */
+:root,
+body {
+  --sema-color-text-default: #ffffff !important;
+}
+
+/* Sidebar Container */
+[data-test-id="sidebar-container"] {
+  background-color: #000000 !important;
+  border-right-color: #1a1a1a !important;
+}
+
+/* Sidebar Settings Panel */
+#side-bar-settings-panel {
+  background-color: #000000 !important;
+  border-right: 1px solid #1a1a1a !important;
+}
+
+/* Left vertical nav rail */
+nav#VerticalNavContent,
+nav#VerticalNavContent > div,
+nav#VerticalNavContent > div > div {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-right-color: #1a1a1a !important;
+}
+
+/* Left nav icon buttons stay black */
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] a,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] a,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] button,
+nav#VerticalNavContent [data-test-id="bell-icon"] button,
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] a > div,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] a > div,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] button > div,
+nav#VerticalNavContent [data-test-id="bell-icon"] button > div,
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] .VHreRh,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] .VHreRh,
+nav#VerticalNavContent [data-test-id="bell-icon"] .VHreRh {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] a:hover,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] a:hover,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] button:hover,
+nav#VerticalNavContent [data-test-id="bell-icon"] button:hover,
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] a:hover > div,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] a:hover > div,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] button:hover > div,
+nav#VerticalNavContent [data-test-id="bell-icon"] button:hover > div {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] a:hover .VHreRh,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] a:hover .VHreRh,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] button:hover .VHreRh,
+nav#VerticalNavContent [data-test-id="bell-icon"] button:hover .VHreRh {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Nav icons white */
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] svg,
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] svg *,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] svg,
+nav#VerticalNavContent [data-test-id="vertical-nav-icon"] svg *,
+nav#VerticalNavContent [data-test-id="bell-icon"] svg,
+nav#VerticalNavContent [data-test-id="bell-icon"] svg * {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Pinterest logo only */
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] svg,
+nav#VerticalNavContent [data-test-id="pinterest-logo-home-button"] svg * {
+  fill: var(--pdt-accent, #8E6BFF) !important;
+  stroke: var(--pdt-accent, #8E6BFF) !important;
+  color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Sidebar Hover States */
+#side-bar-settings-panel a:hover,
+#side-bar-settings-panel div[role="button"]:hover,
+#side-bar-settings-panel a:hover > div {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+  color: #000000 !important;
+  border-radius: 8px !important;
+}
+
+#install-app:hover,
+#install-app:hover > div,
+#install-app:hover span,
+div[role="button"]:hover #install-app,
+div[role="button"]:hover #install-app > div,
+div[role="button"]:hover #install-app span {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+/* Settings panel icons */
+#side-bar-settings-panel a svg,
+#side-bar-settings-panel a svg *,
+#side-bar-settings-panel a path,
+#side-bar-settings-panel button svg,
+#side-bar-settings-panel button svg *,
+#side-bar-settings-panel button path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Settings panel close button */
+#side-bar-settings-panel button[aria-label="Close settings and support menu"] > div,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"] .VHreRh.pZY3za.XjRT60,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:hover > div,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:hover .VHreRh.pZY3za.XjRT60,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:active > div,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:active .VHreRh.pZY3za.XjRT60,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:focus-visible > div,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:focus-visible .VHreRh.pZY3za.XjRT60 {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:hover .VHreRh.pZY3za.XjRT60,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:active .VHreRh.pZY3za.XjRT60,
+#side-bar-settings-panel button[aria-label="Close settings and support menu"]:focus-visible .VHreRh.pZY3za.XjRT60 {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Create / Plus Action Buttons */
+[data-test-id="create-pin-cluster-button"] {
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+  border: none !important;
+  border-radius: 24px !important;
+}
+
+[data-test-id="create-pin-cluster-button"] div {
+  background-color: transparent !important;
+  color: #000000 !important;
+}
+
+[data-test-id="create-pin-cluster-button"]:hover {
+  background-color: var(--pdt-accent, #ab7db5) !important;
+}
+
+[data-test-id="create-pin-cluster-button"] svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Sticky Feed Bar Background */
+[data-test-id="homefeed-feed"] div[style*="background-color: var(--sema-color-background-default)"] {
+  background-color: #000000 !important;
+}
+
+/* More ideas tabs bar */
+div:has(> [data-root-margin="more-ideas-tabs"]),
+[data-root-margin="more-ideas-tabs"],
+[data-root-margin="more-ideas-tabs"] > .ADXRXN,
+[data-root-margin="more-ideas-tabs"] .ecEhnF,
+[data-root-margin="more-ideas-tabs"] [role="tablist"] {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+[data-root-margin="more-ideas-tabs"] [role="tab"] > div > div {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+[data-root-margin="more-ideas-tabs"] [role="tab"] .WuRgKB {
+  color: #ffffff !important;
+}
+
+[data-root-margin="more-ideas-tabs"] [role="tab"]:hover .WuRgKB {
+  color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+[data-root-margin="more-ideas-tabs"] [role="tab"]:hover > div > div {
+  box-shadow: inset 0 -2px 0 0 var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Top tabs underline indicator */
+[data-root-margin="more-ideas-tabs"] .TfR6nu > div,
+[data-root-margin="more-ideas-tabs"] ._gOf1c {
+  display: none !important;
+}
+
+/* Top header and search bar */
+div[role="banner"],
+[data-test-id="header"],
+[data-test-id="header-Header"],
+[data-test-id="header-background"],
+[data-test-id="nags-container"] {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+/* Search box shell */
+#searchBoxContainer,
+[data-test-id="search-box-container"],
+#searchBoxContainer > div,
+[data-test-id="search-box-container"] > div {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  position: relative !important;
+  z-index: 20 !important;
+  overflow: visible !important;
+}
+
+/* Search field outline */
+#searchBoxContainer .Lo7aEl,
+[data-test-id="search-box-container"] .Lo7aEl {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-radius: 12px !important;
+  outline: 2px solid var(--pdt-accent, #8E6BFF) !important;
+  outline-offset: 0 !important;
+  position: relative !important;
+  z-index: 21 !important;
+  overflow: visible !important;
+}
+
+div[role="banner"] input,
+div[role="banner"] input[type="search"],
+div[role="banner"] input[placeholder],
+#searchBoxContainer input,
+[data-test-id="search-box-input"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+#searchBoxContainer input::placeholder,
+[data-test-id="search-box-input"]::placeholder {
+  color: #ffffff !important;
+  opacity: 0.7 !important;
+}
+
+/* Search icons */
+#searchBoxContainer svg,
+#searchBoxContainer svg *,
+[data-test-id="search-box-container"] svg,
+[data-test-id="search-box-container"] svg * {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Search action buttons */
+#searchBoxContainer [data-test-id="button-container"],
+#searchBoxContainer [data-test-id="button-container"] > div,
+#searchBoxContainer [data-test-id="button-container"] button,
+#searchBoxContainer [data-test-id="button-container"] button > div,
+#searchBoxContainer [data-test-id="button-container"] .VHreRh {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+#searchBoxContainer [data-test-id="button-container"] button:hover,
+#searchBoxContainer [data-test-id="button-container"] button:hover > div,
+#searchBoxContainer [data-test-id="button-container"] button:hover .VHreRh {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+#searchBoxContainer [data-test-id="button-container"] button:hover .VHreRh {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+#searchBoxContainer [data-test-id="button-container"] svg,
+#searchBoxContainer [data-test-id="button-container"] svg *,
+#searchBoxContainer [data-test-id="button-container"] path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Lens + voice capsule */
+#searchBoxContainer button[aria-label="Lens"] > div,
+#searchBoxContainer button[aria-label="Voice search"] > div,
+#searchBoxContainer button[aria-label="Lens"] .VHreRh,
+#searchBoxContainer button[aria-label="Voice search"] .VHreRh {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+#searchBoxContainer button[aria-label="Lens"]:hover > div,
+#searchBoxContainer button[aria-label="Voice search"]:hover > div {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+#searchBoxContainer button[aria-label="Lens"]:hover .VHreRh,
+#searchBoxContainer button[aria-label="Voice search"]:hover .VHreRh {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Header profile hover shell */
+[data-test-id="header-profile"] a > div[aria-hidden="true"],
+[data-test-id="header-profile"] a:hover > div[aria-hidden="true"] {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+/* Accounts dropdown */
+#HeaderAccountOptionsLayout,
+[data-test-id="HeaderAccountsOptionLayout"] {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+#HeaderAccountOptionsLayout *,
+[data-test-id="HeaderAccountsOptionLayout"] * {
+  color: #ffffff !important;
+}
+
+#HeaderAccountOptionsLayout svg,
+#HeaderAccountOptionsLayout svg *,
+[data-test-id="HeaderAccountsOptionLayout"] svg,
+[data-test-id="HeaderAccountsOptionLayout"] svg * {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+#HeaderAccountOptionsLayout a:hover,
+#HeaderAccountOptionsLayout button:hover,
+#HeaderAccountOptionsLayout [role="menuitem"]:hover,
+[data-test-id="HeaderAccountsOptionLayout"] a:hover,
+[data-test-id="HeaderAccountsOptionLayout"] button:hover,
+[data-test-id="HeaderAccountsOptionLayout"] [role="menuitem"]:hover {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+}
+
+/* Accounts trigger arrow capsule */
+button[data-test-id="header-accounts-options-button"],
+button[data-test-id="header-accounts-options-button"] > div,
+button[data-test-id="header-accounts-options-button"] .VHreRh.pZY3za.XjRT60 {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+button[data-test-id="header-accounts-options-button"]:hover,
+button[data-test-id="header-accounts-options-button"]:focus-visible,
+button[data-test-id="header-accounts-options-button"]:active,
+button[data-test-id="header-accounts-options-button"][aria-expanded="true"],
+button[data-test-id="header-accounts-options-button"]:hover > div,
+button[data-test-id="header-accounts-options-button"]:focus-visible > div,
+button[data-test-id="header-accounts-options-button"]:active > div,
+button[data-test-id="header-accounts-options-button"][aria-expanded="true"] > div {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+button[data-test-id="header-accounts-options-button"]:hover .VHreRh.pZY3za.XjRT60,
+button[data-test-id="header-accounts-options-button"]:focus-visible .VHreRh.pZY3za.XjRT60,
+button[data-test-id="header-accounts-options-button"]:active .VHreRh.pZY3za.XjRT60,
+button[data-test-id="header-accounts-options-button"][aria-expanded="true"] .VHreRh.pZY3za.XjRT60 {
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+button[data-test-id="header-accounts-options-button"] svg,
+button[data-test-id="header-accounts-options-button"] svg *,
+button[data-test-id="header-accounts-options-button"] path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Profile page hero/header section */
+.appContent .ADXRXN.ecEhnF,
+.appContent .ADXRXN.ecEhnF > div,
+.appContent .ADXRXN.ecEhnF .H2DtUH.KwViV7.FE_3R1.KDGhSV._tKaHB,
+.appContent .ADXRXN.ecEhnF .BVzdUh.c49R7p.g0I6wi.sSBu24.wl0pCr.zEVE_X {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+/* Profile tabs, fixed duplicate hover */
+#_pins-profile-tab,
+#_boards-profile-tab,
+#_collages-profile-tab,
+#_pins-profile-tab:hover,
+#_boards-profile-tab:hover,
+#_collages-profile-tab:hover,
+#_pins-profile-tab:focus-visible,
+#_boards-profile-tab:focus-visible,
+#_collages-profile-tab:focus-visible {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Kill duplicate wrapper background */
+#_pins-profile-tab > div,
+#_boards-profile-tab > div,
+#_collages-profile-tab > div,
+#_pins-profile-tab:hover > div,
+#_boards-profile-tab:hover > div,
+#_collages-profile-tab:hover > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Real tab chip background */
+#_pins-profile-tab > div > .gEQpi5,
+#_boards-profile-tab > div > .gEQpi5,
+#_collages-profile-tab > div > .gEQpi5 {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* Selected tab stays black */
+#_pins-profile-tab[aria-selected="true"] > div > .gEQpi5,
+#_boards-profile-tab[aria-selected="true"] > div > .gEQpi5,
+#_collages-profile-tab[aria-selected="true"] > div > .gEQpi5 {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+/* Custom hover only on real chip */
+#_pins-profile-tab:hover > div > .gEQpi5,
+#_boards-profile-tab:hover > div > .gEQpi5,
+#_collages-profile-tab:hover > div > .gEQpi5 {
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+  border-radius: 12px !important;
+}
+
+/* Text turns purple on hover */
+#_pins-profile-tab:hover .WuRgKB,
+#_boards-profile-tab:hover .WuRgKB,
+#_collages-profile-tab:hover .WuRgKB {
+  color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Account options dropdown */
+div[aria-label="Account options"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+div[aria-label="Account options"] button:hover,
+div[aria-label="Account options"] button:hover > div {
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+}
+
+div[aria-label="Account options"] button:hover {
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+  border-radius: 12px !important;
+}
+
+/* Organize button */
+button[aria-label="Organize"] .VHreRh {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+button[aria-label="Organize"] svg,
+button[aria-label="Organize"] svg *,
+button[aria-label="Organize"] path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+button[aria-label="Organize"]:hover .VHreRh,
+button[aria-label="Organize"]:focus-visible .VHreRh,
+button[aria-label="Organize"]:active .VHreRh {
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+  border-radius: 14px !important;
+}
+
+/* Profile header card */
+[data-test-id="self-profile-header"] a > div,
+[data-test-id="self-profile-header"] a .BVzdUh {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+[data-test-id="self-profile-header"] a:hover > div,
+[data-test-id="self-profile-header"] a:hover .BVzdUh {
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+  border-radius: 18px !important;
+}
+
+/* Share Profile button */
+button[aria-label="Share Profile"] {
+  background: var(--pdt-accent, #8E6BFF) !important;
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+  border: 1px solid var(--pdt-accent, #8E6BFF) !important;
+  color: #ffffff !important;
+  border-radius: 16px !important;
+}
+
+button[aria-label="Share Profile"] *,
+button[aria-label="Share Profile"] .WuRgKB {
+  color: #ffffff !important;
+}
+
+button[aria-label="Share Profile"]:hover {
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  background-color: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Favorites button, outline only */
+button[aria-label="Favorites"] > div,
+button[aria-label="Favorites"] .dBMCN4 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid var(--pdt-accent, #8E6BFF) !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+button[aria-label="Favorites"]:hover > div,
+button[aria-label="Favorites"]:hover .dBMCN4 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--pdt-accent, #8E6BFF) !important;
+  box-shadow: none !important;
+}
+
+button[aria-label="Favorites"] .WuRgKB {
+  color: #ffffff !important;
+}
+
+button[aria-label="Favorites"] svg,
+button[aria-label="Favorites"] svg *,
+button[aria-label="Favorites"] path {
+  fill: var(--pdt-accent, #B38AFF) !important;
+  stroke: var(--pdt-accent, #B38AFF) !important;
+  color: var(--pdt-accent, #B38AFF) !important;
+  filter: drop-shadow(0 0 6px var(--pdt-accent, #8E6BFF)) !important;
+}
+
+/* Created by you button, outline only */
+button[aria-label="Created by you"] > div,
+button[aria-label="Created by you"] .dBMCN4 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid var(--pdt-accent, #8E6BFF) !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+button[aria-label="Created by you"]:hover > div,
+button[aria-label="Created by you"]:hover .dBMCN4 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--pdt-accent, #8E6BFF) !important;
+  box-shadow: none !important;
+}
+
+button[aria-label="Created by you"] .WuRgKB {
+  color: #ffffff !important;
+}
+/* Hide selected profile tab underline */
+#_pins-profile-tab ._gOf1c,
+#_boards-profile-tab ._gOf1c,
+#_collages-profile-tab ._gOf1c {
+  display: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+/* Closeup image background only */
+[data-test-id="closeup-body-image-container"],
+[data-test-id="closeup-body-image-container"] > div,
+[data-test-id="closeup-image"],
+[data-test-id="closeup-image"] > div,
+[data-test-id="story-pin-image-block"],
+[data-test-id="story-pin-image-block"] > div,
+[data-test-id="story-pin-image-block"] > div > div,
+[data-test-id="story-pin-image-block"] .gEQpi5,
+div:has(> [data-test-id="story-pin-image-block"]) {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+/* Pinterest board picker / Save flyout: keep every panel AMOLED black. */
+.co9vq_.Ula08X [role="dialog"][aria-label="Popover"],
+[data-test-id="board-picker-flyout"],
+[data-test-id="board-picker-flyout"] section,
+[data-test-id="board-picker-flyout"] [role="list"],
+[data-test-id="board-picker-flyout"] [data-test-id="boardWithoutSection"],
+[data-test-id="board-picker-flyout"] [data-test-id^="board-row-"],
+[data-test-id="board-picker-flyout"] [data-test-id="search-boards-field-container"],
+[data-test-id="board-picker-flyout"] [data-test-id="create-board"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+[data-test-id="board-picker-flyout"] input[type="search"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff !important;
+}
+
+[data-test-id="board-picker-flyout"] input[type="search"]::placeholder {
+  color: #aaa !important;
+  -webkit-text-fill-color: #aaa !important;
+}
+
+[data-test-id="board-picker-flyout"] .WuRgKB,
+[data-test-id="board-picker-flyout"] h2,
+[data-test-id="board-picker-flyout"] svg {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+/* Create-board footer has an extra painted wrapper in the V2 Pinterest markup. */
+[data-test-id="board-picker-flyout"] .lSnwe8,
+[data-test-id="board-picker-flyout"] [data-test-id="create-board-button"],
+[data-test-id="board-picker-flyout"] [data-test-id="create-board-button"] > div {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Pinterest search suggestions: black panel and white copy, regardless of query text. */
+#SuggestionsMenu {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+#SuggestionsMenu [data-test-id="typeaheadResults"],
+#SuggestionsMenu [data-test-id="typeaheadResults"] :is(div, a, button) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#SuggestionsMenu :is(h1, h2, h3, h4, h5, h6, p, span, a, button, .WuRgKB),
+#SuggestionsMenu [data-test-id="search-suggestion-text"] {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#SuggestionsMenu svg,
+#SuggestionsMenu svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+/* Current Pinterest notifications/news sidebar: black panels, white copy. */
+#news-feed-sidebar,
+#news-feed-sidebar > .H2DtUH,
+#news-feed-sidebar [data-test-id="news-hub-title"],
+#news-feed-sidebar [data-test-id="scrollable-container"],
+#news-feed-sidebar .scrollableList,
+#news-feed-sidebar .scrollableList > li,
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+#news-feed-sidebar div:not(.SXrTgC),
+#news-feed-sidebar :is(ul, li, a, button) {
+  background-color: transparent !important;
+}
+
+#news-feed-sidebar .SXrTgC {
+  background: transparent !important;
+}
+
+#news-feed-sidebar :is(div, span, h1, h2, h3, h4, p, a, button) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#news-feed-sidebar {
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  border-color: #222 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg,
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+#news-feed-sidebar [data-test-id="gestalt-avatar-svg"] text {
+  fill: #fff !important;
+}
+
+/* More-options surface: black at rest, selected V2 accent on hover. */
+div.box_k.justifyCenter_K.paddingX500_1u.paddingY500_1u.rounding6_j.xsDisplayFlex_k:has(> svg[aria-label="more options"]) {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+div.box_k.justifyCenter_K.paddingX500_1u.paddingY500_1u.rounding6_j.xsDisplayFlex_k:has(> svg[aria-label="more options"]):hover {
+  background: var(--pdt-accent, #8E6BFF) !important;
+  background-color: var(--pdt-accent, #8E6BFF) !important;
+}
+
+/* Public-board badge: black surface with white icon and copy. */
+.box_k.paddingX100_1u.rounding1_j:has(> [data-test-id="public-board-icon-label"]) {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+[data-test-id="public-board-icon-label"],
+[data-test-id="public-board-icon-label"] span {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+[data-test-id="public-board-icon-label"] svg[aria-label="public board"],
+[data-test-id="public-board-icon-label"] svg[aria-label="public board"] path {
+  color: #fff !important;
+  fill: #fff !important;
+}
+

@@ -11,7 +11,8 @@
 </head>
 
 <body>
-  <header>
+  <div class="vault-layout">
+    <aside class="vault-sidebar" aria-label="Vault controls">
     <div class="brand">
       <img class="brand-logo" src="Pinterest.png" alt="Vault" />
       <div><h1>Pinterest Vault</h1></div>
@@ -20,7 +21,7 @@
     <div class="controls">
       <div class="search-wrapper">
         <span class="search-icon">🔎</span>
-        <input id="searchInput" type="text" placeholder="Search...but pinterest titles can be weird" />
+        <input id="searchInput" type="text" placeholder="Search Tags" />
       </div>
     </div>
 
@@ -101,14 +102,25 @@
       </div>
 
     </div>
-  </header>
+    </aside>
 
+    <section class="vault-main" aria-label="Saved pins">
   <div id="emptyState">
     <div style="font-size:14px; font-weight:600; margin-bottom:6px;">Empty… for now</div>
     <div style="font-size:12px;">Open a pin and press <b>Save to Vault</b>.</div>
   </div>
 
   <main id="vaultGrid"></main>
+    </section>
+  </div>
+
+  <div class="zip-overlay" id="zipOverlay" aria-hidden="true" hidden>
+    <div class="zip-loader" role="status" aria-live="polite">
+      <div class="zip-spinner" aria-hidden="true"></div>
+      <div class="zip-title">Zipping media...</div>
+      <div class="zip-text" id="zipOverlayText">Preparing files</div>
+    </div>
+  </div>
 
   <div class="viewer" id="viewer" aria-hidden="true">
     <div class="viewer-backdrop" id="viewerClose"></div>
@@ -116,22 +128,25 @@
     <div class="viewer-dialog" role="dialog" aria-modal="true" aria-label="Media Viewer">
       <div class="viewer-header">
         <div class="viewer-title" id="viewerTitle">Preview</div>
-        <button class="viewer-x" id="viewerX" type="button">✕</button>
+        <div class="viewer-header-actions">
+          <button class="viewer-actions-toggle" id="viewerActionsToggle" type="button" aria-expanded="true" aria-controls="viewerActions">Hide actions</button>
+          <button class="viewer-x" id="viewerX" type="button">✕</button>
+        </div>
       </div>
 
-      <div class="viewer-body">
-        <div class="viewer-media" id="viewerMedia"></div>
-      </div>
-
-      <div class="viewer-footer">
-        <div class="viewer-left">
-          <a class="viewer-link" id="viewerOpen" href="#" target="_blank" rel="noreferrer">Open</a>
-          <button class="viewer-btn" id="viewerCopy" type="button">Copy</button>
+      <div class="viewer-content">
+        <div class="viewer-body">
+          <div class="viewer-media" id="viewerMedia"></div>
         </div>
 
-        <div class="viewer-right">
-          <button class="viewer-btn primary" id="viewerDownload" type="button">Download</button>
-        </div>
+        <aside class="viewer-actions" id="viewerActions" aria-label="Viewer actions">
+          <div class="viewer-actions-title">Actions</div>
+          <div class="viewer-actions-list">
+            <a class="viewer-link" id="viewerOpen" href="#" target="_blank" rel="noreferrer">Open</a>
+            <button class="viewer-btn" id="viewerCopy" type="button">Copy</button>
+            <button class="viewer-btn primary" id="viewerDownload" type="button">Download</button>
+          </div>
+        </aside>
       </div>
     </div>
   </div>

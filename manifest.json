@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Pinterest AMOLED Theme",
-  "version": "1.0.8",
-  "description": "Forces Pinterest to use a pure AMOLED black theme that actually works",
+  "version": "1.1.5",
+  "description": "Forces Pinterest to use a pure AMOLED black theme with themes, local Vault, ZIP downloads, and optional plugin support",
   "author": "Yuilix",
   "icons": {
     "16": "Pinterest.png",
@@ -18,24 +18,30 @@
       "32": "Pinterest.png"
     }
   },
-  "permissions": ["storage","downloads"],
-  "host_permissions": ["*://*.pinterest.com/*"],
+  "permissions": ["storage", "downloads"],
+  "host_permissions": [
+    "*://*.pinterest.com/*",
+    "*://*.pinimg.com/*",
+    "*://i.pinimg.com/*"
+  ],
   "content_scripts": [
     {
       "matches": ["*://*.pinterest.com/*"],
-      "js": ["toggle-amoled.js"],
+      "css": ["whats-new.css"],
+      "js": ["themes/catalog.js", "toggle-amoled.js", "whats-new.js"],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["amoled.css","gray.css"],
+      "resources": ["amoled.css", "amoled-v2.css", "gray.css", "themes/main.css"],
       "matches": ["*://*.pinterest.com/*"]
     }
   ],
   "browser_specific_settings": {
     "gecko": {
       "id": "pinterest-amoled@yuilix.dev",
+      "strict_min_version": "128.0",
       "data_collection_permissions": {
         "required": ["none"]
       }

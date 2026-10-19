@@ -1,54 +1,62 @@
-
+/* Converted palette:
+   Blacks -> #292928
+   Purples -> #ab7db5
+   Whites stay #ffffff
+*/
 
 html,
 body {
   background-color: #292928 !important;
 }
 
+.default_k {
+  background-color: #292928 !important;
+}
 
+/* Main Pinterest app root */
 #__PWS_ROOT__,
 body > div:first-child {
   background-color: #292928 !important;
 }
 
-
+/* Left vertical nav background */
 #VerticalNavContent {
   background-color: #292928 !important;
   border-right-color: #292928 !important;
 }
 
-
+/* Make nav icons white */
 #VerticalNavContent svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Top tab strip background */
 [style*="--sema-color-background-default"] {
   background-color: #292928 !important;
 }
 
-
+/* Tab texts (Tümü / Refs / Wallpapers etc.) */
 .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Force Pinterest's semantic background token to dark */
 :root {
   --sema-color-background-default: #292928 !important;
 }
 
-
+/* Any inline style using that var -> dark */
 *[style*="var(--sema-color-background-default)"] {
   background-color: #292928 !important;
 }
 
-
+/* 2) Dark background for the white popup (flyout) next to the bar */
 .dHA5K0.kF2VEF.sSBu24.zEVE_X {
   background-color: #292928 !important;
 }
 
-
+/* Text inside that popup stays white */
 .dHA5K0.kF2VEF.sSBu24.zEVE_X span,
 .dHA5K0.kF2VEF.sSBu24.zEVE_X p,
 .dHA5K0.kF2VEF.sSBu24.zEVE_X h1,
@@ -58,14 +66,14 @@ body > div:first-child {
   color: #ffffff !important;
 }
 
-
+/* Inputs inside that popup */
 .dHA5K0.kF2VEF.sSBu24.zEVE_X input,
 .dHA5K0.kF2VEF.sSBu24.zEVE_X textarea {
   background-color: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* UNIVERSAL POPUP / FLYOUT DARK MODE – dialogs only */
 [role="dialog"],
 [aria-modal="true"],
 [role="dialog"] .kF2VEF,
@@ -80,18 +88,18 @@ body > div:first-child {
   color: #ffffff !important;
 }
 
-
+/* Force the Tümü / Refs / Wallpapers bar wrapper to be dark */
 div[style*="top:80px"][style*="width:100%"] {
   background-color: #292928 !important;
 }
 
-
+/* Make the “slider / discovery” icon near tabs white */
 .VHreRh.kHGn_J.XjRT60 svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* “Grup / Gizli” pill buttons */
 .WuRgKB.eMU5i5.YfEt3H.o5UlW_.h3gMqR.cZLkj_ {
   background-color: #292928 !important;
   color: #ffffff !important;
@@ -99,80 +107,80 @@ div[style*="top:80px"][style*="width:100%"] {
   border-radius: 9999px !important;
 }
 
-
+/* Outer "Grup / Gizli" button wrapper */
 .dBMCN4.jShAKf.fNg3j8.RABojg.IdIBJj.fAZwDI.SdmY6_.y4A0gb.ap8aAM.O0u6sV {
   background-color: #292928 !important;
   color: #ffffff !important;
   border-radius: 9999px !important;
 }
 
-
+/* Inner label */
 .WuRgKB.eMU5i5.YfEt3H.o5UlW_.h3gMqR.cZLkj_ {
   background-color: transparent !important;
   color: #ffffff !important;
   padding: 4px 12px !important;
 }
 
-
+/* Dropdown menu container (Sıralama türü / Profil düzeni) */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u {
   background-color: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Inner panel */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u .ADXRXN.EH8C6E.Ip8hrQ._tKaHB.sSBu24.saDmEv.wl0pCr.zEVE_X {
   background-color: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Buttons inside dropdown */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u button {
   background-color: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Labels (Sıralama türü / Profil düzeni / A'dan Z'ye / Özel / Son Pin Eklendi etc.) */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u .WuRgKB,
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u .pA9X1U {
   color: #ffffff !important;
 }
 
-
+/* Checkmark icon in the selected option */
 .gEQpi5.qjbPDW.VqGOcX.Tu2pQF.PTl72u svg path {
   fill: #ffffff !important;
 }
 
-
+/* "Profili görüntüle" button */
 button[data-test-id="selfProfileHeader-view-profile-button"],
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.CNPSpi.O0u6sV {
   background-color: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Text inside the button */
 button[data-test-id="selfProfileHeader-view-profile-button"] .WuRgKB,
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.CNPSpi.O0u6sV .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Search bar row background */
 .ADXRXN.Lo7aEl.zEVE_X {
   background-color: #292928 !important;
 }
 
-
+/* Search dropdown panel background also dark */
 #SuggestionsMenu,
 #SuggestionsMenu .ADXRXN.WTrvgR._tKaHB.ecEhnF.zEVE_X {
   background-color: #292928 !important;
 }
 
-
+/* Text inside suggestions stays white */
 #SuggestionsMenu .WuRgKB,
 #SuggestionsMenu h4 {
   color: #ffffff !important;
 }
 
-
+/* Search input text + placeholder */
 input[data-test-id="search-box-input"] {
   color: #ffffff !important;
 }
@@ -181,7 +189,7 @@ input[data-test-id="search-box-input"]::placeholder {
   color: #888888 !important;
 }
 
-
+/* 1) "Son Aramalar" / recent searches section */
 #SuggestionsMenu .H2DtUH.am4r_S.bhb3s6._tKaHB,
 #SuggestionsMenu [data-test-id="suggestion-group-heading"],
 #SuggestionsMenu [data-test-id="suggestion-group-heading"] h4,
@@ -194,7 +202,7 @@ input[data-test-id="search-box-input"]::placeholder {
   fill: #ffffff !important;
 }
 
-
+/* 2) Rows + hover */
 #SuggestionsMenu [data-test-id="search-suggestion"] {
   background-color: #292928 !important;
 }
@@ -207,7 +215,7 @@ input[data-test-id="search-box-input"]::placeholder {
   color: #ffffff !important;
 }
 
-
+/* Kill the white / grey outline around search dropdown */
 #SuggestionsMenu,
 #SuggestionsMenu .WTrvgR,
 #SuggestionsMenu .MQHiAK,
@@ -221,7 +229,7 @@ input[data-test-id="search-box-input"]::placeholder {
   border-color: #292928 !important;
 }
 
-
+/* Rows + hover */
 #SuggestionsMenu [data-test-id="search-suggestion"] {
   background-color: #292928 !important;
 }
@@ -230,36 +238,36 @@ input[data-test-id="search-box-input"]::placeholder {
   background-color: #292928 !important;
 }
 
-
+/* Text inside stays white */
 #SuggestionsMenu [data-test-id="search-suggestion"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Closeup: "more options" (three dots) button icon -> white */
 [data-test-id="closeup-more-options"] svg path,
 [data-test-id="closeup-action-bar-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Make that upload/arrow icon full white */
 .dVx3J_.Q3hcOU.mm_g7v svg path,
 .VHreRh.kHGn_J.cUw_ba svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Tabs bar wrapper */
 div[style*="top: 80px"][style*="background-color: rgb(255, 255, 255"] {
   background-color: #292928 !important;
 }
 
-
+/* Inner tab row container */
 .ADXRXN.MJ_eMy.ecEhnF.gEQpi5.zEVE_X {
   background-color: #292928 !important;
 }
 
-
+/* Each tab pill background */
 .ADXRXN.B3GZzn.fz1RM7.gEQpi5.gcIrSY.i1hWBD {
   background-color: #292928 !important;
 }
@@ -271,127 +279,127 @@ svg.iewObu path {
   fill: #ab7db5 !important;
 }
 
-
+/* "Değiştir" button */
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.GaMK1V.O0u6sV {
   background-color: #292928 !important;
   color: #ffffff !important;
   border-color: #292928 !important;
 }
 
-
+/* Text inside */
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.GaMK1V.O0u6sV .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Hover */
 button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.E6J5D_.GaMK1V.O0u6sV:hover {
   background-color: #292928 !important;
 }
 
-
+/* "Ad" label text white */
 .urH_ll label.piPv3T.jSnx8D._hXngT._xeu4m .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* First name input */
 #first_name.VTVmV8.q3kIpX.g0zfi1.bb8HPP.zNJ6Me.c3eeZM.vr41LG.EYma4O.hxKTA7.mm0O_j.eyoFbE.glzo1E.btwCoE {
   color: #ffffff !important;
   background-color: #292928 !important;
   border-color: #333333 !important;
 }
 
-
+/* Placeholder */
 #first_name::placeholder {
   color: #aaaaaa !important;
 }
 
-
+/* "Soyadı" label text white */
 .urH_ll label.piPv3T.jSnx8D._hXngT._xeu4m .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Last name input field */
 #last_name.VTVmV8.q3kIpX.g0zfi1.bb8HPP.zNJ6Me.c3eeZM.vr41LG.EYma4O.hxKTA7.mm0O_j.eyoFbE.glzo1E.btwCoE {
   color: #ffffff !important;
   background-color: #292928 !important;
   border-color: #333333 !important;
 }
 
-
+/* Placeholder for last name */
 #last_name::placeholder {
   color: #aaaaaa !important;
 }
 
-
+/* "Hakkında" label text white */
 label[for="about"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* About textarea */
 #about.zhTvpR.hxKTA7.mm0O_j {
   background-color: #292928 !important;
   color: #ffffff !important;
   border-color: #333333 !important;
 }
 
-
+/* About textarea placeholder */
 #about::placeholder {
   color: #aaaaaa !important;
 }
 
-
+/* "Web sitesi" label */
 label[for="website_url"] .WuRgKB {
   color: #ab7db5 !important;
 }
 
-
+/* Website input */
 #website_url.VTVmV8 {
   background-color: #292928 !important;
   color: #ab7db5 !important;
   border-color: #333333 !important;
 }
 
-
+/* Website placeholder */
 #website_url::placeholder {
   color: #ab7db5 !important;
 }
 
-
+/* Label "Kullanıcı adı" -> white */
 label[for="username"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Username input */
 #username.VTVmV8 {
   background-color: #292928 !important;
   color: #ffffff !important;
   border-color: #333333 !important;
 }
 
-
+/* Helper URL text under it */
 #username-helperText .pA9X1U {
   color: #ab7db5 !important;
 }
 
-
+/* "Kaydet" (Done) button */
 [data-test-id="done-button"] button {
   background-color: #ab7db5 !important;
   border-color: #ab7db5 !important;
   color: #ffffff !important;
 }
 
-
+/* Inner text */
 [data-test-id="done-button"] .lIkAnG {
   color: #ffffff !important;
 }
 
-
+/* Hover */
 [data-test-id="done-button"] button:hover {
   background-color: #ab7db5 !important;
   border-color: #ab7db5 !important;
 }
 
-
+/* Cancel + Save buttons */
 [data-test-id="cancel-button"] button,
 [data-test-id="done-button"] button {
   background-color: #ab7db5 !important;
@@ -400,20 +408,20 @@ label[for="username"] .WuRgKB {
   opacity: 1 !important;
 }
 
-
+/* Inner label text */
 [data-test-id="cancel-button"] .OlWU8v,
 [data-test-id="done-button"] .OlWU8v {
   color: #ffffff !important;
 }
 
-
+/* Hover */
 [data-test-id="cancel-button"] button:hover,
 [data-test-id="done-button"] button:hover {
   background-color: #ab7db5 !important;
   border-color: #ab7db5 !important;
 }
 
-
+/* "Profil resmimi değiştirin" button */
 button[aria-label="Profil resmimi değiştirin"] {
   background-color: #292928 !important;
   border-color: #292928 !important;
@@ -432,13 +440,13 @@ button[aria-label="Profil resmimi değiştirin"]:focus-visible {
   color: #ffffff !important;
 }
 
-
+/* Global scrollbar style (Firefox) */
 * {
   scrollbar-width: thin;
   scrollbar-color: #ab7db5 #292928;
 }
 
-
+/* WebKit scrollbars */
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -458,18 +466,18 @@ button[aria-label="Profil resmimi değiştirin"]:focus-visible {
   background: #ab7db5 !important;
 }
 
-
+/* Pin title card (Closeup view) */
 .CloseupTitleCard {
   background-color: #292928 !important;
 }
 
-
+/* Title text */
 .CloseupTitleCard h1,
 .CloseupTitleCard .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Comment meta row: keep red */
 [data-test-id="comments-time-passed"] .pA9X1U,
 [data-test-id="comment-reply-button-container"] .pA9X1U,
 [data-test-id="comment-reaction-container-reaction-count"] span,
@@ -477,78 +485,78 @@ button[aria-label="Profil resmimi değiştirin"]:focus-visible {
   color: #ff4b7a !important;
 }
 
-
+/* Icons (heart + three dots) red */
 [data-test-id="comment-reaction-container-entry-point"] svg path,
 [data-test-id="comment-more-options"] svg path {
   fill: #ff4b7a !important;
 }
 
-
+/* Names / text containers */
 span.WuRgKB.aMgNKE.v_eFe4.qnEc35.hxKTA7.mm0O_j,
 span.WuRgKB.aMgNKE.v_eFe4.qnEc35.hxKTA7.mm0O_j * {
   color: #ffffff !important;
 }
 
-
+/* Comment author + text */
 [data-test-id="author-and-comment-container"] .WuRgKB,
 [data-test-id="author-and-comment-container"] .aeO02S,
 [data-test-id="author-and-comment-container"] a.etmDmh.i7jpet.DodKMr.hlFz_k.Q3hcOU.AMxolZ.zlD4hU.eTLu1g.O0u6sV {
   color: #ffffff !important;
 }
 
-
+/* Comments header block background */
 .ADXRXN.r97eaX,
 .ADXRXN.r97eaX .Q3hcOU.DodKMr {
   background-color: #292928 !important;
 }
 
-
+/* "59 Yorum" text */
 #comments-heading,
 [data-test-id="collapsible-header"] .WuRgKB,
 [data-test-id="collapsible-header"] h2 {
   color: #ffffff !important;
 }
 
-
+/* Expand arrow icon */
 [data-test-id="collapsible-header"] svg path {
   fill: #ffffff !important;
 }
 
-
+/* Comment editor container */
 #dweb-comment-editor-container {
   background-color: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Editable text */
 #dweb-comment-editor-container .public-DraftEditor-content,
 #dweb-comment-editor-container [data-editor],
 #dweb-comment-editor-container span[data-text="true"] {
   color: #ffffff !important;
 }
 
-
+/* Placeholder text */
 #dweb-comment-editor-container .public-DraftEditorPlaceholder-inner {
   color: #888888 !important;
 }
 
-
+/* Just in case */
 #dweb-comment-editor-container[style] {
   color: #ffffff !important;
 }
 
-
+/* Comment "Tepki ver" reaction button */
 button[data-test-id="react-button"] .VHreRh.kHGn_J.XjRT60 {
   background-color: #292928 !important;
   border-radius: 9999px !important;
 }
 
-
+/* Heart icon */
 button[data-test-id="react-button"] .VHreRh.kHGn_J.XjRT60 svg path {
   fill: #ffffff !important;
 }
 
-
+/* "Yorumlar" button */
 button[aria-label="Yorumlar"] .VHreRh.kHGn_J.XjRT60 {
   background-color: #292928 !important;
   border-radius: 9999px !important;
@@ -558,7 +566,7 @@ button[aria-label="Yorumlar"] .VHreRh.kHGn_J.XjRT60 svg path {
   fill: #ffffff !important;
 }
 
-
+/* Edit profile button */
 div[data-test-id="edit-button"] button.G0yGFD.ap8aAM.Q3hcOU.r_wnlE.itmoZr.GaMK1V.O0u6sV {
   background-color: #292928 !important;
   border-color: #292928 !important;
@@ -569,13 +577,13 @@ div[data-test-id="edit-button"] button .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Website icon */
 div[data-test-id="website-icon-and-url"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Bell / notifications area */
 div[data-test-id="bell-icon"],
 div[data-test-id="bell-icon"] * {
   background-color: #292928 !important;
@@ -593,7 +601,7 @@ div[data-test-id="bell-icon"] div {
   color: #ffffff !important;
 }
 
-
+/* Search box icon area */
 div[data-test-id="search-box-container"],
 div[data-test-id="search-box-container"] * {
   background-color: #292928 !important;
@@ -612,7 +620,7 @@ div[data-test-id="search-box-container"] button {
   color: #ffffff !important;
 }
 
-
+/* Business account switcher */
 div[data-test-id="business-account-switcher"] {
   background-color: #292928 !important;
 }
@@ -622,7 +630,7 @@ div[data-test-id="business-account-switcher"]
   background-color: #292928 !important;
 }
 
-
+/* Text */
 div[data-test-id="business-account-switcher"] .WuRgKB,
 div[data-test-id="business-account-switcher"] span,
 div[data-test-id="business-account-switcher"] a,
@@ -631,13 +639,13 @@ div[data-test-id="business-account-switcher"] div {
   color: #ffffff !important;
 }
 
-
+/* Icons */
 div[data-test-id="business-account-switcher"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Account search (profile switcher) */
 div[data-test-id="account-search-PROFILE"] {
   color: #ffffff !important;
 }
@@ -651,7 +659,7 @@ div[data-test-id="account-search-PROFILE"] input#account-search-field::placehold
   color: #ffffff !important;
 }
 
-
+/* Business name field */
 .ADXRXN.Tjcf3c._VU9d3.kXGpvW.zEVE_X label[for="business_name"] .WuRgKB {
   color: #ffffff !important;
 }
@@ -664,7 +672,7 @@ div[data-test-id="account-search-PROFILE"] input#account-search-field::placehold
   color: #ffffff !important;
 }
 
-
+/* Ad account search block */
 div[data-test-id="account-search-AD_ACCOUNT"] {
   color: #ffffff !important;
 }
@@ -683,7 +691,7 @@ div[data-test-id="account-search-AD_ACCOUNT"] svg path {
   stroke: #ffffff !important;
 }
 
-
+/* Promo / offer card */
 .ADXRXN.TCMh56.Tjcf3c.dHA5K0.qJUqe1.wl0pCr.zEVE_X {
   background-color: #292928 !important;
   border-color: #292928 !important;
@@ -710,7 +718,7 @@ div[data-test-id="account-search-AD_ACCOUNT"] svg path {
   stroke: #ffffff !important;
 }
 
-
+/* Whole business hub landing page */
 .mainContainer {
   background-color: #292928 !important;
 }
@@ -748,7 +756,7 @@ div[data-test-id="business-hub-footer"].ADXRXN.LXCPkA.kF2VEF.r97eaX.th_pS3.zEVE_
   border-color: #292928 !important;
 }
 
-
+/* "More" button area */
 .ADXRXN.TlGbMY.ecEhnF.gcIrSY,
 .ADXRXN.TlGbMY.ecEhnF.gcIrSY * {
   background-color: #292928 !important;
@@ -759,7 +767,7 @@ div[data-test-id="business-hub-footer"].ADXRXN.LXCPkA.kF2VEF.r97eaX.th_pS3.zEVE_
   stroke: #ffffff !important;
 }
 
-
+/* Create Pin onboarding button */
 div[data-test-id="onboarding-module-create-pin-button"],
 div[data-test-id="onboarding-module-create-pin-button"] * {
   background-color: #292928 !important;
@@ -774,7 +782,7 @@ div[data-test-id="onboarding-module-create-pin-button"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Create Ad onboarding button */
 div[data-test-id="onboarding-module-create-ad-button"],
 div[data-test-id="onboarding-module-create-ad-button"] * {
   background-color: #292928 !important;
@@ -789,7 +797,7 @@ div[data-test-id="onboarding-module-create-ad-button"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* "İşletmeler / Varlıklar" header row */
 .ADXRXN.BVzdUh.Ip8hrQ,
 .ADXRXN.BVzdUh.Ip8hrQ * {
   background-color: #292928 !important;
@@ -802,13 +810,13 @@ div[data-test-id="onboarding-module-create-ad-button"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Inbox whole area */
 div[data-test-id="full-height-inbox-container"],
 div[data-test-id="full-height-inbox-container"] .ADXRXN {
   background-color: #292928 !important;
 }
 
-
+/* Clickable blocks */
 div[data-test-id="full-height-inbox-container"] button,
 div[data-test-id="full-height-inbox-container"] a,
 div[data-test-id="full-height-inbox-container"] [role="button"],
@@ -834,7 +842,7 @@ div[data-test-id="full-height-inbox-container"] .Q3hcOU:focus {
   outline: none !important;
 }
 
-
+/* Text */
 div[data-test-id="full-height-inbox-container"] .WuRgKB,
 div[data-test-id="full-height-inbox-container"] span,
 div[data-test-id="full-height-inbox-container"] a,
@@ -847,7 +855,7 @@ div[data-test-id="full-height-inbox-container"] label {
   color: #ffffff !important;
 }
 
-
+/* Inputs */
 div[data-test-id="full-height-inbox-container"] input,
 div[data-test-id="full-height-inbox-container"] textarea {
   background-color: #292928 !important;
@@ -862,19 +870,19 @@ div[data-test-id="full-height-inbox-container"] textarea::placeholder {
   opacity: 0.7 !important;
 }
 
-
+/* SVG icons */
 div[data-test-id="full-height-inbox-container"] svg,
 div[data-test-id="full-height-inbox-container"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Don't mess with images/avatars */
 div[data-test-id="full-height-inbox-container"] img {
   background: transparent !important;
 }
 
-
+/* Notifications / messages button wrapper */
 div[data-test-id="notifications-button"],
 div[data-test-id="notifications-button"] a,
 div[data-test-id="notifications-button"] .ADXRXN,
@@ -908,7 +916,7 @@ div[data-test-id="notifications-button"] a {
   color: #ffffff !important;
 }
 
-
+/* Engagement tab */
 div[data-test-id="engagement-tab"],
 div[data-test-id="engagement-tab"] a,
 div[data-test-id="engagement-tab"] .ADXRXN,
@@ -942,7 +950,7 @@ div[data-test-id="engagement-tab"] a {
   color: #ffffff !important;
 }
 
-
+/* "Anladım" button */
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X button,
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X .G0yGFD {
   background-color: #292928 !important;
@@ -957,12 +965,12 @@ div[data-test-id="engagement-tab"] a {
   filter: none !important;
 }
 
-
+/* text -> purple */
 .ADXRXN.AsRsEE.TFmI8_.ezWmw4.ggvZLi.u5MNBk.xdjfP5.zEVE_X .WuRgKB {
   color: #ab7db5 !important;
 }
 
-
+/* Engagement page main area */
 div[data-test-id="native-engagement-list"],
 div[data-test-id="native-engagement-list"] *,
 div[data-test-id="native-engagement-welcome"],
@@ -1008,45 +1016,45 @@ div[data-test-id="native-engagement-welcome"] *:active {
   background-color: #292928 !important;
 }
 
-
+/* Business switcher base */
 div[data-test-id="business-account-switcher"] {
   background: #292928 !important;
 }
 
-
+/* Force dark everywhere EXCEPT the avatar block */
 div[data-test-id="business-account-switcher"] *:not([data-test-id="gestalt-avatar-svg"]):not([data-test-id="gestalt-avatar-svg"] *) {
   background-color: #292928 !important;
   border-color: #292928 !important;
   box-shadow: none !important;
 }
 
-
+/* Keep avatar/profile picture untouched */
 div[data-test-id="business-account-switcher"] [data-test-id="gestalt-avatar-svg"],
 div[data-test-id="business-account-switcher"] [data-test-id="gestalt-avatar-svg"] * {
   background-color: transparent !important;
 }
 
-
+/* Text */
 div[data-test-id="business-account-switcher"] .WuRgKB,
 div[data-test-id="business-account-switcher"] a,
 div[data-test-id="business-account-switcher"] span {
   color: #ffffff !important;
 }
 
-
+/* Arrow/svg */
 div[data-test-id="business-account-switcher"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Hover/focus stays dark */
 div[data-test-id="business-account-switcher"] *:hover,
 div[data-test-id="business-account-switcher"] *:active,
 div[data-test-id="business-account-switcher"] *:focus {
   background-color: #292928 !important;
 }
 
-
+/* Header profile button */
 div[data-test-id="header-profile"],
 div[data-test-id="header-profile"] a,
 div[data-test-id="header-profile"] .iN00fp,
@@ -1061,18 +1069,18 @@ div[data-test-id="header-profile"] *:active {
   box-shadow: none !important;
 }
 
-
+/* Don’t touch avatar/photo */
 div[data-test-id="header-profile"] [data-test-id="gestalt-avatar-svg"],
 div[data-test-id="header-profile"] [data-test-id="gestalt-avatar-svg"] * {
   background-color: transparent !important;
 }
 
-
+/* Keep avatar border dark */
 div[data-test-id="header-profile"] [data-test-id="gestalt-avatar-svg"] {
   border-color: #292928 !important;
 }
 
-
+/* Header accounts/options button */
 button[data-test-id="header-accounts-options-button"],
 button[data-test-id="header-accounts-options-button"] * {
   background-color: #292928 !important;
@@ -1100,7 +1108,7 @@ button[data-test-id="header-accounts-options-button"] div {
   color: #ffffff !important;
 }
 
-
+/* Pin rep footer */
 [data-test-id="pinrep-footer"] svg,
 [data-test-id="pinrep-footer"] svg * {
   fill: #ffffff !important;
@@ -1115,13 +1123,13 @@ button[data-test-id="header-accounts-options-button"] div {
   color: #ffffff !important;
 }
 
-
+/* Shortcuts header */
 h3.wyEmcc,
 .H2DtUH .oRZ5_s h3 {
   color: #ffffff !important;
 }
 
-
+/* The edit button in that bar */
 .H2DtUH .oRZ5_s button,
 .H2DtUH button.G0yGFD {
   background: #ab7db5 !important;
@@ -1139,7 +1147,7 @@ h3.wyEmcc,
   filter: brightness(1.05);
 }
 
-
+/* Shortcuts -> Edit button: keep hover dark */
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:hover,
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:active,
 .H2DtUH .oRZ5_s button.G0yGFD.BfUJ13:focus-visible {
@@ -1152,7 +1160,7 @@ h3.wyEmcc,
   color: #ffffff !important;
 }
 
-
+/* Dynamic badge dropdown icon */
 .ADXRXN.ylMNj8 svg,
 .ADXRXN.ylMNj8 svg path {
   fill: #ffffff !important;
@@ -1166,7 +1174,7 @@ h3.wyEmcc,
   stroke: #ffffff !important;
 }
 
-
+/* Mega-nav header */
 [data-test-id="dynamic-menu-controller"],
 [data-test-id="dynamic-menu-controller"]:hover,
 [data-test-id="dynamic-menu-controller"]:active,
@@ -1192,7 +1200,7 @@ h3.wyEmcc,
   color: #ffffff !important;
 }
 
-
+/* Share profile + cover edit buttons */
 [data-test-id="share-profile-auth"] button.euRXRl,
 [data-test-id="profile-cover-edit-button"] button.euRXRl {
   background: #292928 !important;
@@ -1221,13 +1229,13 @@ h3.wyEmcc,
   stroke: #ffffff !important;
 }
 
-
+/* Action bar area */
 [data-test-id="pin-action-bar"],
 [data-test-id="pin-action-bar"] * {
   background-color: #292928 !important;
 }
 
-
+/* Specific buttons */
 button.euRXRl[data-test-id="react-button"],
 [data-test-id="reactions-count-button"],
 [data-test-id="closeup-share-button"] button.euRXRl,
@@ -1240,9 +1248,13 @@ button.euRXRl[aria-label="Daha fazla işlem"] {
   box-shadow: none !important;
   border-color: transparent !important;
 }
+/* Converted palette:
+   Blacks -> #292928
+   Purples -> #ab7db5
+   Whites stay #ffffff
+*/
 
-
-
+/* Keep them dark on hover / focus / active */
 button.euRXRl[data-test-id="react-button"]:hover,
 button.euRXRl[data-test-id="react-button"]:active,
 button.euRXRl[data-test-id="react-button"]:focus,
@@ -1266,7 +1278,7 @@ button.euRXRl[aria-label="Daha fazla işlem"]:hover {
   background-color: #292928 !important;
 }
 
-
+/* Icons + numbers white */
 [data-test-id="pin-action-bar"] svg,
 [data-test-id="pin-action-bar"] svg path,
 button.euRXRl[data-test-id="react-button"] svg,
@@ -1283,14 +1295,14 @@ button.euRXRl[aria-label="Yorumlar"] svg path,
   color: #ffffff !important;
 }
 
-
+/* Closeup Share area: force dark background ALWAYS */
 [data-test-id="closeup-share-button"],
 [data-test-id="closeup-share-button"] * {
   background: #292928 !important;
   background-color: #292928 !important;
 }
 
-
+/* specifically hammer hover/active/focus states */
 [data-test-id="closeup-share-button"]:hover,
 [data-test-id="closeup-share-button"] button,
 [data-test-id="closeup-share-button"] button:hover,
@@ -1307,21 +1319,21 @@ button.euRXRl[aria-label="Yorumlar"] svg path,
   border-color: transparent !important;
 }
 
-
+/* keep share icon white */
 [data-test-id="closeup-share-button"] svg,
 [data-test-id="closeup-share-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Collapse button area: force dark bg always */
 [data-test-id="collapse-button"],
 [data-test-id="collapse-button"] * {
   background: #292928 !important;
   background-color: #292928 !important;
 }
 
-
+/* kill hover/active/focus lightening */
 [data-test-id="collapse-button"]:hover,
 [data-test-id="collapse-button"] button,
 [data-test-id="collapse-button"] button:hover,
@@ -1338,14 +1350,14 @@ button.euRXRl[aria-label="Yorumlar"] svg path,
   border-color: transparent !important;
 }
 
-
+/* arrow svg white */
 [data-test-id="collapse-button"] svg,
 [data-test-id="collapse-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Emoji / Sticker / Photo picker buttons */
 button[aria-label="Bir emoji seçin"],
 button[aria-label="Bir çıkartma seçin"],
 button[aria-label="Bir fotoğraf seçin"] {
@@ -1355,7 +1367,7 @@ button[aria-label="Bir fotoğraf seçin"] {
   border-color: transparent !important;
 }
 
-
+/* Hover purple */
 button[aria-label="Bir emoji seçin"]:hover,
 button[aria-label="Bir emoji seçin"]:hover *,
 button[aria-label="Bir çıkartma seçin"]:hover,
@@ -1366,7 +1378,7 @@ button[aria-label="Bir fotoğraf seçin"]:hover * {
   background-color: #ab7db5 !important;
 }
 
-
+/* SVG always white */
 button[aria-label="Bir emoji seçin"] svg,
 button[aria-label="Bir emoji seçin"] svg path,
 button[aria-label="Bir çıkartma seçin"] svg,
@@ -1377,7 +1389,7 @@ button[aria-label="Bir fotoğraf seçin"] svg path {
   stroke: #ffffff !important;
 }
 
-
+/* Pin save button: ALWAYS purple */
 [data-test-id="PinBetterSaveButton"] button,
 button[aria-label="Kaydet"].fsprMd {
   background: #ab7db5 !important;
@@ -1386,7 +1398,7 @@ button[aria-label="Kaydet"].fsprMd {
   box-shadow: none !important;
 }
 
-
+/* Keep it purple on hover/active/focus */
 [data-test-id="PinBetterSaveButton"] button:hover,
 [data-test-id="PinBetterSaveButton"] button:active,
 [data-test-id="PinBetterSaveButton"] button:focus,
@@ -1399,13 +1411,13 @@ button[aria-label="Kaydet"].fsprMd:focus {
   filter: none !important;
 }
 
-
+/* Text stays white */
 [data-test-id="PinBetterSaveButton"] .lIkAnG,
 button[aria-label="Kaydet"].fsprMd * {
   color: #ffffff !important;
 }
 
-
+/* Create-board tile */
 [data-test-id="create-board"],
 [data-test-id="create-board-button"],
 [data-test-id="create-board-button"] > div,
@@ -1416,7 +1428,7 @@ button[aria-label="Kaydet"].fsprMd * {
   box-shadow: none !important;
 }
 
-
+/* Keep it dark on hover / active / focus */
 [data-test-id="create-board-button"]:hover,
 [data-test-id="create-board-button"]:active,
 [data-test-id="create-board-button"]:focus,
@@ -1426,14 +1438,14 @@ button[aria-label="Kaydet"].fsprMd * {
   filter: none !important;
 }
 
-
+/* Text always white */
 [data-test-id="create-board-button"] .WuRgKB,
 [data-test-id="create-board-button"] .rszMzv,
 [data-test-id="create-board-button"] [title] {
   color: #ffffff !important;
 }
 
-
+/* SVG icon always white */
 [data-test-id="create-board-button"] svg,
 [data-test-id="create-board-button"] svg * {
   fill: #ffffff !important;
@@ -1441,7 +1453,7 @@ button[aria-label="Kaydet"].fsprMd * {
   stroke: #ffffff !important;
 }
 
-
+/* Force BOTH "board select dropdown" + "Kaydet" to purple */
 [data-test-id="pin-better-save-button"] button,
 button[data-test-id="PinBetterSaveDropdown"],
 [data-test-id="PinBetterSaveButton"] button {
@@ -1451,7 +1463,7 @@ button[data-test-id="PinBetterSaveDropdown"],
   box-shadow: none !important;
 }
 
-
+/* Keep purple on hover / active / focus */
 [data-test-id="pin-better-save-button"] button:hover,
 [data-test-id="pin-better-save-button"] button:active,
 [data-test-id="pin-better-save-button"] button:focus,
@@ -1466,13 +1478,13 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   filter: none !important;
 }
 
-
+/* Text white inside both */
 [data-test-id="pin-better-save-button"] .WuRgKB,
 [data-test-id="pin-better-save-button"] .lIkAnG {
   color: #ffffff !important;
 }
 
-
+/* Caret SVG stays white */
 [data-test-id="pin-better-save-button"] svg,
 [data-test-id="pin-better-save-button"] svg * {
   fill: #ffffff !important;
@@ -1480,34 +1492,34 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* The container you pasted */
 .ADXRXN.EH8C6E._xSIdT {
   background: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* All text inside */
 .ADXRXN.EH8C6E._xSIdT .WuRgKB,
 .ADXRXN.EH8C6E._xSIdT .YfEt3H,
 .ADXRXN.EH8C6E._xSIdT .aMgNKE {
   color: #ffffff !important;
 }
 
-
+/* Icon (svg) */
 .ADXRXN.EH8C6E._xSIdT svg,
 .ADXRXN.EH8C6E._xSIdT svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Whole back-button area */
 .KvKvqR,
 .KvKvqR [data-test-id="back-button"],
 .KvKvqR [data-test-id="back-button"] * {
   background: #292928 !important;
 }
 
-
+/* Keep any text white */
 .KvKvqR [data-test-id="back-button"],
 .KvKvqR [data-test-id="back-button"] .WuRgKB,
 .KvKvqR [data-test-id="back-button"] span,
@@ -1515,14 +1527,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Arrow (svg) */
 .KvKvqR [data-test-id="back-button"] svg,
 .KvKvqR [data-test-id="back-button"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Hover/active/focus must NOT brighten */
 .KvKvqR [data-test-id="back-button"]:hover,
 .KvKvqR [data-test-id="back-button"]:active,
 .KvKvqR [data-test-id="back-button"]:focus,
@@ -1533,18 +1545,18 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* If Pinterest adds a hover overlay/shadow layer */
 .KvKvqR [data-test-id="back-button"] .Fm_EPH {
   background: transparent !important;
   opacity: 0 !important;
 }
 
-
+/* Input text white */
 #partner_contact_email {
   color: #ffffff !important;
 }
 
-
+/* Placeholder white too */
 #partner_contact_email::placeholder,
 #partner_contact_email::-webkit-input-placeholder,
 #partner_contact_email::-moz-placeholder,
@@ -1553,7 +1565,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Country code + phone number block */
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1563,7 +1575,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Inputs + select */
 #countryCode,
 #phoneNumber {
   background: #292928 !important;
@@ -1571,7 +1583,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   border-color: #555555 !important;
 }
 
-
+/* Phone placeholder */
 #phoneNumber::placeholder,
 #phoneNumber::-webkit-input-placeholder,
 #phoneNumber::-moz-placeholder,
@@ -1580,20 +1592,20 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Dropdown arrow icon */
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X .hdKVJ2 svg,
 .ADXRXN.Hv8rKq.Tjcf3c.zEVE_X .hdKVJ2 svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Options */
 #countryCode option {
   background: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Container */
 .ADXRXN.Hv8rKq {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1603,14 +1615,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Input */
 #partner_address_line_1 {
   background: #292928 !important;
   color: #ffffff !important;
   border-color: #555555 !important;
 }
 
-
+/* Placeholder */
 #partner_address_line_1::placeholder,
 #partner_address_line_1::-webkit-input-placeholder,
 #partner_address_line_1::-moz-placeholder,
@@ -1619,7 +1631,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Container */
 .ADXRXN.Hv8rKq {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1629,27 +1641,27 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Select */
 #partner_country {
   background: #292928 !important;
   color: #ffffff !important;
   border-color: #555555 !important;
 }
 
-
+/* Dropdown arrow */
 .ADXRXN.Hv8rKq .hdKVJ2 svg,
 .ADXRXN.Hv8rKq .hdKVJ2 svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Options */
 #partner_country option {
   background: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Email settings block */
 .ADXRXN.k5oQr4 {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1659,14 +1671,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Input */
 #email {
   background: #292928 !important;
   color: #ffffff !important;
   border-color: #555555 !important;
 }
 
-
+/* Placeholder */
 #email::placeholder,
 #email::-webkit-input-placeholder,
 #email::-moz-placeholder,
@@ -1675,7 +1687,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Password row container */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1686,7 +1698,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Password input */
 #password {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1694,14 +1706,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   caret-color: #ffffff !important;
 }
 
-
+/* Eye toggle icon */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 .f8Y_Ck svg,
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.i4_mIm.qJUqe1 .f8Y_Ck svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Buttons -> purple */
 .ADXRXN.To17G1 .G0yGFD {
   background: #ab7db5 !important;
   border: none !important;
@@ -1716,7 +1728,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   background: #ab7db5 !important;
 }
 
-
+/* Personal Information container */
 [data-test-id="personalInformationContainer"] {
   background: #292928 !important;
   color: #ffffff !important;
@@ -1726,7 +1738,7 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   color: #ffffff !important;
 }
 
-
+/* Inputs / text fields */
 #birthdate,
 #custom_gender,
 #contact_name,
@@ -1737,14 +1749,14 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   caret-color: #ffffff !important;
 }
 
-
+/* Placeholders */
 #birthdate::placeholder,
 #custom_gender::placeholder,
 #combobox-accountBasicsCountry::placeholder {
   color: #ffffff !important;
 }
 
-
+/* Selects */
 #accountBussinessType,
 #accountBasicsLanguage {
   background: #292928 !important;
@@ -1752,21 +1764,21 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   border-color: #555555 !important;
 }
 
-
+/* Options */
 #accountBussinessType option,
 #accountBasicsLanguage option {
   background: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Icons */
 [data-test-id="personalInformationContainer"] svg,
 [data-test-id="personalInformationContainer"] svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-
+/* Datepicker popup */
 [data-test-id="personalInformationContainer"] .react-datepicker,
 [data-test-id="personalInformationContainer"] .react-datepicker__header,
 [data-test-id="personalInformationContainer"] .react-datepicker__day,
@@ -1779,37 +1791,37 @@ button[data-test-id="PinBetterSaveDropdown"]:focus,
   border-color: #555555 !important;
 }
 
-
+/* Selected day highlight */
 [data-test-id="personalInformationContainer"] .react-datepicker__day--selected {
   background: #ab7db5 !important;
   color: #ffffff !important;
 }
 
-
+/* Month/year dropdown options */
 [data-test-id="personalInformationContainer"] .react-datepicker__month-select option,
 [data-test-id="personalInformationContainer"] .react-datepicker__year-select option {
   background: #292928 !important;
   color: #ffffff !important;
 }
 
-
+/* Radio + checkbox accents */
 [data-test-id="personalInformationContainer"] input[type="radio"],
 [data-test-id="personalInformationContainer"] input[type="checkbox"] {
   accent-color: #ab7db5 !important;
 }
 
-
+/* Checkbox tick SVG */
 [data-test-id="personalInformationContainer"] .SDw0sc {
   fill: #ffffff !important;
 }
 
-
+/* Outer clickable button */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"] {
   background: transparent !important;
   border: none !important;
 }
 
-
+/* Actual pill area */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]
   .dBMCN4.jShAKf.iS__OQ.RABojg._W0I5h.fAZwDI.SdmY6_.y4A0gb.ap8aAM.O0u6sV {
   background: #ab7db5 !important;
@@ -1818,30 +1830,30 @@ button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]
   border: none !important;
 }
 
-
+/* Text inside */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"] .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Remove outline / focus */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]:focus-visible {
   outline: none !important;
   box-shadow: none !important;
 }
 
-
+/* Optional hover */
 button.fsprMd._W0I5h.O0u6sV[aria-label="Hepsini kapat"]
   .dBMCN4.jShAKf.iS__OQ.RABojg._W0I5h.fAZwDI.SdmY6_.y4A0gb.ap8aAM.O0u6sV:hover {
   background: #ab7db5 !important;
 }
 
-
+/* Main Pinterest text white */
 .WuRgKB,
 .pA9X1U {
   color: #ffffff !important;
 }
 
-
+/* "Yönetin" link */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.r_wnlE.VogH1o.E6J5D_ {
   background: #ab7db5 !important;
   color: #ffffff !important;
@@ -1864,30 +1876,30 @@ a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.r_wnlE.VogH1o.E6J5D_
   fill: #ffffff !important;
 }
 
-
+/* Instagram label + description */
 .H2DtUH .WuRgKB {
   color: #ffffff !important;
 }
 
-
+/* Force icons white */
 svg[aria-label="Instagram"] path { fill: #ffffff !important; }
 svg[aria-label=".csv veya .txt dosyası yükleyin"] path { fill: #ffffff !important; }
 svg.aTSQd5.hL9n03._ByyDT path { fill: #ffffff !important; }
 svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
 
-
+/* Vertical nav icon circles */
 .VHreRh.kHGn_J.XjRT60 {
   background-color: #292928 !important;
 }
 
-
+/* Anchor + button wrappers */
 .etmDmh.i7jpet.zlD4hU.Q3hcOU,
 .dVx3J_.Q3hcOU.mm_g7v,
 .euRXRl .dVx3J_.Q3hcOU {
   background-color: #292928 !important;
 }
 
-
+/* Hover / focus / active */
 .etmDmh.i7jpet.zlD4hU.Q3hcOU:hover,
 .etmDmh.i7jpet.zlD4hU.Q3hcOU:focus-visible,
 .dVx3J_.Q3hcOU.mm_g7v:hover,
@@ -1897,7 +1909,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   background-color: #292928 !important;
 }
 
-
+/* Group / Gizli pills */
 .fsprMd.IdIBJj.O0u6sV,
 .fsprMd.IdIBJj.O0u6sV .dBMCN4 {
   background-color: #292928 !important;
@@ -1917,12 +1929,12 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   color: #ffffff !important;
 }
 
-
+/* Whole create-pin cluster card area */
 .ADXRXN.gEQpi5:has(button[data-test-id="create-pin-cluster-button"]) {
   background-color: #292928 !important;
 }
 
-
+/* The 3-image box: purple outline, rounded, dark */
 .ADXRXN.gEQpi5:has(button[data-test-id="create-pin-cluster-button"])
   > .e2jAjp.gcIrSY.N9tO7e {
   border: 1px solid #ab7db5 !important;
@@ -1931,7 +1943,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   overflow: hidden;
 }
 
-
+/* Inner tiles */
 .ADXRXN.gEQpi5:has(button[data-test-id="create-pin-cluster-button"])
   .NYgy1O.TfR6nu.WTrvgR.aHn_t7.bnBtRO.mJ2PyB {
   border-color: #292928 !important;
@@ -1950,20 +1962,20 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   color: #ffffff !important;
 }
 
-
+/* Dropdown base */
 #SuggestionsMenu,
 #SuggestionsMenu [data-test-id="typeaheadResults"],
 #SuggestionsMenu .ADXRXN.WTrvgR._tKaHB.ecEhnF.zEVE_X {
   background-color: #292928 !important;
 }
 
-
+/* Suggestion tiles */
 #SuggestionsMenu [data-test-id="recent-query"],
 #SuggestionsMenu [data-test-id="search-suggestion"] {
   background-color: #292928 !important;
 }
 
-
+/* Kill dim overlays */
 #SuggestionsMenu .SXrTgC,
 #SuggestionsMenu .xpe_Hd {
   display: none !important;
@@ -1974,7 +1986,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   background-color: transparent !important;
 }
 
-
+/* Image wrapper */
 #SuggestionsMenu [data-test-id="search-suggestion-image-container"] .ADXRXN.gEQpi5 {
   background-color: transparent !important;
 }
@@ -1984,7 +1996,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   mix-blend-mode: normal !important;
 }
 
-
+/* Text */
 #SuggestionsMenu .WuRgKB,
 #SuggestionsMenu h3,
 #SuggestionsMenu [data-test-id="search-suggestion-text"] {
@@ -1992,7 +2004,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   -webkit-text-fill-color: #ffffff !important;
 }
 
-
+/* Hover / selected */
 #SuggestionsMenu [data-test-id="search-suggestion"]:hover,
 #SuggestionsMenu [data-test-id="search-suggestion"]:focus-visible,
 #SuggestionsMenu [data-test-id="search-suggestion"][aria-selected="true"] {
@@ -2013,7 +2025,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   -webkit-text-fill-color: #ffffff !important;
 }
 
-
+/* Share panel scroll area */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X {
   background-color: #292928 !important;
   color: #ffffff !important;
@@ -2036,15 +2048,20 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X .q3kIpX::placeholder {
   color: #ffffff !important;
 }
+/* same conversion rules:
+   black -> #292928
+   purple (#b38aff / #9c72ff / #8b5cf6 / #a78bfa / #5B21B6 / #4C1D95 / #3a0ea6 / #7A42FF / #6A3DFF / #9333ea / #a855f7 / #7c3aed / #6d28d9 / #5b21b6) -> #ab7db5
+   whites stay #fff
+   borders like #3a3a3a / #555 / #9a9a9a stay as-is (neutral gray)
+*/
 
-
-
+/* Inputs background */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X input.tX2F_U{
   background-color:#292928 !important;
   border-color:#3a3a3a !important;
 }
 
-
+/* Buttons */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button{
   background-color:#ab7db5 !important;
   color:#ffffff !important;
@@ -2052,7 +2069,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   border:none !important;
 }
 
-
+/* Keep purple on hover/focus */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button:hover,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button:focus-visible,
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X button:active{
@@ -2060,7 +2077,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   color:#ffffff !important;
 }
 
-
+/* Custom scrollbar (WebKit) */
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X::-webkit-scrollbar{ width:8px; }
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X::-webkit-scrollbar-track{ background:#292928; }
 .ADXRXN._tKaHB.q_lkxg.wl0pCr.zEVE_X::-webkit-scrollbar-thumb{
@@ -2071,7 +2088,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   background:#ab7db5;
 }
 
-
+/* Copy-link share icon: dark pill, white icon */
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
   [data-test-id="copy-link-share-icon-auth"] .H2DtUH .ADXRXN{
   background-color:#292928 !important;
@@ -2079,7 +2096,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   padding:0 !important;
 }
 
-
+/* Button + inner square stay dark */
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
   [data-test-id="copy-link-share-icon-auth"] button.euRXRl,
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
@@ -2088,13 +2105,13 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   border-radius:999px !important;
 }
 
-
+/* Ensure icon stays white */
 .ADXRXN.TyRBan.XC5OnJ._tKaHB.sSBu24.zEVE_X
   [data-test-id="copy-link-share-icon-auth"] svg path{
   fill:#ffffff !important;
 }
 
-
+/* News hub list hover: dark card */
 .scrollableList [data-test-id="news-hub-list-item"]{
   background:transparent;
   transition:background .15s ease;
@@ -2107,7 +2124,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   stroke:#ffffff !important;
 }
 
-
+/* remove the original bg */
 .ADXRXN.eOQXgz .o__pql .ADXRXN.ZEBTif{
   background:transparent !important;
   box-shadow:none !important;
@@ -2119,7 +2136,7 @@ svg.aTSQd5.hL9n03.F1qJlU path { fill: #ffffff !important; }
   display:none !important;
 }
 
-
+/* text stays same, bg gets wider */
 .ADXRXN.eOQXgz .o__pql .ADXRXN.ZEBTif > span.YLh4cb{
   color:#ffffff !important;
   position:relative !important;
@@ -2145,7 +2162,7 @@ button.fsprMd._W0I5h:active{
   box-shadow:none !important;
 }
 
-
+/* CSV importer */
 [data-test-id="csv-importer"] [data-test-id="drag-behavior-container"],
 [data-test-id="csv-importer"] .ADXRXN.dHA5K0.gEQpi5.gSktR2.i1hWBD{
   background:#ab7db5 !important;
@@ -2162,7 +2179,7 @@ button.fsprMd._W0I5h:active{
   box-shadow:none !important;
 }
 
-
+/* Send button bg (converted) */
 button.euRXRl,
 button.euRXRl:hover,
 button.euRXRl:active,
@@ -2181,7 +2198,7 @@ button.euRXRl:hover > div > div{
   box-shadow:none !important;
 }
 
-
+/* input text + placeholder */
 input#contactSearch{
   color:#fff !important;
   -webkit-text-fill-color:#fff !important;
@@ -2191,7 +2208,7 @@ input#contactSearch::placeholder{
   opacity:1 !important;
 }
 
-
+/* Clear input button hover -> purple */
 .S0lmtn.avKrN2 .Q3hcOU.dHA5K0:hover,
 .S0lmtn.avKrN2 .Q3hcOU.dHA5K0:hover > div{
   background:#ab7db5 !important;
@@ -2200,7 +2217,7 @@ input#contactSearch::placeholder{
   outline:none !important;
 }
 
-
+/* Closeup viewer backgrounds */
 [data-test-id="closeup-visual-container"] [data-test-id="closeup-body-image-container"],
 [data-test-id="closeup-visual-container"] [data-test-id="closeup-body-image-container"] .ADXRXN.gEQpi5{
   background:#292928 !important;
@@ -2212,20 +2229,20 @@ input#contactSearch::placeholder{
   background-color:#292928 !important;
 }
 
-
+/* whole message box container */
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X{
   background:#292928 !important;
   border-color:#292928 !important;
   box-shadow:none !important;
 }
 
-
+/* inner wrappers */
 .ADXRXN.B3GZzn.TFmI8_.gEQpi5.sSBu24.zEVE_X,
 .ADXRXN.XexRYe._tKaHB.wl0pCr.zEVE_X{
   background:#292928 !important;
 }
 
-
+/* textarea */
 textarea#messageDraft{
   background:#292928 !important;
   color:#fff !important;
@@ -2237,13 +2254,13 @@ textarea#messageDraft::placeholder{
   opacity:1 !important;
 }
 
-
+/* kill focus ring */
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X:focus-within{
   box-shadow:none !important;
   outline:none !important;
 }
 
-
+/* send button area */
 [data-test-id="send-message-to-conversation"],
 [data-test-id="send-message-to-conversation"] .euRXRl,
 [data-test-id="send-message-to-conversation"] .euRXRl > div,
@@ -2254,13 +2271,13 @@ textarea#messageDraft::placeholder{
   outline:none !important;
 }
 
-
+/* messages text */
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X,
 .ADXRXN.CFzQgS.g8WGSl.h2QNmC.i4_mIm.zEVE_X *{
   color:#fff;
 }
 
-
+/* React heart purple */
 .oRZ5_s .DTsIgD button[data-test-id="react-button"]{ color:#ab7db5 !important; }
 .oRZ5_s .DTsIgD button[data-test-id="react-button"] svg.aTSQd5.hL9n03.LN6DSu,
 .oRZ5_s .DTsIgD button[data-test-id="react-button"] svg.aTSQd5.hL9n03.LN6DSu *{
@@ -2271,7 +2288,7 @@ textarea#messageDraft::placeholder{
   opacity:1 !important;
 }
 
-
+/* emoji category */
 li.epr-emoji-category,
 li.epr-emoji-category .epr-emoji-category-content{
   background-color:#292928 !important;
@@ -2281,7 +2298,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   background-color:transparent !important;
 }
 
-
+/* emoji panel */
 .epr_q53mwh.epr_vl50xg.epr_-3yva2a.epr_c90x4z.epr_-sisw4f.epr_mw4zr1.epr_-kg0voo.epr_iogimd.epr_wtwvf4.epr_-lzq3oa{
   background:#292928 !important;
 }
@@ -2289,7 +2306,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   color:#fff !important;
 }
 
-
+/* category nav */
 #epr-category-nav-id.epr-category-nav{ background:#292928 !important; }
 #epr-category-nav-id .epr-btn,
 #epr-category-nav-id .epr-btn:hover,
@@ -2300,7 +2317,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   outline:none !important;
 }
 
-
+/* category icons purple on hover */
 #epr-category-nav-id .epr-btn:hover{
   color:#ab7db5 !important;
   fill:#ab7db5 !important;
@@ -2312,7 +2329,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   stroke:#ab7db5 !important;
 }
 
-
+/* search bar */
 .epr-search-container{ background:#292928 !important; }
 .epr-search-container input[type="text"]{
   background:#292928 !important;
@@ -2333,7 +2350,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   background:#292928 !important;
 }
 
-
+/* more/less description blocks */
 .ADXRXN.Fm_EPH.NYgy1O.TfR6nu.mJ2PyB [data-test-id="more-description-container"],
 .ADXRXN.Fm_EPH.NYgy1O.TfR6nu.mJ2PyB [data-test-id="more-description-container"] *{
   background:#292928 !important;
@@ -2354,7 +2371,7 @@ li.epr-emoji-category .epr-emoji-category-label{
 }
 [data-test-id="less-description-container"] .WuRgKB{ color:#ab7db5 !important; }
 
-
+/* force purple text for both ...more and ...less */
 [data-test-id="more-description-container"] .WuRgKB,
 [data-test-id="more-description-container"] .Q3hcOU,
 [data-test-id="less-description-container"] .WuRgKB,
@@ -2364,7 +2381,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   fill:#ab7db5 !important;
 }
 
-
+/* profile suggestion card */
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX,
 .ADXRXN.DwbjAm.Yh17xG._yHzFs.dSlwuX:hover{
   background:#292928 !important;
@@ -2387,7 +2404,7 @@ li.epr-emoji-category .epr-emoji-category-label{
   background-color:#292928 !important;
 }
 
-
+/* Create a Pin or a board button */
 button[aria-label="Create a Pin or a board"]{
   background:#ab7db5 !important;
   background-color:#ab7db5 !important;
@@ -2405,7 +2422,7 @@ button[aria-label="Create a Pin or a board"]:hover{
   border-color:#ab7db5 !important;
 }
 
-
+/* sliding bar rules */
 .KvKvqR,
 .KvKvqR *{
   background:transparent !important;
@@ -2425,7 +2442,7 @@ button[aria-label="Create a Pin or a board"]:hover{
   transition:transform .3s ease-in-out, opacity .3s ease-in-out !important;
 }
 
-
+/* Notification badge */
 .ac_zDw .qKw26o,
 .ac_zDw .qKw26o *{
   background:#ab7db5 !important;
@@ -2436,7 +2453,7 @@ button[aria-label="Create a Pin or a board"]:hover{
   box-shadow:0 0 0 2px #ab7db5 !important;
 }
 
-
+/* Search box outline (converted) */
 #HeaderContent #searchBoxContainer .ADXRXN[style*="box-shadow"]{
   box-shadow:0 0 0 4px #ab7db5 !important;
 }
@@ -2455,7 +2472,7 @@ button[aria-label="Create a Pin or a board"]:hover{
   box-shadow:0 0 0 2px rgba(57,34,71,.55) !important;
 }
 
-
+/* Right-side filter segment */
 :where(#searchBoxContainer,[data-test-id="search-box-container"]) :where(
   [data-test-id="search-filter"],
   [data-test-id="search-filter"] *,
@@ -2477,14 +2494,14 @@ button[aria-label="Create a Pin or a board"]:hover{
   color:#9a9a9a !important;
 }
 
-
+/* shared vars */
 :root{
   --xzen-purple:#ab7db5;
   --xzen-purple-glow: rgba(57,34,71,.55);
   --xzen-radius:14px;
 }
 
-
+/* outline wrapper variants */
 :where(#searchBoxContainer,[data-test-id="search-box-container"]) :where(
   .ADXRXN.Lo7aEl.zEVE_X,
   .ADXRXN.gEQpi5.sSBu24.wl0pCr.zEVE_X
@@ -2505,7 +2522,7 @@ button[aria-label="Create a Pin or a board"]:hover{
   background:transparent !important;
 }
 
-
+/* full outline without killing suggestions */
 :root{ --xzen-purple-deep:#ab7db5; }
 #searchBoxContainer > .Lo7aEl{
   background-color:#292928 !important;
@@ -2539,12 +2556,12 @@ button[aria-label="Create a Pin or a board"]:hover{
   opacity:.9 !important;
 }
 
-
+/* Settings menu underline */
 nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
   background-color:#ab7db5 !important;
 }
 
-
+/* Pronouns panel */
 #pronouns,
 .co9vq_.Ula08X .gEQpi5.qjbPDW.Tu2pQF.Ula08X{
   background:#292928 !important;
@@ -2568,7 +2585,7 @@ nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
 #pronouns [role="option"]::before,
 #pronouns [role="option"]::after{ content:none !important; }
 
-
+/* selected pronoun pill */
 .df3qGz .ADXRXN.Lo7aEl.gEQpi5.h2QNmC.nnftW_{
   background:#292928 !important;
   border:1px solid rgba(57,34,71,.55) !important;
@@ -2579,7 +2596,7 @@ nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
 .df3qGz button.Qshsbk svg,
 .df3qGz button.Qshsbk path{ fill:#fff !important; }
 
-
+/* Top tabs hover/current */
 .H2DtUH.KwViV7.FE_3R1.Tjcf3c.sSBu24 a.etmDmh:hover .WuRgKB{
   color:#ab7db5 !important;
 }
@@ -2587,7 +2604,7 @@ nav[data-test-id="settings-menu"] .ADXRXN.TfR6nu._gOf1c.aHn_t7.mJ2PyB{
   color:#ab7db5 !important;
 }
 
-
+/* View board button */
 button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV{
   background:#ab7db5 !important;
   border-color:#ab7db5 !important;
@@ -2601,7 +2618,7 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   background:#ab7db5 !important;
 }
 
-
+/* Save button: dark purple @60% -> converted */
 :root{ --xzen-purple-dark: rgba(57,34,71,.60); }
 .Q3hcOU.Lo7aEl[aria-label="Save"] > .ADXRXN.Lo7aEl{
   background:var(--xzen-purple-dark) !important;
@@ -2612,7 +2629,7 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   background:var(--xzen-purple-dark) !important;
 }
 
-
+/* Visit site outline */
 :root{ --xzen-purple:#ab7db5; }
 [data-test-id="visit-site-button"] a,
 [data-test-id="visit-site-button"] a.etmDmh,
@@ -2624,7 +2641,7 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
 }
 [data-test-id="visit-site-button"] a::before{ border:0 !important; }
 
-
+/* pin action dropdown outlines */
 :root{ --xzen-purple: rgba(57,34,71,.85); --xzen-purple-dark:#ab7db5; }
 
 [data-test-id="pin-action-dropdown"] button[role="menuitem"],
@@ -2658,15 +2675,15 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   box-shadow:0 0 0 3px rgba(57,34,71,.75) inset !important;
 }
 
-
+/* ideas flyout icon white */
 #ideas-flyout svg,
 #ideas-flyout svg *{ fill:#fff !important; }
 
-
+/* credit link */
 #xzen-amoled-credit-item a{ color:#ab7db5 !important; text-decoration:none !important; font-weight:600 !important; opacity:.92 !important; }
 #xzen-amoled-credit-item a:hover{ opacity:1 !important; text-decoration:underline !important; }
 
-
+/* section headers underline + title tint */
 #VerticalNav-Settings-Flyout .X1bmBV > [role="presentation"]{ position:relative; padding-bottom:6px !important; margin-bottom:8px !important; }
 #VerticalNav-Settings-Flyout .X1bmBV > [role="presentation"]::after{
   content:"";
@@ -2681,7 +2698,7 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   opacity:.95;
 }
 
-
+/* left-aligned shorter underline on hover */
 #VerticalNav-Settings-Flyout button.yww37Y{ position:relative; }
 #VerticalNav-Settings-Flyout button.yww37Y::after{
   content:"";
@@ -2710,20 +2727,20 @@ button.G0yGFD.ap8aAM.Q3hcOU.j0pMjI.E6J5D_.GaMK1V.O0u6sV:hover{
   color:#ab7db5 !important;
 }
 
-
+/* creation options flyout tile */
 #VerticalNav-CreationOptions-Flyout .BVzdUh._xSIdT.gcIrSY.h2QNmC{
   background:#292928 !important;
   border-radius:10px !important;
   padding:6px !important;
 }
 
-
+/* Explore button tile */
 #ideas-flyout.ADXRXN{
   background-color:#292928 !important;
   border-radius:12px !important;
 }
 
-
+/* 3 square options */
 a[aria-label="Organize"] > div > div:has(svg),
 a[aria-label="More ideas"] > div > div:has(svg),
 a[aria-label="Collage"] > div > div:has(svg){
@@ -2742,11 +2759,11 @@ a[aria-label="Collage"] svg *{
   color:#fff !important;
 }
 
-
+/* Organize text white */
 a[aria-label="Organize"]{ color:#fff !important; }
 a[aria-label="Organize"] .WuRgKB{ color:#fff !important; }
 
-
+/* black bg + white svg for this block */
 ._37Rc2.HdFEzo{ background-color:#292928 !important; }
 ._37Rc2.HdFEzo svg,
 ._37Rc2.HdFEzo svg *{
@@ -2756,7 +2773,7 @@ a[aria-label="Organize"] .WuRgKB{ color:#fff !important; }
 }
 ._37Rc2.HdFEzo .nDkDfP{ color:#fff !important; }
 
-
+/* storyboard title field */
 [data-test-id="storyboard-title-field-container"] .urH_ll{ background:#292928 !important; }
 [data-test-id="storyboard-title-field-container"] label,
 [data-test-id="storyboard-title-field-container"] label *{ color:#fff !important; }
@@ -2776,7 +2793,7 @@ a[aria-label="Organize"] .WuRgKB{ color:#fff !important; }
   border-color:#ab7db5 !important;
 }
 
-
+/* WebsiteField */
 .urH_ll:has(#WebsiteField) #WebsiteField{
   background:#292928 !important;
   color:#fff !important;
@@ -2792,7 +2809,7 @@ a[aria-label="Organize"] .WuRgKB{ color:#fff !important; }
   box-shadow:0 0 0 1px rgba(57,34,71,.75) inset, 0 0 0 3px rgba(57,34,71,.18) !important;
 }
 
-
+/* description/draft editor */
 .Q3hcOU.DodKMr.BM2pT6.itw4K9.g0I6wi[aria-disabled="true"]
   > .ADXRXN._xSIdT.a7F6nQ.gcIrSY.iQW80L.u5MNBk.wl0pCr{
   background:#292928 !important;
@@ -2828,7 +2845,7 @@ a[aria-label="Organize"] .WuRgKB{ color:#fff !important; }
   box-shadow:0 0 0 1px rgba(57,34,71,.28) inset, 0 0 18px rgba(57,34,71,.12) !important;
 }
 
-
+/* board dropdown */
 .Q3hcOU.gcIrSY.itw4K9.g0I6wi[aria-disabled="true"][data-test-id="board-dropdown-select-button"] > .ADXRXN{
   background:#292928 !important;
   border:1px solid rgba(57,34,71,.85) !important;
@@ -2849,7 +2866,7 @@ a[aria-label="Organize"] .WuRgKB{ color:#fff !important; }
   box-shadow:0 0 0 1px rgba(57,34,71,.28) inset, 0 0 18px rgba(57,34,71,.12) !important;
 }
 
-
+/* tagged topics input */
 label.piPv3T.jSnx8D._hXngT.Ak7eo_ .OlWU8v{ color:#fff !important; }
 input#combobox-storyboard-interest-tags.VTVmV8.q3kIpX.g0zfi1.B94P4O.miEtGt.dm14Pm.vr41LG.EYma4O.hxKTA7.mm0O_j.eyoFbE.glzo1E.hPj47J[disabled]{
   background:#292928 !important;
@@ -2864,7 +2881,7 @@ input#combobox-storyboard-interest-tags[disabled]::placeholder{
 }
 #combobox-storyboard-interest-tags[disabled]{ -webkit-text-fill-color:#fff !important; }
 
-
+/* upload dropzone (note: you had svg/text BLACK on purpose, kept that) */
 div[data-test-id="drag-behavior-container"].ADXRXN.dHA5K0{
   background:#292928 !important;
   box-shadow:none !important;
@@ -2892,7 +2909,7 @@ div[data-test-id="drag-behavior-container"]
   color:#292928 !important;
 }
 
-
+/* Save from URL outline-only */
 a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.j0pMjI.hG7AI5.E6J5D_[href="/pin-builder/?tab=save_from_url"]{
   border:1px solid rgba(57,34,71,.85) !important;
   border-radius:12px !important;
@@ -2900,7 +2917,7 @@ a.etmDmh.i7jpet.zlD4hU.Q3hcOU.O0u6sV.RLsYhV.G0yGFD.ap8aAM.j0pMjI.hG7AI5.E6J5D_[h
   background:transparent !important;
 }
 
-
+/* outlines-only section */
 :root{
   --xzen-purple: rgba(57,34,71,.85);
   --xzen-purple-soft: rgba(57,34,71,.18);
@@ -2966,7 +2983,7 @@ div[data-test-id="header-content-container"]{
   box-shadow:0 0 0 1px var(--xzen-purple-soft) inset !important;
 }
 
-
+/* Pin drafts sidebar outlines */
 :root{ --xzen-purple: rgba(57,34,71,.85); --xzen-purple-soft: rgba(57,34,71,.18); }
 .ADXRXN.DTsIgD.a7F6nQ.ecEhnF.iQW80L.n62I2n.u5MNBk{
   border-color:var(--xzen-purple) !important;
@@ -2980,7 +2997,7 @@ div[data-test-id="storyboard-drafts-sidebar"] hr[data-gestalt-valid-html="Divide
   border-top-color:var(--xzen-purple) !important;
 }
 
-
+/* ideas dropdown hover underline + text */
 #ideas-dropdown button[id^="ideas-dropdown-item-"] a{
   position:relative !important;
   text-decoration:none !important;
@@ -3017,7 +3034,7 @@ div[data-test-id="storyboard-drafts-sidebar"] hr[data-gestalt-valid-html="Divide
 
 #board-name{ color:#fff !important; }
 
-
+/* FORCE IMAGES VISIBLE */
 html body img.iFOUS5,
 html body .PinCard__imageWrapper img,
 html body [data-test-id="non-story-pin-image"] img,
@@ -3042,25 +3059,25 @@ html body [data-test-id="pincard-storyPin-without-link"]{
   filter:none !important;
   -webkit-filter:none !important;
 }
-
+/* Whole Settings & Support dropdown: base DARK GREY (not black) */
 #SideBarSettingsDropdown,
 #SideBarSettingsDropdown *{
   background: #363534 !important;
   background-color: #363534 !important;
 }
 
-
+/* Whole section hover: a bit darker grey */
 #SideBarSettingsDropdown a:hover > div,
 #SideBarSettingsDropdown a:focus-visible > div,
 #SideBarSettingsDropdown a:active > div,
 #SideBarSettingsDropdown [role="button"]:hover > div,
 #SideBarSettingsDropdown [role="button"]:focus-visible > div,
 #SideBarSettingsDropdown [role="button"]:active > div{
-  background: #2f2e2d !important;   
+  background: #2f2e2d !important;   /* darker than #363534 */
   background-color: #2f2e2d !important;
 }
 
-
+/* Keep text + icons white */
 #SideBarSettingsDropdown .WuRgKB,
 #SideBarSettingsDropdown .pA9X1U,
 #SideBarSettingsDropdown h3,
@@ -3073,31 +3090,31 @@ html body [data-test-id="pincard-storyPin-without-link"]{
   fill: #fff !important;
   stroke: #fff !important;
 }
-
+/* Black outline for the whole dropdown */
 #SideBarSettingsDropdown{
   outline: 2px solid #000 !important;
   outline-offset: -2px !important;
 }
 
-
+/* If you want the outline on the inner panel too (safer) */
 #SideBarSettingsDropdown > .ADXRXN.B3GZzn.TFmI8_,
 #SideBarSettingsDropdown > .ADXRXN.B3GZzn.TFmI8_ > .ADXRXN.B3GZzn.TFmI8_{
   border: 2px solid #000 !important;
   box-shadow: none !important;
 }
-
+/* Change text color to specific purple when hovering over the tab */
 a[role="tab"]:hover .WuRgKB {
     color: #ab7db5 !important; 
     transition: color 0.2s ease-in-out;
 }
 
-
+/* Optional: If you also want the bottom border/underline to turn purple on hover */
 a[role="tab"]:hover ._gOf1c {
     background-color: #ab7db5 !important;
     transition: background-color 0.2s ease-in-out;
 }
 
-
+/* Change background to charcoal on hover for all menu items */
 #SideBarSettingsDropdown #settings:hover,
 #SideBarSettingsDropdown #homefeed-tuner:hover,
 #SideBarSettingsDropdown #account-claiming:hover,
@@ -3115,7 +3132,7 @@ a[role="tab"]:hover ._gOf1c {
     background-color: #292928 !important;
 }
 
-
+/* Make the text your custom PURPLE on hover */
 #SideBarSettingsDropdown a:hover .WuRgKB,
 #SideBarSettingsDropdown div[role="button"]:hover .WuRgKB,
 #SideBarSettingsDropdown a:hover .ylMNj8 {
@@ -3123,7 +3140,7 @@ a[role="tab"]:hover ._gOf1c {
     transition: color 0.2s ease-in-out;
 }
 
-
+/* Ensure the SVG icons also turn custom PURPLE on hover */
 #SideBarSettingsDropdown a:hover svg,
 #SideBarSettingsDropdown div[role="button"]:hover svg {
     fill: #ab7db5 !important;
@@ -3131,32 +3148,78 @@ a[role="tab"]:hover ._gOf1c {
     transition: fill 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-
+/* Change the label text above the inputs to white */
 #label-first_name div,
 #label-last_name div {
     color: #ffffff !important;
 }
 
-
+/* Change the text typed inside the input fields to white */
 #first_name,
 #last_name {
     color: #ffffff !important;
 }
 
-
+/* Make the Change Password button your custom purple */
 div[data-test-id="change-password-button"] button {
     background-color: #ab7db5 !important;
     border: none !important;
     transition: background-color 0.2s ease-in-out !important;
 }
 
-
+/* Ensure the text inside the button is white */
 div[data-test-id="change-password-button"] button .WuRgKB {
     color: #ffffff !important;
 }
 
-
+/* Maintain custom purple when you hover over the button */
 div[data-test-id="change-password-button"] button:hover {
     background-color: #ab7db5 !important;
-    opacity: 0.9; 
+    opacity: 0.9; /* Added a slight opacity change so the user knows they are hovering */
+}
+/* Current Pinterest notifications/news sidebar: match the Gray theme, white copy. */
+#news-feed-sidebar,
+#news-feed-sidebar > .H2DtUH,
+#news-feed-sidebar [data-test-id="news-hub-title"],
+#news-feed-sidebar [data-test-id="scrollable-container"],
+#news-feed-sidebar .scrollableList,
+#news-feed-sidebar .scrollableList > li,
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  background: #292928 !important;
+  background-color: #292928 !important;
+  color: #fff !important;
+}
+
+#news-feed-sidebar div:not(.SXrTgC),
+#news-feed-sidebar :is(ul, li, a, button) {
+  background-color: #292928 !important;
+}
+
+#news-feed-sidebar .SXrTgC {
+  background: transparent !important;
+}
+
+#news-feed-sidebar :is(div, span, h1, h2, h3, h4, p, a, button) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#news-feed-sidebar {
+  border-color: #292928 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  border-color: #424241 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg,
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+#news-feed-sidebar [data-test-id="gestalt-avatar-svg"] text {
+  fill: #fff !important;
 }

@@ -8,80 +8,277 @@
 </head>
 
 <body>
-  <div class="bg"></div>
-
-  <main class="wrap">
-    <header class="top">
+  <main class="app">
+    <aside class="sidebar">
       <div class="brand">
         <img class="logo" src="Pinterest.png" alt="True AMOLED" />
-        <div class="brand-text">
+        <div>
           <div class="h1">True AMOLED</div>
           <div class="sub">Settings</div>
         </div>
       </div>
 
-      <div class="right">
-        <span class="status" id="settingsStatus"></span>
-      </div>
-    </header>
+      <nav class="tabs" aria-label="Settings tabs">
+        <button class="tab active" type="button" data-tab="dashboard">Dashboard</button>
+        <button class="tab" type="button" data-tab="themes">Themes</button>
+        <button class="tab tab-with-icon" type="button" data-tab="plugins">
+          <span class="puzzle-icon" aria-hidden="true"><span></span></span>
+          <span>Plugins</span>
+        </button>
+        <button class="tab" type="button" data-tab="info">Info</button>
+        <button class="tab" type="button" data-tab="donation">Donation</button>
+      </nav>
 
-    <!-- VAULT -->
-    <section class="panel">
-      <div class="panel-head">
-        <div class="panel-title">Private Pins (Vault)</div>
-        <div class="panel-desc">
-          Adds a <b>Save to Vault</b> button on pin pages and enables your local Vault page.
+      <div class="status" id="settingsStatus"></div>
+    </aside>
+
+    <section class="content">
+      <!-- DASHBOARD TAB -->
+      <section class="page active" id="page-dashboard">
+        <div class="page-head">
+          <div class="page-title">Dashboard</div>
+          <div class="page-desc">Manage private vault features and quick actions.</div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="row-text">
-          <div class="row-title">Enable Vault feature</div>
-          <div class="row-desc">Disabling removes injection and hides the popup’s “Private Pins”.</div>
+        <div class="panel">
+          <div class="panel-title">Private Pins Vault</div>
+          <div class="panel-desc">
+            Adds a <b>Save to Vault</b> button on Pinterest and enables your local Vault page.
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="row-title">Enable Vault feature</div>
+              <div class="row-desc">Disabling removes the injected Vault button.</div>
+            </div>
+
+            <div id="vaultSwitch" class="switch" role="switch" aria-checked="true" tabindex="0">
+              <div class="knob"></div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="openVault" class="btn primary" type="button">Open Vault</button>
+          </div>
+
+          <div class="saved" id="savedHint"></div>
+        </div>
+      </section>
+
+      <!-- THEMES TAB -->
+      <section class="page" id="page-themes">
+        <div class="page-head">
+          <div class="page-title">Themes</div>
+          <div class="page-desc">Choose which stylesheet is injected while the extension is enabled.</div>
         </div>
 
-        <div id="vaultSwitch" class="switch" role="switch" aria-checked="true" tabindex="0">
-          <div class="knob"></div>
+        <div class="theme-options" id="themeOptions" role="radiogroup" aria-label="Theme selection"></div>
+
+        <section class="panel accent-customizer" aria-labelledby="accentCustomizerTitle">
+          <div class="panel-title" id="accentCustomizerTitle">Custom accent colors</div>
+          <div class="panel-desc">
+            Pick separate accent colors for AMOLED v1.5 and V2. Editing a color selects that theme and updates open Pinterest tabs live.
+          </div>
+
+          <div class="accent-layout">
+            <div class="accent-controls">
+              <div class="accent-control" data-accent-theme="amoled">
+                <div class="accent-copy">
+                  <label class="accent-label" for="accentAmoled">AMOLED v1.5</label>
+                  <div class="accent-desc">Replaces the purple highlights in amoled.css.</div>
+                </div>
+                <input id="accentAmoled" class="accent-picker" type="color" value="#B38AFF" aria-label="AMOLED v1.5 accent color" />
+                <input id="accentAmoledHex" class="accent-hex" type="text" value="#B38AFF" maxlength="7" spellcheck="false" aria-label="AMOLED v1.5 accent hex value" />
+                <button class="btn accent-reset" type="button" data-reset-accent="amoled">Reset</button>
+              </div>
+
+              <div class="accent-control" data-accent-theme="amoled-v2">
+                <div class="accent-copy">
+                  <label class="accent-label" for="accentAmoledV2">AMOLED V2</label>
+                  <div class="accent-desc">Replaces the purple highlights in amoled-v2.css.</div>
+                </div>
+                <input id="accentAmoledV2" class="accent-picker" type="color" value="#8E6BFF" aria-label="AMOLED V2 accent color" />
+                <input id="accentAmoledV2Hex" class="accent-hex" type="text" value="#8E6BFF" maxlength="7" spellcheck="false" aria-label="AMOLED V2 accent hex value" />
+                <button class="btn accent-reset" type="button" data-reset-accent="amoled-v2">Reset</button>
+              </div>
+
+              <div class="accent-actions">
+                <button id="openPinterestPreview" class="btn primary" type="button">Open Pinterest preview</button>
+                <div class="accent-status" id="accentSaveStatus" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <div class="site-preview" id="accentPreview" aria-label="Accent color preview">
+              <div class="preview-sidebar">
+                <div class="preview-logo">P</div>
+                <div class="preview-nav-dot active"></div>
+                <div class="preview-nav-dot"></div>
+                <div class="preview-nav-dot"></div>
+              </div>
+              <div class="preview-main">
+                <div class="preview-search">Search Pinterest</div>
+                <div class="preview-title">Pinterest preview</div>
+                <div class="preview-pins">
+                  <div class="preview-pin tall"><span>Save</span></div>
+                  <div class="preview-pin"><span>Save</span></div>
+                  <div class="preview-pin short"><span>Save</span></div>
+                </div>
+                <div class="preview-accent-name" id="accentPreviewLabel">AMOLED v1.5 accent</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="tiny" id="themeHint"></div>
+      </section>
+
+      <!-- PLUGINS TAB -->
+      <section class="page" id="page-plugins">
+        <div class="page-head">
+          <div class="page-title">Plugins</div>
+          <div class="page-desc">Optional add-ons that work alongside this extension.</div>
         </div>
-      </div>
 
-      <div class="saved" id="savedHint"></div>
+        <div class="panel plugin-panel">
+          <div class="plugin-head">
+            <div class="plugin-icon" aria-hidden="true"><span></span></div>
+            <div>
+              <div class="panel-title">Download Pins/Boards Add-on</div>
+              <div class="panel-desc">
+                Official Plugin for this Extension, It helps you to install all your pins & boards
+              </div>
+            </div>
+          </div>
 
-      <div class="actions">
-        <button id="openVault" class="btn primary" type="button">Open Vault</button>
-      </div>
+          <div class="plugin-state" id="pinsBoardsPluginState">Checking install status...</div>
+
+          <div class="actions plugin-actions">
+            <button id="checkPinsBoardsPlugin" class="btn" type="button">Check again</button>
+            <button id="togglePinsBoardsPlugin" class="btn" type="button" hidden>
+              Disable add-on
+            </button>
+            <button id="installPinsBoardsPlugin" class="btn primary" type="button">
+              Install add-on
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFO TAB -->
+      <section class="page" id="page-info">
+        <div class="page-head">
+          <div class="page-title">Info</div>
+          <div class="page-desc">How Private Pins Vault works and why it exists.</div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">What is Private Pins Vault?</div>
+          <div class="panel-desc">
+            Private Pins Vault is a local saving feature. Instead of saving a pin to your Pinterest account,
+            the extension stores the pin information inside your browser storage and shows it inside the Vault page.
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-title">1. You press Vault</div>
+              <div class="info-text">
+                The extension reads the current pin image, title, URL, and media link.
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-title">2. It saves locally</div>
+              <div class="info-text">
+                The pin is saved in this browser's extension storage, not to Pinterest boards.
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-title">3. You open Vault</div>
+              <div class="info-text">
+                Your saved pins appear inside the Private Pins page, separate from Pinterest.
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-title">4. You stay cleaner</div>
+              <div class="info-text">
+                Your Pinterest profile, boards, and saved history do not need to hold every reference you want to keep.
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-title">5. Edit with tags</div>
+              <div class="info-text">
+                Vault lets you edit saved pins with tags, organize them, and keep your references easier to search later.
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-title">6. Download your Vault</div>
+              <div class="info-text">
+                You can download all saved pins from your Vault when needed, so your local collection is not locked inside the page.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel info-gap">
+          <div class="panel-title">Why use it?</div>
+
+          <div class="info-list compact">
+            <div class="info-card">Keeps references away from your public Pinterest boards.</div>
+            <div class="info-card">Useful for private inspiration collecting.</div>
+            <div class="info-card">Less direct interaction with Pinterest saving.</div>
+            <div class="info-card">Fast access from the popup or settings page.</div>
+            <div class="info-card">You can tag, edit, and organize saved pins.</div>
+            <div class="info-card">You can download all saved Vault pins when needed.</div>
+          </div>
+        </div>
+
+        <div class="info-alert">
+          If the Vault button does not appear OR The Themes are not applied, hard refresh Pinterest with <b>CTRL + F5</b>, May need to press a few times.
+        </div>
+      </section>
+
+      <!-- DONATION TAB -->
+      <section class="page" id="page-donation">
+        <div class="page-head">
+          <div class="page-title">Donation</div>
+          <div class="page-desc">Support the project if you like ducks :D</div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Support development</div>
+          <div class="panel-desc">
+            Donations help keep updates, bug fixes, and new theme improvements going.
+          </div>
+
+          <div class="donation-box">
+            <a class="donate-image-link" href="https://www.buymeacoffee.com/yuilix" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.buymeacoffee.com/button-api/?text=Support My Work?&amp;emoji=🦆&amp;slug=yuilix&amp;button_colour=7d0d64&amp;font_colour=ffffff&amp;font_family=Arial&amp;outline_colour=ffffff&amp;coffee_colour=FFDD00" alt="Support My Work?" />
+            </a>
+
+            <a class="btn" href="https://github.com/LXRylex/TrueAMOLED-Projext-Pinterest/issues" target="_blank" rel="noopener noreferrer">
+              Report bugs / Suggestions
+            </a>
+
+            <a class="btn social-btn" href="https://www.instagram.com/lxdasu/" target="_blank" rel="noopener noreferrer">
+              <svg class="social-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.4" cy="6.6" r="1.2"></circle>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
     </section>
-
-    <!-- THEME -->
-    <section class="panel">
-      <div class="panel-head">
-        <div class="panel-title">Theme</div>
-        <div class="panel-desc">
-          Choose which stylesheet is injected. <b>Off = AMOLED</b>, <b>On = Gray</b>.
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="row-text">
-          <div class="row-title">Enable Gray theme</div>
-          <div class="row-desc">Switching themes updates instantly while the extension is enabled.</div>
-        </div>
-
-        <div id="themeSwitch" class="switch" role="switch" aria-checked="false" tabindex="0">
-          <div class="knob"></div>
-        </div>
-      </div>
-
-      <div class="tiny" id="themeHint"></div>
-    </section>
-
-    <footer class="foot">
-      <div class="foot-note">
-        Tip: If the option to save to "Vault" isn't available then hard refresh Pinterest by holding CTRL and press F5.
-      </div>
-    </footer>
   </main>
 
+  <script src="themes/catalog.js"></script>
   <script src="settings.js"></script>
 </body>
 </html>

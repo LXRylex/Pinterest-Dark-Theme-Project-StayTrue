@@ -1,0 +1,193 @@
+:root {
+	--pdt-d1: black;
+	--pdt-d2: rgb(20, 20, 20);
+	--pdt-d3: rgb(30, 30, 30);
+	--pdt-d4: rgb(50, 50, 50);
+	--pdt-l1: white;
+	--pdt-l2: rgb(160, 160, 160);
+	--pdt-l3: rgb(120, 120, 120);
+	background-color: var(--pdt-d1);
+}
+
+body {
+	background-color: var(--pdt-d1) !important;
+	z-index: 0;
+	color: var(--pdt-l1);
+
+	/* Backgrounds */
+	--color-background-box-default: var(--pdt-d1);
+	--color-background-tabs-default-base: var(--pdt-d1);
+	--color-background-tabs-default-active: var(--pdt-d4);
+	--color-background-popover-primary: var(--pdt-d2);
+	--color-background-box-secondary: var(--pdt-d3);
+	--color-background-overlay: var(--pdt-d3);
+	--color-background-box-darkwash: var(--pdt-d4);
+	--color-background-button-white-default: var(--pdt-d3);
+	--color-background-formfield-primary: var(--pdt-d3);
+	--color-background-tag-primary-default: var(--pdt-d2);
+	--color-background-box-warning-weak: var(--pdt-d2);
+	--color-background-box-lightwash: var(--pdt-d3);
+	--color-background-box-light: var(--pdt-d3);
+	--color-background-switch-default-selected: var(--pdt-l1);
+	--color-background-switch-default-unselected: var(--pdt-d2);
+	--color-background-selected-base: var(--pdt-l1);
+	--color-background-box-selected: var(--pdt-d4);
+	--color-background-secondary-base: var(--pdt-d2);
+	--color-background-datepicker-container: var(--pdt-d1);
+	--color-background-formfield-primary: var(--pdt-d2);
+	--color-background-mask-wash: rgb(from var(--pdt-l1) r g b / 4%);
+	--color-background-button-disabled-default: var(--pdt-d3);
+	--sema-color-background-subtle: var(--pdt-d2);
+	--sema-color-background-disabled: var(--pdt-d3);
+	--sema-color-background-elevation: var(--pdt-d3);
+	--sema-color-background-default: var(--pdt-d1);
+	--sema-color-background-secondary: var(--pdt-d3);
+	--sema-color-background-wash-light: var(--pdt-d1);
+	--color-background-combobox-item-hover: var(--pdt-d4);
+	--color-background-button-tertiary-hover: var(--pdt-d2);
+	--color-background-button-white-hover: var(--pdt-d4);
+	--color-background-tabs-default-hover: var(--pdt-d3);
+	--sema-color-hover-background-default: var(--pdt-d2);
+	--sema-color-hover-background-secondary: var(--pdt-d4);
+	--sema-color-hover-background-elevation: var(--pdt-d4);
+
+	/* Texts */
+	--color-text-formfield-default: var(--pdt-l1);
+	--color-text-dark: var(--pdt-l1);
+	--color-text-inverse: white;
+	--sema-color-text-neutral: var(--pdt-l1);
+	--sema-color-text-default: var(--pdt-l1);
+	--sema-color-text-subtle: var(--pdt-l2);
+	--sema-color-text-dark: var(--pdt-l1);
+
+	/* Icons */
+	--color-icon-subtle: var(--pdt-l2);
+	--color-icon-dark: var(--pdt-l1);
+	--sema-color-icon-dark: var(--pdt-l1);
+	--sema-color-icon-default: var(--pdt-l1);
+	--sema-color-icon-subtle: var(--pdt-l1);
+
+	/* Buttons */
+	--comp-button-color-background-secondary-default: var(--pdt-d3);
+	--comp-button-color-background-tertiary-default: var(--pdt-d2);
+	--comp-button-color-hover-background-secondary-default: var(--pdt-d4);
+	--comp-button-color-hover-background-tertiary-default: var(--pdt-d4);
+
+	/* Borders */
+	--color-border-popover-primary: var(--pdt-d1);
+	--color-border-container: var(--pdt-d3);
+	--sema-color-border-decorative: var(--pdt-d3);
+
+	--elevation-datepicker: 0 0 8px rgb(from var(--pdt-l1) r g b / 10%);
+	--elevation-floating: 0 0 8px rgb(from var(--pdt-l2) r g b / 10%);
+	--base-color-grayscale-100: var(--pdt-d3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 13px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--pdt-d3);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--pdt-d4);
+}
+
+::-moz-scrollbar {
+	width: 13px;
+}
+
+::-moz-scrollbar-track {
+	background: var(--pdt-d3);
+}
+
+::-moz-scrollbar-thumb {
+	background: var(--pdt-d4);
+}
+
+::-ms-scrollbar {
+	width: 13px;
+}
+
+::-ms-scrollbar-track {
+	background: var(--pdt-d3);
+}
+
+::-ms-scrollbar-thumb {
+	background: var(--pdt-d4);
+}
+
+.TJZ {
+	background-color: var(--pdt-d2) !important;
+	/* Don’t know what it does, if you can mention it :) */
+}
+
+div[data-test-id="comment-heading-divider"],
+/* Post : Line between poster’s profile and comments*/
+div[data-test-id="closeup-metadata-details-divider"],
+/* Post : Line on top of comments when scrolling down them*/
+div[data-test-id="comment-body-scrolling-divider"],
+/* Post : Line on bottom of comments */
+.ADXRXN.ecEhnF.n62I2n
+
+/* Anywhere : Border when « messages/pin creation/updates/settings » window opened and screen is wide enough*/
+	{
+	border-color: var(--pdt-d3) !important;
+}
+
+#dweb-comment-editor-container, #messageDraft { /* Comments & pin creation bio text input, Messages input */
+	color: var(--pdt-l1) !important;
+}
+
+div.ADXRXN.BVzdUh._xSIdT.gEQpi5 {
+	background-color: var(--pdt-d2);
+}
+/* Current Pinterest notifications/news sidebar: black panels, white copy. */
+#news-feed-sidebar,
+#news-feed-sidebar > .H2DtUH,
+#news-feed-sidebar [data-test-id="news-hub-title"],
+#news-feed-sidebar [data-test-id="scrollable-container"],
+#news-feed-sidebar .scrollableList,
+#news-feed-sidebar .scrollableList > li,
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+#news-feed-sidebar div:not(.SXrTgC),
+#news-feed-sidebar :is(ul, li, a, button) {
+  background-color: #000 !important;
+}
+
+#news-feed-sidebar .SXrTgC {
+  background: transparent !important;
+}
+
+#news-feed-sidebar :is(div, span, h1, h2, h3, h4, p, a, button) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#news-feed-sidebar {
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar [data-test-id="news-hub-list-item"] {
+  border-color: #222 !important;
+  box-shadow: none !important;
+}
+
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg,
+#news-feed-sidebar :is([aria-label="Close news hub"], [data-test-id="ellipsis-icon"]) svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+#news-feed-sidebar [data-test-id="gestalt-avatar-svg"] text {
+  fill: #fff !important;
+}

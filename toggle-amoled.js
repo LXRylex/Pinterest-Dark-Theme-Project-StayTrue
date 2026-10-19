@@ -1,32 +1,154 @@
 const CSS_ID = "pinterest-amoled-css-link";
+const THEME_VARS_ID = "pinterest-theme-vars-xzen";
 const DIM_ID = "pinterest-dim-overlay-xzen";
 
 let enabledCache = false;
 let dimCache = 0;
 
-
 const KEY_VAULT_ENABLED = "pinterestVaultEnabled";
 let vaultEnabledCache = true;
 
-
 const KEY_THEME = "pinterestTheme";
 let themeCache = "amoled";
+
+const KEY_THEME_ACCENTS = "pinterestThemeAccentColors";
+const KEY_THEME_ACCENT_PREVIEW = "pinterestThemeAccentPreview";
+let themeAccentCache = {};
+const appliedThemeVarNames = new Set();
+let extensionContextStopped = false;
+let reinjectObserver = null;
+
+function stopExtensionContext() {
+  extensionContextStopped = true;
+  reinjectObserver?.disconnect();
+}
+
+function extensionContextIsActive() {
+  if (extensionContextStopped) return false;
+  if (globalThis.chrome?.runtime?.id) return true;
+  stopExtensionContext();
+  return false;
+}
+
+const FALLBACK_THEME_CATALOG = [
+  { id: "amoled", cssFile: "amoled.css", customizableAccent: true, defaultAccent: "#B38AFF" },
+  { id: "amoled-v2", cssFile: "amoled-v2.css", customizableAccent: true, defaultAccent: "#8E6BFF" },
+  { id: "gray", cssFile: "gray.css" },
+];
+
+function getThemeCatalog() {
+  const catalog = window.XZEN_THEME_CATALOG;
+  return Array.isArray(catalog) && catalog.length ? catalog : FALLBACK_THEME_CATALOG;
+}
+
+function getThemeDef(theme) {
+  return getThemeCatalog().find((item) => item.id === theme);
+}
+
+function normalizeTheme(theme) {
+  return getThemeDef(theme) ? theme : "amoled";
+}
 
 function getHeadOrRoot() {
   return document.head || document.documentElement;
 }
 
 function cssFileForTheme(t) {
-  return t === "gray" ? "gray.css" : "amoled.css";
+  const theme = getThemeDef(normalizeTheme(t));
+  return theme?.cssFile || "amoled.css";
+}
+
+function removeThemeVars() {
+  const el = document.getElementById(THEME_VARS_ID);
+  if (el) el.remove();
+
+  for (const name of appliedThemeVarNames) {
+    document.documentElement.style.removeProperty(name);
+  }
+  appliedThemeVarNames.clear();
+}
+
+function normalizeHexColor(value) {
+  const match = String(value || "").trim().match(/^#?([0-9a-f]{6})$/i);
+  return match ? `#${match[1].toUpperCase()}` : "";
+}
+
+function accentVarsForTheme(theme, overrideColor) {
+  if (!theme || !["amoled", "amoled-v2"].includes(theme.id)) return {};
+
+  const storedColor = arguments.length > 1 ? overrideColor : themeAccentCache[theme.id];
+  const accent = normalizeHexColor(storedColor);
+  if (!accent) return {};
+
+  const red = parseInt(accent.slice(1, 3), 16);
+  const green = parseInt(accent.slice(3, 5), 16);
+  const blue = parseInt(accent.slice(5, 7), 16);
+  const rgba = (alpha) => `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+
+  return {
+    accent,
+    "accent-rgb": `${red}, ${green}, ${blue}`,
+    "accent-soft": rgba(0.18),
+    "accent-soft-22": rgba(0.22),
+    "accent-glow": rgba(0.55),
+    "accent-dark-60": rgba(0.60),
+    "accent-70": rgba(0.70),
+    "accent-85": rgba(0.85),
+    "accent-90": rgba(0.90),
+    "accent-95": rgba(0.95),
+  };
+}
+
+function applyThemeVars(theme, overrideColor) {
+  const accentVars = arguments.length > 1
+    ? accentVarsForTheme(theme, overrideColor)
+    : accentVarsForTheme(theme);
+  const vars = { ...(theme?.vars || {}), ...accentVars };
+
+  if (!Object.keys(vars).length) {
+    removeThemeVars();
+    return;
+  }
+
+  const cssVars = Object.entries(vars)
+    .map(([key, value]) => `--pdt-${key}: ${value} !important;`)
+    .join("");
+
+  for (const [key, value] of Object.entries(vars)) {
+    const name = `--pdt-${key}`;
+    document.documentElement.style.setProperty(name, value, "important");
+    appliedThemeVarNames.add(name);
+  }
+
+  let style = document.getElementById(THEME_VARS_ID);
+
+  if (!style) {
+    style = document.createElement("style");
+    style.id = THEME_VARS_ID;
+    style.setAttribute("data-xzen", "theme-vars");
+    getHeadOrRoot().appendChild(style);
+  }
+
+  style.textContent = `:root{${cssVars}}`;
 }
 
 function injectCss(theme = "amoled") {
-  const file = cssFileForTheme(theme);
-  const wantHref = chrome.runtime.getURL(file);
+  if (!extensionContextIsActive()) return false;
+  const cleanTheme = normalizeTheme(theme);
+  const themeDef = getThemeDef(cleanTheme);
+  const file = cssFileForTheme(cleanTheme);
+  let wantHref;
+  try {
+    wantHref = chrome.runtime.getURL(file);
+  } catch (error) {
+    // An open tab can outlive an extension reload/update.
+    if (!/extension context invalidated/i.test(error?.message || "")) throw error;
+    stopExtensionContext();
+    return false;
+  }
 
   let link = document.getElementById(CSS_ID);
 
-  
   if (!link) {
     link = document.createElement("link");
     link.id = CSS_ID;
@@ -35,13 +157,15 @@ function injectCss(theme = "amoled") {
     getHeadOrRoot().appendChild(link);
   }
 
-  
   if (link.href !== wantHref) link.href = wantHref;
+  applyThemeVars(themeDef);
+  return true;
 }
 
 function removeCss() {
   const el = document.getElementById(CSS_ID);
   if (el) el.remove();
+  removeThemeVars();
 }
 
 function ensureDimOverlay() {
@@ -69,9 +193,9 @@ function setDim(level) {
   el.style.opacity = String(n / 100);
 }
 
-
+/* ===================== XZEN CREDIT ===================== */
 const CREDIT_ID = "xzen-amoled-credit-item";
-const CREDIT_COLOR = "#B38AFF"; 
+const CREDIT_COLOR = "var(--pdt-accent, #B38AFF)";
 
 function removeCredit() {
   const el = document.getElementById(CREDIT_ID);
@@ -122,6 +246,7 @@ function ensureCreditInjected() {
     a.style.opacity = "1";
     a.style.textDecoration = "underline";
   });
+
   a.addEventListener("mouseleave", () => {
     a.style.opacity = "0.9";
     a.style.textDecoration = "none";
@@ -132,32 +257,40 @@ function ensureCreditInjected() {
 }
 
 let creditTicking = false;
+
 function scheduleEnsureCredit() {
+  if (!extensionContextIsActive()) return;
   if (creditTicking) return;
+
   creditTicking = true;
   requestAnimationFrame(() => {
     creditTicking = false;
+    if (!extensionContextIsActive()) return;
     ensureCreditInjected();
   });
 }
 
-
-
+/* ===================== VAULT ===================== */
 const VAULT_KEY = "xzenVaultItems";
-const VAULT_BTN_ID = "xzen-vault-save-btn";
+const VAULT_BTN_CLASS = "xzen-vault-save-btn";
+const VAULT_SAVED_CLASS = "xzen-vault-saved";
+const VAULT_HOME_BTN_CLASS = "xzen-vault-home-save-btn";
+const VAULT_PIN_BTN_CLASS = "xzen-vault-pin-save-btn";
+const VAULT_CLOSEUP_BTN_CLASS = "xzen-vault-closeup-save-btn";
+const VAULT_CLOSEUP_CONTAINER_CLASS = "xzen-vault-closeup-container";
+const VAULT_CONTAINER_CLASS = "xzen-vault-container";
 const VAULT_STYLE_ID = "xzen-vault-style";
 const TOAST_ID = "xzen-vault-toast";
 
 function removeVaultButtonIfExists() {
-  const el = document.getElementById(VAULT_BTN_ID);
-  if (!el) return;
+  document.querySelectorAll(`.${VAULT_CONTAINER_CLASS}, .${VAULT_BTN_CLASS}`).forEach((el) => {
+    const wrapper =
+      el.closest(`.${VAULT_CONTAINER_CLASS}`) ||
+      el.closest('[data-xzen-vault-container="true"]') ||
+      el;
 
-  const wrapper =
-    el.closest('[data-test-id="PinBetterSaveButton"]') ||
-    el.closest(".C6J6UC") ||
-    el.closest(".ADXRXN") ||
-    el;
-  wrapper.remove();
+    wrapper.remove();
+  });
 }
 
 function ensureVaultStyles() {
@@ -183,10 +316,118 @@ function ensureVaultStyles() {
   pointer-events: none;
   transition: opacity .14s ease, transform .14s ease;
 }
+
 #${TOAST_ID}.show{
   opacity: 1;
   transform: translateX(-50%) translateY(-2px);
-}`.trim();
+}
+
+.${VAULT_CONTAINER_CLASS}{
+  pointer-events: auto !important;
+}
+
+.${VAULT_BTN_CLASS}{
+  z-index: 30 !important;
+}
+
+.${VAULT_BTN_CLASS} *{
+  white-space: nowrap !important;
+}
+
+/* Saved state */
+.${VAULT_BTN_CLASS}.${VAULT_SAVED_CLASS} .VHreRh,
+.${VAULT_BTN_CLASS}.${VAULT_SAVED_CLASS} > div,
+.${VAULT_BTN_CLASS}.${VAULT_SAVED_CLASS} .dBMCN4{
+  background: rgba(0, 0, 0, 0.35) !important;
+  box-shadow: inset 0 0 0 1px #000000, 0 0 10px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Homepage pin-card button */
+.${VAULT_HOME_BTN_CLASS}{
+  position: absolute !important;
+  right: 60px !important;
+  bottom: 10px !important;
+  min-width: 74px !important;
+  width: auto !important;
+  max-width: 92px !important;
+  height: 34px !important;
+  padding: 0 12px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.38) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .15s ease, transform .15s ease !important;
+}
+
+[data-test-id="pin"]:hover .${VAULT_HOME_BTN_CLASS}{
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.${VAULT_HOME_BTN_CLASS}:hover{
+  transform: translateY(-1px);
+}
+
+/* Hide homepage button if Pinterest reuses a pin card inside closeup */
+[data-test-id="closeup-action-bar"] .${VAULT_HOME_BTN_CLASS},
+[data-test-id="closeupActionBar"] .${VAULT_HOME_BTN_CLASS},
+[data-test-id="closeup-visual-container"] .${VAULT_HOME_BTN_CLASS},
+[data-test-id="pin-closeup"] .${VAULT_HOME_BTN_CLASS},
+[data-test-id="closeup-container"] .${VAULT_HOME_BTN_CLASS}{
+  display: none !important;
+}
+
+/* Regular opened pin fallback button */
+.${VAULT_PIN_BTN_CLASS}{
+  position: static !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin-left: 8px !important;
+}
+
+/* Closeup top action-bar Vault button */
+.${VAULT_CLOSEUP_CONTAINER_CLASS}{
+  display: flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  margin-left: 8px !important;
+}
+
+.${VAULT_CLOSEUP_BTN_CLASS}{
+  all: unset !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+}
+
+.${VAULT_CLOSEUP_BTN_CLASS} .VHreRh{
+  background: #000000 !important;
+  border-radius: 999px !important;
+  height: 48px !important;
+  width: 48px !important;
+}
+
+.${VAULT_CLOSEUP_BTN_CLASS}:hover .VHreRh{
+  background: rgba(var(--pdt-accent-rgb, 142, 107, 255), 0.18) !important;
+  box-shadow: inset 0 0 0 1px var(--pdt-accent, #8E6BFF) !important;
+}
+
+.${VAULT_CLOSEUP_BTN_CLASS}.${VAULT_SAVED_CLASS} .VHreRh{
+  background: rgba(0, 0, 0, 0.35) !important;
+  box-shadow: inset 0 0 0 1px #000000, 0 0 10px rgba(0, 0, 0, 0.45) !important;
+}
+
+.${VAULT_CLOSEUP_BTN_CLASS} svg,
+.${VAULT_CLOSEUP_BTN_CLASS} svg *{
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+`.trim();
 
   const style = document.createElement("style");
   style.id = VAULT_STYLE_ID;
@@ -196,13 +437,16 @@ function ensureVaultStyles() {
 
 function showToast(text) {
   let t = document.getElementById(TOAST_ID);
+
   if (!t) {
     t = document.createElement("div");
     t.id = TOAST_ID;
     document.documentElement.appendChild(t);
   }
+
   t.textContent = text;
   t.classList.add("show");
+
   clearTimeout(t._hideTimer);
   t._hideTimer = setTimeout(() => t.classList.remove("show"), 900);
 }
@@ -210,8 +454,10 @@ function showToast(text) {
 function meta(nameOrProp) {
   const m1 = document.querySelector(`meta[property="${nameOrProp}"]`);
   if (m1?.content) return m1.content;
+
   const m2 = document.querySelector(`meta[name="${nameOrProp}"]`);
   if (m2?.content) return m2.content;
+
   return "";
 }
 
@@ -226,6 +472,7 @@ function absUrl(href) {
 function pickLargestFromSrcset(srcset) {
   const s = String(srcset || "").trim();
   if (!s) return "";
+
   const parts = s.split(",").map((x) => x.trim()).filter(Boolean);
 
   let bestUrl = "";
@@ -255,21 +502,15 @@ function pickLargestFromSrcset(srcset) {
 
 function toOriginalPinImg(u) {
   const url = String(u || "").trim();
-  if (!url) return "";
-
-  if (url.includes("/originals/")) return url;
-
-  const m = url.match(/^https?:\/\/i\.pinimg\.com\/\d+x\/(.+)$/i);
-  if (m && m[1]) {
-    return `https://i.pinimg.com/originals/${m[1]}`;
-  }
-
+  // Keep the exact CDN URL that Pinterest already loaded successfully.
+  // Not every /736x/ or /1200x/ image has a readable /originals/ variant.
   return url;
 }
 
 function cleanTitle(t) {
   let s = String(t || "").trim();
   if (!s) return "";
+
   s = s.replace(/^This contains an image of:\s*/i, "").trim();
   return s.slice(0, 180);
 }
@@ -291,6 +532,7 @@ function getScopeFromButton(btn) {
 function findPinUrlFromScope(scope) {
   const a = scope.querySelector('a[href*="/pin/"]');
   const href = a?.getAttribute("href") || "";
+
   if (href && href.includes("/pin/")) return absUrl(href);
 
   const og = meta("og:url");
@@ -302,27 +544,49 @@ function findPinUrlFromScope(scope) {
   return "";
 }
 
+function persistableVideoUrl(...urls) {
+  for (const raw of urls) {
+    const url = String(raw || "").trim();
+    if (/^https?:\/\//i.test(url)) return url;
+  }
+  return "";
+}
+
 function pickBestVideoFromScope(scope) {
   const vids = Array.from(scope.querySelectorAll("video")).filter((v) => {
     const r = v.getBoundingClientRect();
     return r.width >= 120 && r.height >= 120;
   });
+
   if (!vids.length) return "";
 
   let best = vids[0];
   let bestScore = 0;
+
   for (const v of vids) {
     const r = v.getBoundingClientRect();
     const score = r.width * r.height;
+
     if (score > bestScore) {
       bestScore = score;
       best = v;
     }
   }
 
-  return (
-    (best.currentSrc || best.src || "").trim() ||
-    (best.querySelector("source")?.src || "").trim()
+  const sourceUrls = Array.from(best.querySelectorAll("source")).flatMap((source) => [
+    source.currentSrc,
+    source.src,
+    source.getAttribute("src"),
+    source.getAttribute("data-src"),
+  ]);
+
+  return persistableVideoUrl(
+    best.currentSrc,
+    best.src,
+    best.getAttribute("src"),
+    best.getAttribute("data-src"),
+    best.getAttribute("data-video-url"),
+    ...sourceUrls
   );
 }
 
@@ -330,9 +594,11 @@ function pickBestImageFromScope(scope) {
   const imgs = Array.from(scope.querySelectorAll("img")).filter((img) => {
     const src = img.currentSrc || img.src || "";
     if (!src) return false;
+
     const r = img.getBoundingClientRect();
     const w = Math.max(r.width, img.naturalWidth || 0);
     const h = Math.max(r.height, img.naturalHeight || 0);
+
     return w >= 80 && h >= 80;
   });
 
@@ -360,8 +626,10 @@ function pickBestImageFromScope(scope) {
 
 function guessTypeFromUrl(u) {
   const x = (u || "").toLowerCase();
+
   if (x.includes(".gif")) return "gif";
   if (x.includes(".mp4") || x.includes(".webm") || x.includes("video")) return "video";
+
   return "image";
 }
 
@@ -394,15 +662,19 @@ function getPinPreviewFromButton(btn) {
     cleanTitle(meta("og:title") || meta("twitter:title") || document.title || "Pinterest");
 
   const videoUrl =
-    (meta("og:video:secure_url") || meta("og:video") || meta("twitter:player:stream") || "").trim() ||
-    pickBestVideoFromScope(scope);
+    pickBestVideoFromScope(scope) ||
+    persistableVideoUrl(
+      meta("og:video:secure_url"),
+      meta("og:video"),
+      meta("twitter:player:stream")
+    );
 
   const imageUrl =
     pickBestImageFromScope(scope) ||
     (meta("og:image") || meta("twitter:image") || "").trim();
 
   const mediaUrlRaw = (videoUrl || imageUrl || "").trim();
-  const mediaType = guessTypeFromUrl(mediaUrlRaw);
+  const mediaType = videoUrl ? "video" : guessTypeFromUrl(mediaUrlRaw);
 
   const bestImage = toOriginalPinImg(imageUrl);
   const bestMedia = mediaType === "video" ? mediaUrlRaw : toOriginalPinImg(mediaUrlRaw);
@@ -433,19 +705,39 @@ function saveToVault(item) {
         showToast("Vault save failed");
         return;
       }
+
       showToast("Saved to Vault");
     });
   });
 }
 
-function makeVaultContainerFromNative(nativeContainer) {
+function markVaultButtonSaved(btn) {
+  if (!btn) return;
+  btn.classList.add(VAULT_SAVED_CLASS);
+  btn.setAttribute("aria-pressed", "true");
+}
+
+function makeVaultContainerFromNative(nativeContainer, mode) {
   const container = nativeContainer.cloneNode(true);
+
   container.removeAttribute("data-test-id");
+  container.classList.add(VAULT_CONTAINER_CLASS);
+  container.setAttribute("data-xzen-vault-container", "true");
 
   const btn = container.querySelector("button");
   if (!btn) return null;
 
-  btn.id = VAULT_BTN_ID;
+  btn.removeAttribute("id");
+  btn.classList.add(VAULT_BTN_CLASS);
+
+  if (mode === "home") {
+    btn.classList.add(VAULT_HOME_BTN_CLASS);
+  } else if (mode === "closeup") {
+    btn.classList.add(VAULT_CLOSEUP_BTN_CLASS);
+  } else {
+    btn.classList.add(VAULT_PIN_BTN_CLASS);
+  }
+
   btn.type = "button";
   btn.setAttribute("aria-label", "Save to Vault");
 
@@ -460,12 +752,9 @@ function makeVaultContainerFromNative(nativeContainer) {
     })();
 
   if (labelEl) {
-    labelEl.textContent = "Save to Vault";
+    labelEl.textContent = "Save";
     labelEl.style.whiteSpace = "nowrap";
   }
-
-  btn.style.whiteSpace = "nowrap";
-  btn.style.minWidth = "132px";
 
   btn.addEventListener(
     "click",
@@ -475,6 +764,7 @@ function makeVaultContainerFromNative(nativeContainer) {
 
       const item = getPinPreviewFromButton(btn);
       saveToVault(item);
+      markVaultButtonSaved(btn);
 
       if (labelEl) {
         const old = labelEl.textContent;
@@ -488,42 +778,142 @@ function makeVaultContainerFromNative(nativeContainer) {
   return container;
 }
 
+function makeCloseupActionVaultButton() {
+  const item = document.createElement("div");
+  item.className = `${VAULT_CONTAINER_CLASS} ${VAULT_CLOSEUP_CONTAINER_CLASS}`;
+  item.setAttribute("data-xzen-vault-container", "true");
+
+  item.innerHTML = `
+    <div role="listitem" class="ADXRXN">
+      <div class="ADXRXN DTsIgD">
+        <div aria-label="Save to Vault" class="ADXRXN">
+          <button aria-label="Save to Vault" class="euRXRl ${VAULT_BTN_CLASS} ${VAULT_CLOSEUP_BTN_CLASS}" type="button" aria-pressed="false">
+            <div class="dVx3J_ Q3hcOU mm_g7v">
+              <div class="VHreRh kHGn_J XjRT60" style="height:48px;width:48px;">
+                <svg aria-hidden="true" class="aTSQd5 hL9n03 _ByyDT" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <path d="M5 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v20l-7-4-7 4z"></path>
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const btn = item.querySelector("button");
+
+  btn.addEventListener(
+    "click",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const dataBtn =
+        document.querySelector('[data-test-id="closeup-action-bar"] [data-test-id="PinBetterSaveButton"] button') ||
+        btn;
+
+      const itemData = getPinPreviewFromButton(dataBtn);
+      saveToVault(itemData);
+      markVaultButtonSaved(btn);
+    },
+    true
+  );
+
+  return item;
+}
+
 function injectVaultButton() {
   if (!vaultEnabledCache) return;
 
   ensureVaultStyles();
-  if (document.getElementById(VAULT_BTN_ID)) return;
 
-  const saveBlock = document.querySelector('[data-test-id="pin-better-save-button"]');
-  if (!saveBlock) return;
+  const saveBlocks = document.querySelectorAll('[data-test-id="pin-better-save-button"]');
+  if (!saveBlocks.length) return;
 
-  const nativeContainer = saveBlock.querySelector('[data-test-id="PinBetterSaveButton"]');
-  if (!nativeContainer) return;
+  saveBlocks.forEach((saveBlock) => {
+    const nativeContainer = saveBlock.querySelector('[data-test-id="PinBetterSaveButton"]');
+    if (!nativeContainer) return;
 
-  const parent = nativeContainer.parentElement;
-  if (!parent) return;
+    const closeup =
+      saveBlock.closest('[data-test-id="closeup-action-bar"]') ||
+      saveBlock.closest('[data-test-id="closeupActionBar"]') ||
+      saveBlock.closest('[data-test-id="pin-closeup"]') ||
+      saveBlock.closest('[data-test-id="closeup-container"]');
 
-  const vaultContainer = makeVaultContainerFromNative(nativeContainer);
-  if (!vaultContainer) return;
+    const pinCard = saveBlock.closest('[data-test-id="pin"]');
 
-  parent.appendChild(vaultContainer);
+    const isCloseup = !!closeup;
+    const isHomeCard = !!pinCard && !isCloseup;
+
+    if (isHomeCard) {
+      if (pinCard.querySelector(`.${VAULT_HOME_BTN_CLASS}`)) return;
+
+      const imageWrapper =
+        pinCard.querySelector(".PinCard__imageWrapper") ||
+        pinCard.querySelector('[data-test-id="pinWrapper"]');
+
+      if (!imageWrapper) return;
+
+      imageWrapper.style.position = "relative";
+
+      const vaultContainer = makeVaultContainerFromNative(nativeContainer, "home");
+      if (!vaultContainer) return;
+
+      imageWrapper.appendChild(vaultContainer);
+      return;
+    }
+
+    if (isCloseup) {
+      if (document.querySelector(`.${VAULT_CLOSEUP_BTN_CLASS}`)) return;
+
+      const moreOptions =
+        closeup.querySelector('[data-test-id="closeup-more-options"]') ||
+        document.querySelector('[data-test-id="closeup-more-options"]');
+      if (!moreOptions) return;
+
+      const moreButtonWrap = moreOptions.closest(".FlexItem_x") || moreOptions;
+      if (!moreButtonWrap.parentElement) return;
+
+      const vaultButton = makeCloseupActionVaultButton();
+      moreButtonWrap.insertAdjacentElement("afterend", vaultButton);
+
+      return;
+    }
+
+    if (saveBlock.querySelector(`.${VAULT_PIN_BTN_CLASS}`)) return;
+
+    const parent = nativeContainer.parentElement;
+    if (!parent) return;
+
+    const vaultContainer = makeVaultContainerFromNative(nativeContainer, "pin");
+    if (!vaultContainer) return;
+
+    parent.appendChild(vaultContainer);
+  });
 }
 
 let vaultTick = false;
+
 function scheduleVaultInject() {
+  if (!extensionContextIsActive()) return;
   if (!vaultEnabledCache) return;
   if (vaultTick) return;
+
   vaultTick = true;
   requestAnimationFrame(() => {
     vaultTick = false;
+    if (!extensionContextIsActive()) return;
     injectVaultButton();
   });
 }
 
+/* ===================== /VAULT ===================== */
 
 function apply() {
+  if (!extensionContextIsActive()) return;
   if (enabledCache) {
-    injectCss(themeCache);
+    if (!injectCss(themeCache)) return;
     scheduleEnsureCredit();
   } else {
     removeCss();
@@ -540,12 +930,17 @@ function loadStateAndApply() {
       pinterestDimLevel: 0,
       [KEY_VAULT_ENABLED]: true,
       [KEY_THEME]: "amoled",
+      [KEY_THEME_ACCENTS]: {},
     },
     (data) => {
+      if (!extensionContextIsActive()) return;
       enabledCache = !!data.pinterestAmoledEnabled;
       dimCache = Number(data.pinterestDimLevel) || 0;
       vaultEnabledCache = !!data[KEY_VAULT_ENABLED];
-      themeCache = data[KEY_THEME] === "gray" ? "gray" : "amoled";
+      themeCache = normalizeTheme(data[KEY_THEME]);
+      themeAccentCache = data[KEY_THEME_ACCENTS] && typeof data[KEY_THEME_ACCENTS] === "object"
+        ? data[KEY_THEME_ACCENTS]
+        : {};
 
       apply();
 
@@ -558,6 +953,18 @@ function loadStateAndApply() {
 loadStateAndApply();
 
 chrome.storage.onChanged.addListener((changes, area) => {
+  if (!extensionContextIsActive()) return;
+  if (area === "local" && changes[KEY_THEME_ACCENT_PREVIEW]) {
+    const preview = changes[KEY_THEME_ACCENT_PREVIEW].newValue;
+    const previewTheme = normalizeTheme(preview?.theme);
+    if (enabledCache && ["amoled", "amoled-v2"].includes(previewTheme)) {
+      themeCache = previewTheme;
+      if (!injectCss(themeCache)) return;
+      applyThemeVars(getThemeDef(themeCache), preview.color);
+    }
+    return;
+  }
+
   if (area !== "sync") return;
 
   let shouldReapply = false;
@@ -566,18 +973,26 @@ chrome.storage.onChanged.addListener((changes, area) => {
     enabledCache = !!changes.pinterestAmoledEnabled.newValue;
     shouldReapply = true;
   }
+
   if (changes.pinterestDimLevel) {
     dimCache = Number(changes.pinterestDimLevel.newValue) || 0;
     shouldReapply = true;
   }
 
   if (changes[KEY_THEME]) {
-    themeCache = changes[KEY_THEME].newValue === "gray" ? "gray" : "amoled";
-    if (enabledCache) injectCss(themeCache); 
+    themeCache = normalizeTheme(changes[KEY_THEME].newValue);
+    if (enabledCache) injectCss(themeCache);
+  }
+
+  if (changes[KEY_THEME_ACCENTS]) {
+    const next = changes[KEY_THEME_ACCENTS].newValue;
+    themeAccentCache = next && typeof next === "object" ? next : {};
+    if (enabledCache) injectCss(themeCache);
   }
 
   if (changes[KEY_VAULT_ENABLED]) {
     vaultEnabledCache = !!changes[KEY_VAULT_ENABLED].newValue;
+
     if (!vaultEnabledCache) removeVaultButtonIfExists();
     else scheduleVaultInject();
   }
@@ -585,8 +1000,30 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (shouldReapply) apply();
 });
 
-const reinjectObserver = new MutationObserver(() => {
-  if (enabledCache && !document.getElementById(CSS_ID)) injectCss(themeCache);
+chrome.runtime.onMessage.addListener((message) => {
+  if (!extensionContextIsActive()) return;
+  if (message?.type !== "xzen-preview-theme-accent") return;
+  if (!enabledCache) return;
+
+  const previewTheme = normalizeTheme(message.theme);
+  if (!["amoled", "amoled-v2"].includes(previewTheme)) return;
+
+  themeCache = previewTheme;
+  if (!injectCss(themeCache)) return;
+  applyThemeVars(getThemeDef(themeCache), message.color);
+});
+
+reinjectObserver = new MutationObserver(() => {
+  if (!extensionContextIsActive()) return;
+  const needsThemeVars =
+    !!getThemeDef(themeCache)?.vars || !!normalizeHexColor(themeAccentCache[themeCache]);
+  if (
+    enabledCache &&
+    (!document.getElementById(CSS_ID) ||
+      (needsThemeVars && !document.getElementById(THEME_VARS_ID)))
+  ) {
+    if (!injectCss(themeCache)) return;
+  }
 
   if ((enabledCache || dimCache > 0) && !document.getElementById(DIM_ID)) {
     ensureDimOverlay();
@@ -596,17 +1033,21 @@ const reinjectObserver = new MutationObserver(() => {
   if (enabledCache && !document.getElementById(CREDIT_ID)) scheduleEnsureCredit();
 
   if (vaultEnabledCache) {
-    if (!document.getElementById(VAULT_BTN_ID)) scheduleVaultInject();
+    scheduleVaultInject();
   } else {
-    if (document.getElementById(VAULT_BTN_ID)) removeVaultButtonIfExists();
+    removeVaultButtonIfExists();
   }
 });
 
-reinjectObserver.observe(document.documentElement, { childList: true, subtree: true });
+reinjectObserver.observe(document.documentElement, {
+  childList: true,
+  subtree: true,
+});
 
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
     apply();
+
     if (vaultEnabledCache) scheduleVaultInject();
     else removeVaultButtonIfExists();
   }
@@ -614,6 +1055,7 @@ document.addEventListener("visibilitychange", () => {
 
 window.addEventListener("pageshow", () => {
   apply();
+
   if (vaultEnabledCache) scheduleVaultInject();
   else removeVaultButtonIfExists();
 });

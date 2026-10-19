@@ -1,6 +1,8 @@
+/* popup.css (REPLACE ENTIRE FILE) */
 
-
-
+/* =========================================
+   VARIABLES
+   ========================================= */
 :root {
   --bg-color: #000000;
   --accent: #B38AFF;
@@ -22,7 +24,9 @@ body {
   overflow: hidden;
 }
 
-
+/* =========================================
+   LAYOUT
+   ========================================= */
 .card {
   position: relative;
   padding: 20px;
@@ -31,11 +35,13 @@ body {
   gap: 18px;
 }
 
-
+/* CRITICAL: No dark overlay */
 .dark-layer { display: none !important; }
 .sep { display: none; }
 
-
+/* =========================================
+   HEADER
+   ========================================= */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -58,7 +64,9 @@ body {
   margin-top: 2px;
 }
 
-
+/* =========================================
+   TOGGLE
+   ========================================= */
 .toggle-wrap { display: flex; align-items: center; }
 .toggle-label { display: none; }
 
@@ -102,7 +110,9 @@ body {
   box-shadow: 0 0 8px var(--accent);
 }
 
-
+/* =========================================
+   SLIDER
+   ========================================= */
 .dim {
   display: flex;
   flex-direction: column;
@@ -152,6 +162,28 @@ body {
   box-shadow: 0 0 10px var(--accent);
 }
 
+#dimSlider::-moz-range-track {
+  height: 6px;
+  background: transparent;
+  border: 0;
+}
+
+#dimSlider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  background: var(--accent);
+  border: 1px solid #111;
+  border-radius: 50%;
+  cursor: grab;
+  transition: transform 0.1s;
+}
+
+#dimSlider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--accent);
+}
+
 .dim-hint {
   display: block;
   font-size: 10px;
@@ -160,7 +192,9 @@ body {
   text-align: left;
 }
 
-
+/* =========================================
+   LINKS AREA
+   ========================================= */
 .links {
   display: grid;
   grid-template-columns: 42px 1fr 42px;
@@ -172,23 +206,23 @@ body {
   align-items: center;
 }
 
-
+/* map items */
 #privatePinsBtn { grid-area: vault; }
 #githubLink { grid-area: github; }
 #reviewLink { grid-area: review; }
 #customLink { grid-area: custom; }
 
-
+/* When Vault is OFF: collapse the vault row completely */
 body.vault-off .links {
   grid-template-areas: "github review custom";
 }
 
-
+/* safety */
 body.vault-off #privatePinsBtn {
   display: none !important;
 }
 
-
+/* button/link shared */
 .icon-btn, .review-btn {
   height: 40px;
   background: transparent;
@@ -217,7 +251,7 @@ body.vault-off #privatePinsBtn {
 }
 .review-btn:hover { color: #fff !important; }
 
-
+/* Private Pins button */
 #privatePinsBtn{
   height: 40px;
   width: 100%;
@@ -260,7 +294,9 @@ body.vault-off #privatePinsBtn {
   box-shadow: none !important;
 }
 
-
+/* =========================================
+   DONATE (CLICKABLE + SAME SIZE AS BUTTONS)
+   ========================================= */
 #donateWrap{
   width: 100%;
   margin-top: -6px;
@@ -287,7 +323,9 @@ body.vault-off #privatePinsBtn {
   max-width: 100%;
 }
 
-
+/* =========================================
+   FOOTER
+   ========================================= */
 .footer {
   margin-top: 10px !important;
   text-align: center;
@@ -314,37 +352,9 @@ body.vault-off #privatePinsBtn {
 
 .footer-link:hover { color: var(--accent); }
 
-
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-.modal.show { display: flex; }
-
-#modal500 { --p: #B38AFF; }
-#modal500 .modal-backdrop { background: rgba(0,0,0,.85) !important; backdrop-filter: blur(5px); }
-#modal500 .modal-card { background: #080808 !important; border: 1px solid #333 !important; border-radius: 12px !important; padding: 18px; }
-#modal500 .modal-title { color: #fff !important; font-size: 14px; margin-bottom: 8px; font-weight: bold; }
-#modal500 .modal-text { color: #ccc !important; font-size: 12px; }
-#modal500 .modal-text a { color: var(--p) !important; }
-#modal500 .modal-btn {
-  margin-top: 14px;
-  background: transparent !important;
-  border: 1px solid var(--p) !important;
-  color: var(--p) !important;
-  padding: 8px;
-  width: 100%;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-#modal500 .modal-btn:hover { background: var(--p) !important; color: #000 !important; }
-
-
+/* =========================================
+   SETTINGS BUTTON
+   ========================================= */
 .settings-btn{
   position: absolute;
   bottom: 10px;
@@ -365,7 +375,9 @@ body.vault-off #privatePinsBtn {
   border-color: rgba(255,255,255,.22);
 }
 
-
+/* =========================================
+   REVIEW MODAL
+   ========================================= */
 .xzen-modal{
   position: fixed;
   inset: 0;
@@ -392,6 +404,47 @@ body.vault-off #privatePinsBtn {
   backdrop-filter: blur(10px);
   box-shadow: 0 18px 50px rgba(0,0,0,.70);
   color: #fff;
+}
+
+body.discord-announcement-open{
+  min-height: 440px;
+}
+
+#modalDiscordAnnouncement .xzen-modal-card{
+  max-height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#modalDiscordAnnouncement .xzen-modal-text{
+  min-height: 0;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+#modalDiscordAnnouncement .xzen-modal-settings-tip{
+  flex: 0 0 auto;
+  margin-top: 10px;
+  padding: 9px 10px;
+  border: 1px solid rgba(179,138,255,.55);
+  border-radius: 10px;
+  background: rgba(179,138,255,.16);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+#modalDiscordAnnouncement .xzen-modal-actions{
+  flex: 0 0 auto;
+}
+
+#modalDiscordAnnouncement .xzen-modal-text p{
+  margin: 0 0 8px;
+}
+
+#modalDiscordAnnouncement .xzen-modal-text p:last-child{
+  margin-bottom: 0;
 }
 
 .xzen-modal-title{
@@ -428,11 +481,11 @@ body.vault-off #privatePinsBtn {
   margin-top: 12px;
 }
 
-
+/* actions row: allow wrap + keep inside modal */
 .xzen-modal-actions-row{
   justify-content: flex-end;
   gap: 10px;
-  flex-wrap: wrap;         
+  flex-wrap: wrap;         /* NEW */
 }
 
 .xzen-modal-btn{
@@ -445,9 +498,9 @@ body.vault-off #privatePinsBtn {
   border-radius: 12px;
   cursor: pointer;
   white-space: nowrap;
-  text-align: center;      
-  flex: 1 1 140px;         
-  max-width: 100%;         
+  text-align: center;      /* NEW */
+  flex: 1 1 140px;         /* NEW: can shrink/wrap */
+  max-width: 100%;         /* NEW */
 }
 
 .xzen-modal-btn:hover{

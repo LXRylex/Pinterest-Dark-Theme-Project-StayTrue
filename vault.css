@@ -1,4 +1,7 @@
-
+/* =========================
+   Xzen Vault – B/W Compact
+   (single clean file)
+   ========================= */
 
 :root{
   --bg: #000;
@@ -32,6 +35,30 @@ body{
   overflow-x:hidden;
 }
 
+.vault-layout{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:280px minmax(0, 1fr);
+  background:#000;
+}
+
+.vault-sidebar{
+  position:sticky;
+  top:0;
+  align-self:start;
+  height:100vh;
+  overflow:auto;
+  padding:14px;
+  border-right:1px solid var(--border);
+  background:rgba(5,5,5,.96);
+  box-shadow:10px 0 26px rgba(0,0,0,.45);
+  z-index:60;
+}
+
+.vault-main{
+  min-width:0;
+}
+
 ::-webkit-scrollbar{ width: 10px; }
 ::-webkit-scrollbar-track{ background: rgba(255,255,255,.04); }
 ::-webkit-scrollbar-thumb{
@@ -41,7 +68,16 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,.22); }
 
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.14) #000;
+  }
+}
 
+/* =========================
+   Header
+   ========================= */
 header{
   position: sticky;
   top:0;
@@ -71,6 +107,13 @@ header{
   min-width: 190px;
 }
 
+.vault-sidebar .brand{
+  min-width:0;
+  padding-bottom:14px;
+  margin-bottom:14px;
+  border-bottom:1px solid var(--border);
+}
+
 .brand-logo{
   width: 34px;
   height: 34px;
@@ -89,16 +132,25 @@ h1{
   color: var(--text);
 }
 
-
+/* centered search */
 .controls{
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
+.vault-sidebar .controls{
+  display:block;
+  margin-bottom:14px;
+}
+
 .search-wrapper{
   position:relative;
   width: min(760px, 100%);
+}
+
+.vault-sidebar .search-wrapper{
+  width:100%;
 }
 
 .search-icon{
@@ -108,6 +160,16 @@ h1{
   transform: translateY(-50%);
   opacity:.65;
   font-size: 12px;
+}
+
+.vault-sidebar .search-icon{
+  font-size:0;
+}
+
+.vault-sidebar .search-icon::after{
+  content:"Search";
+  font-size:11px;
+  font-weight:900;
 }
 
 input[type="text"]{
@@ -129,7 +191,7 @@ input[type="text"]:focus{
   transform: translateY(-1px);
 }
 
-
+/* actions */
 .top-actions{
   position: relative;
   display:flex;
@@ -138,6 +200,50 @@ input[type="text"]:focus{
   justify-content:flex-end;
   flex-wrap: wrap;
 }
+
+.vault-sidebar input[type="text"]{
+  padding-left:58px;
+}
+
+.vault-sidebar .top-actions{
+  align-items:stretch;
+  justify-content:flex-start;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  gap:10px;
+}
+
+.vault-sidebar .top-actions > button{
+  width:100%;
+  height:38px;
+  text-align:left;
+  justify-content:flex-start;
+}
+
+.vault-sidebar #dataMenuBtn,
+.vault-sidebar #deleteMenuBtn,
+.vault-sidebar #tagsMenuBtn,
+.vault-sidebar #filterMenuBtn{
+  display:none;
+}
+
+.vault-sidebar #dataMenu::before,
+.vault-sidebar #deleteMenu::before,
+.vault-sidebar #tagsMenu::before,
+.vault-sidebar #filterMenu::before{
+  display:block;
+  padding:2px 2px 8px;
+  color:rgba(255,255,255,.62);
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.vault-sidebar #dataMenu::before{ content:"Data"; }
+.vault-sidebar #deleteMenu::before{ content:"Delete"; }
+.vault-sidebar #tagsMenu::before{ content:"Tags"; }
+.vault-sidebar #filterMenu::before{ content:"Filter"; }
 
 button{
   appearance:none;
@@ -176,7 +282,7 @@ button.danger:hover:not(:disabled){
   background: linear-gradient(180deg, rgba(255,70,70,.30), rgba(255,70,70,.14)) !important;
 }
 
-
+/* Help button */
 .help-btn{
   background: transparent;
   border: 1px solid rgba(255,255,255,0.2);
@@ -194,7 +300,9 @@ button.danger:hover:not(:disabled){
   border-color: rgba(255,255,255,0.4);
 }
 
-
+/* =========================
+   Menus (dropdown)
+   ========================= */
 .menu{
   position: absolute;
   top: calc(100% + 8px);
@@ -211,7 +319,22 @@ button.danger:hover:not(:disabled){
   z-index: 999;
 }
 
+.vault-sidebar .menu{
+  position:static;
+  top:auto;
+  right:auto;
+  width:100%;
+  min-width:0;
+  max-width:none;
+  margin-top:-4px;
+  box-shadow:none;
+}
+
 .menu[hidden]{ display:none !important; }
+
+.vault-sidebar .menu[hidden]{
+  display:block !important;
+}
 
 .menu-item{
   width: 100%;
@@ -229,6 +352,10 @@ button.danger:hover:not(:disabled){
   justify-content:flex-start;
   transition: transform .12s ease, background .15s ease, border-color .15s ease, opacity .15s ease;
   margin: 0;
+}
+
+.vault-sidebar .menu-item{
+  height:36px;
 }
 .menu-item + .menu-item{ margin-top: 6px; }
 .menu-item:hover:not(:disabled){
@@ -251,7 +378,7 @@ button.danger:hover:not(:disabled){
   padding: 2px 6px 6px;
 }
 
-
+/* Filter tags container in menu */
 .menu-tags{
   display: flex;
   flex-wrap: wrap;
@@ -284,7 +411,9 @@ button.danger:hover:not(:disabled){
   color:#000;
 }
 
-
+/* =========================
+   Empty state
+   ========================= */
 #emptyState{
   display:none;
   text-align:center;
@@ -294,7 +423,9 @@ button.danger:hover:not(:disabled){
 #emptyState.show{ display:block; }
 #emptyState b{ color: rgba(255,255,255,.9); }
 
-
+/* =========================
+   Grid
+   ========================= */
 #vaultGrid{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -306,7 +437,31 @@ button.danger:hover:not(:disabled){
   #vaultGrid{ padding: 10px; gap: 10px; }
 }
 
+@media (max-width: 820px){
+  .vault-layout{
+    grid-template-columns:1fr;
+  }
 
+  .vault-sidebar{
+    position:relative;
+    height:auto;
+    border-right:0;
+    border-bottom:1px solid var(--border);
+  }
+
+  .vault-sidebar .top-actions{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .vault-sidebar .menu{
+    grid-column:1 / -1;
+  }
+}
+
+/* =========================
+   Card
+   ========================= */
 .card{
   position:relative;
   overflow:hidden;
@@ -335,7 +490,7 @@ button.danger:hover:not(:disabled){
 }
 .card:hover::after{ opacity: 1; }
 
-
+/* thumb */
 .thumb-wrapper{
   position:relative;
   width:100%;
@@ -391,6 +546,67 @@ button.danger:hover:not(:disabled){
   border: 1px solid rgba(255,255,255,0.2);
 }
 
+/* body */
+/* =========================
+   ZIP Loading Overlay
+   ========================= */
+.zip-overlay{
+  position:fixed;
+  inset:0;
+  z-index:12000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.zip-overlay.show{
+  display:flex;
+}
+
+.zip-loader{
+  width:min(280px, calc(100% - 32px));
+  min-height:180px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;
+  background:rgba(5,5,5,.94);
+  box-shadow:0 18px 60px rgba(0,0,0,.75);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:22px;
+  text-align:center;
+}
+
+.zip-spinner{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:4px solid rgba(255,255,255,.16);
+  border-top-color:#fff;
+  animation:zipSpin .8s linear infinite;
+}
+
+.zip-title{
+  color:#fff;
+  font-size:15px;
+  font-weight:900;
+}
+
+.zip-text{
+  min-height:18px;
+  color:rgba(255,255,255,.68);
+  font-size:12px;
+  font-weight:700;
+}
+
+@keyframes zipSpin{
+  to{ transform:rotate(360deg); }
+}
 
 .card-body{
   padding: 8px 10px 10px;
@@ -481,7 +697,7 @@ button.danger:hover:not(:disabled){
   border-color: rgba(255,255,255,.24);
 }
 
-
+/* bulk checkbox */
 .select-checkbox{
   position:absolute;
   top: 10px;
@@ -513,7 +729,9 @@ body.bulk-mode .card.selected::before{
 }
 body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
 
-
+/* =========================
+   Viewer (modal)
+   ========================= */
 .viewer{
   position:fixed;
   inset:0;
@@ -543,7 +761,13 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
 .viewer-dialog{
   position:relative;
   width: min(920px, calc(100% - 18px));
-  max-height: min(86vh, 880px);
+  max-width:calc(100vw - 18px);
+  min-width:0;
+  height: min(86vh, 880px);
+  max-height: calc(100vh - 18px);
+  display:grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
   border-radius: 14px;
   overflow:hidden;
   border: 1px solid var(--border);
@@ -555,7 +779,7 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
 }
 .viewer.show .viewer-dialog{ transform: translateY(0) scale(1); opacity: 1; }
 
-.viewer-header, .viewer-footer{
+.viewer-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -564,9 +788,18 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   background: #040404;
 }
 .viewer-header{ border-bottom: 1px solid var(--border); }
-.viewer-footer{ border-top: 1px solid var(--border); }
+
+.viewer-header-actions{
+  display:flex;
+  flex:0 0 auto;
+  align-items:center;
+  gap:8px;
+}
 
 .viewer-title{
+  flex:1 1 0;
+  min-width:0;
+  max-width:100%;
   font-size: 12.5px;
   font-weight: 900;
   white-space: nowrap;
@@ -585,24 +818,111 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
 }
 .viewer-x:hover{ background:#0d0d0d; }
 
+.viewer-actions-toggle{
+  height:30px;
+  padding:0 10px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#080808;
+  color:rgba(255,255,255,.9);
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+.viewer-actions-toggle:hover{ background:#0d0d0d; }
+
+.viewer-content{
+  min-width:0;
+  min-height:0;
+  display:flex;
+  overflow:hidden;
+}
+
 .viewer-body{
+  position:relative;
+  flex:1 1 0;
+  width:0;
+  min-width:0;
   background: #000;
   display:flex;
   align-items:center;
   justify-content:center;
+  min-height:0;
+  overflow:hidden;
 }
 .viewer-media{
+  position:absolute;
+  inset:0;
   width:100%;
+  height:100%;
+  box-sizing:border-box;
+  min-width:0;
+  min-height:0;
+  overflow:hidden;
   display:grid;
+  grid-template-columns:minmax(0, 1fr);
+  grid-template-rows:minmax(0, 1fr);
   place-items:center;
   padding: 12px;
 }
 .viewer-media img, .viewer-media video{
+  display:block;
+  width:auto;
+  height:auto;
   max-width: 100%;
-  max-height: 68vh;
+  max-height: 100%;
+  box-sizing:border-box;
+  object-fit:contain;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: #000;
+}
+
+.viewer-media-error{
+  max-width:320px;
+  padding:16px;
+  color:rgba(255,255,255,.72);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.4;
+  text-align:center;
+}
+
+.viewer-actions{
+  flex:0 0 150px;
+  width:150px;
+  min-width:0;
+  overflow:hidden;
+  border-left:1px solid var(--border);
+  background:#040404;
+  padding:12px;
+  opacity:1;
+  transition:opacity .14s ease, padding .18s ease;
+}
+
+.viewer-dialog.actions-collapsed .viewer-actions{
+  flex-basis:0;
+  width:0;
+  padding-left:0;
+  padding-right:0;
+  border-left-color:transparent;
+  opacity:0;
+  pointer-events:none;
+}
+
+.viewer-actions-title{
+  margin-bottom:12px;
+  color:rgba(255,255,255,.72);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.viewer-actions-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
 }
 
 .viewer-link, .viewer-btn{
@@ -617,12 +937,15 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   cursor:pointer;
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   text-decoration: none;
+  width:100%;
 }
 .viewer-link:hover, .viewer-btn:hover{ background:#0d0d0d; }
-.viewer-left, .viewer-right{ display:flex; gap: 8px; }
 
-
+/* =========================
+   Tag Modal (and reused for Help backdrop)
+   ========================= */
 .tag-modal{
   position: fixed;
   inset: 0;
@@ -717,7 +1040,7 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   min-height: 60px;
 }
 
-
+/* chips in tag modal */
 .tag-chip-btn{
   height: 28px;
   padding: 0 12px;
@@ -789,7 +1112,9 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   transform: translateY(0);
 }
 
-
+/* =========================
+   Help modal (uses same backdrop system)
+   ========================= */
 .help-card{
   width: 520px;
   max-width: 95vw;
@@ -841,7 +1166,9 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   font-weight: 900;
 }
 
-
+/* =========================
+   Context menu for tags
+   ========================= */
 .tag-ctx-menu{
   position: fixed;
   z-index: 11000;
@@ -883,17 +1210,26 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   to  { opacity:1; transform: scale(1); }
 }
 
-
+/* =========================
+   Quick Preview (hold Space)
+   ========================= */
 .quick-preview{
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10020;
   pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .14s ease, visibility 0s linear .14s;
 }
-.quick-preview.show{ display:flex; }
+.quick-preview.show{
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
 
 .quick-preview .qp-backdrop{
   position:absolute;
@@ -901,21 +1237,33 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
   background: rgba(0,0,0,.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  opacity:0;
+  transition:opacity .14s ease;
 }
+.quick-preview.show .qp-backdrop{ opacity:1; }
 
 .quick-preview .qp-card{
   position: relative;
-  width: min(920px, calc(100% - 18px));
+  width: calc(100vw - 18px);
+  max-width: 920px;
+  min-width: 0;
   max-height: 80vh;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.14);
   background: #060606;
   box-shadow: 0 18px 60px rgba(0,0,0,.75);
   overflow: hidden;
-  transform: translateY(6px) scale(.99);
-  opacity: .98;
+  transform: translateY(8px) scale(.985);
+  opacity:0;
+  transition:transform .14s ease, opacity .14s ease;
+}
+.quick-preview.show .qp-card{
+  transform:translateY(0) scale(1);
+  opacity:1;
 }
 .quick-preview .qp-head{
+  min-width: 0;
+  max-width: 100%;
   padding: 10px 12px;
   border-bottom: 1px solid rgba(255,255,255,.12);
   background: #040404;
@@ -929,19 +1277,30 @@ body.bulk-mode .select-checkbox{ accent-color: rgb(255,70,70); }
 .quick-preview .qp-body{
   display: grid;
   place-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
   padding: 12px;
   background: #000;
 }
 .quick-preview img,
 .quick-preview video{
+  display: block;
+  width: 100%;
+  height: min(66vh, calc(80vh - 42px));
   max-width: 100%;
   max-height: 66vh;
+  box-sizing: border-box;
+  object-fit: contain;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,.12);
   background: #000;
 }
 
-
+/* =========================
+   Ambient FX (subtle)
+   ========================= */
 body::before{
   content:"";
   position:fixed;
@@ -953,7 +1312,9 @@ body::before{
     radial-gradient(800px 520px at 15% 0%, rgba(255,255,255,.10), transparent 60%),
     repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px);
 }
-
+/* =========================
+   Vault Intro Modal
+   ========================= */
 .intro-modal{
   position: fixed;
   inset: 0;

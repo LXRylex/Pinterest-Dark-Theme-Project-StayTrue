@@ -1,0 +1,182 @@
+.masonryContainer {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.masonryContainer a,
+.masonryContainer span,
+.masonryContainer div,
+.masonryContainer p,
+.masonryContainer h1,
+.masonryContainer h2,
+.masonryContainer h3,
+.masonryContainer h4,
+.masonryContainer h5,
+.masonryContainer h6,
+.masonryContainer button {
+  color: #fff !important;
+}
+
+.masonryContainer [data-test-id="more-actions-button"],
+.masonryContainer [data-test-id="more-actions-button"] *,
+.masonryContainer [aria-label="More actions"],
+.masonryContainer [aria-label="More actions"] * {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+.WuRgKB.eMU5i5.o5UlW_.h3gMqR.cZLkj_ {
+  color: #000000 !important;
+
+}.H2DtUH.KwViV7.FE_3R1.Tjcf3c.kF2VEF.sSBu24 {
+  display: none !important;
+}
+button.G0yGFD.ap8aAM.Q3hcOU.aa5Agr.itmoZr.GaMK1V.O0u6sV {
+  background: #cc001f !important;
+  background-color: #cc001f !important;
+  border-color: #cc001f !important;
+}
+.WuRgKB.eMU5i5.o5UlW_.hL1e7w {
+  color: #fff !important;
+}
+.ADXRXN.MJ_eMy.gHrR3r {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.ADXRXN.MJ_eMy.gHrR3r a,
+.ADXRXN.MJ_eMy.gHrR3r div,
+.ADXRXN.MJ_eMy.gHrR3r span,
+.ADXRXN.MJ_eMy.gHrR3r h1,
+.ADXRXN.MJ_eMy.gHrR3r h2,
+.ADXRXN.MJ_eMy.gHrR3r h3,
+.ADXRXN.MJ_eMy.gHrR3r p,
+.ADXRXN.MJ_eMy.gHrR3r button {
+  color: #fff !important;
+}
+.ADXRXN.Emc7hI {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.ADXRXN.Emc7hI a,
+.ADXRXN.Emc7hI div,
+.ADXRXN.Emc7hI span,
+.ADXRXN.Emc7hI h1,
+.ADXRXN.Emc7hI h2,
+.ADXRXN.Emc7hI h3,
+.ADXRXN.Emc7hI p,
+.ADXRXN.Emc7hI button {
+  color: #fff !important;
+}
+.H2DtUH.KwViV7.FE_3R1.Tjcf3c.qJUqe1 {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.H2DtUH.KwViV7.FE_3R1.Tjcf3c.qJUqe1 h1,
+.H2DtUH.KwViV7.FE_3R1.Tjcf3c.qJUqe1 span,
+.H2DtUH.KwViV7.FE_3R1.Tjcf3c.qJUqe1 div,
+.H2DtUH.KwViV7.FE_3R1.Tjcf3c.qJUqe1 a,
+.H2DtUH.KwViV7.FE_3R1.Tjcf3c.qJUqe1 button {
+  color: #fff !important;
+}
+.ADXRXN.EH8C6E,
+.ADXRXN.EH8C6E * {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.ADXRXN.EH8C6E svg,
+.ADXRXN.EH8C6E svg *,
+.ADXRXN.EH8C6E path {
+  fill: #fff !important;
+  stroke: #fff !important;
+  color: #fff !important;
+}
+.ADXRXN.EH8C6E ._gOf1c {
+  background: #fff !important;
+  background-color: #fff !important;
+}
+.ADXRXN.EH8C6E,
+.ADXRXN.EH8C6E * {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+.ADXRXN.ecEhnF.gHrR3r {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+.ADXRXN.ecEhnF.gHrR3r > div,
+.ADXRXN.ecEhnF.gHrR3r .oRZ5_s,
+.ADXRXN.ecEhnF.gHrR3r .WuRgKB:not(.eMU5i5):not(.hL1e7w):not(.cZLkj_):not(.h3gMqR):not(.o5UlW_),
+.ADXRXN.ecEhnF.gHrR3r .lIkAnG:not(.eMU5i5):not(.hL1e7w) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.ADXRXN.ecEhnF.gHrR3r svg,
+.ADXRXN.ecEhnF.gHrR3r svg *,
+.ADXRXN.ecEhnF.gHrR3r path {
+  fill: #fff !important;
+  stroke: #fff !important;
+  color: #fff !important;
+}
+button.fsprMd.IdIBJj.O0u6sV,
+button.fsprMd.IdIBJj.O0u6sV .dBMCN4,
+button.fsprMd.IdIBJj.O0u6sV .H2DtUH,
+button.fsprMd.IdIBJj.O0u6sV .oRZ5_s {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+button.fsprMd.IdIBJj.O0u6sV .WuRgKB {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+button.fsprMd.IdIBJj.O0u6sV:hover,
+button.fsprMd.IdIBJj.O0u6sV:hover .dBMCN4 {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+button.fsprMd.IdIBJj.O0u6sV,
+button.fsprMd.IdIBJj.O0u6sV .dBMCN4,
+button.fsprMd.IdIBJj.O0u6sV .H2DtUH,
+button.fsprMd.IdIBJj.O0u6sV .oRZ5_s,
+button.fsprMd.IdIBJj.O0u6sV:hover,
+button.fsprMd.IdIBJj.O0u6sV:hover .dBMCN4,
+button.fsprMd.IdIBJj.O0u6sV:hover .H2DtUH,
+button.fsprMd.IdIBJj.O0u6sV:hover .oRZ5_s {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+button.fsprMd.IdIBJj.O0u6sV .WuRgKB {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+button.fsprMd.IdIBJj.O0u6sV svg,
+button.fsprMd.IdIBJj.O0u6sV svg *,
+button.fsprMd.IdIBJj.O0u6sV path,
+button.fsprMd.IdIBJj.O0u6sV:hover svg,
+button.fsprMd.IdIBJj.O0u6sV:hover svg *,
+button.fsprMd.IdIBJj.O0u6sV:hover path {
+  fill: #000 !important;
+  stroke: #000 !important;
+  color: #000 !important;
+}
+button[aria-label="Organize"] svg,
+button[aria-label="Organize"] svg *,
+button[aria-label="Organize"] path,
+button[aria-label="Organize"]:hover svg,
+button[aria-label="Organize"]:hover svg *,
+button[aria-label="Organize"]:hover path {
+  fill: #000 !important;
+  stroke: #000 !important;
+  color: #000 !important;
+}
