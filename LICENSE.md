@@ -1,8 +1,6 @@
 # Xzentosia Personal Use License (XPUL)
 
-Copyright (c) 2024-2026
-Yuilix / Xzentosia
-All Rights Reserved
+Copyright © Yuilix / Xzentosia All Rights Reserved
 
 This software is the exclusive property of Yuilix (Xzentosia).
 You are granted a personal, non-commercial, non-transferable license to install and use this software privately.
